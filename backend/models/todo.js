@@ -33,6 +33,20 @@ const todoSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+},{
+  timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }
+});
+
+
+todoSchema.pre('save', function (next) {
+  if (this.dueDate) {
+    const now = new Date();
+    const hoursUntilDue = (this.dueDate - now) / 36e5;
+    if (hoursUntilDue < 48) {
+      this.priority = 'high';
+    }
+  }
+  next();
 });
 
 // Create a model based on the schema
