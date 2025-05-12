@@ -16,6 +16,18 @@ const diarySchema=new mongoose.Schema({
         enum: ['happy', 'sad', 'neutral', 'excited', 'angry'],
         default: 'neutral',
       },
+      images: [{
+        type: String,
+        required: false, // Path like: "/uploads/images/abc.jpg"
+      }],
+      videos: [{
+        type: String,
+        required: false, // Path like: "/uploads/videos/xyz.mp4"
+      }],
+      links: [{
+        type: String,
+        required: false, // External links like "https://example.com"
+      }],
       user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
@@ -25,6 +37,8 @@ const diarySchema=new mongoose.Schema({
         type: Date,
         default: Date.now,
       },
+},{
+  timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }
 })
 
 const Diary = mongoose.model('Diary', diarySchema);
