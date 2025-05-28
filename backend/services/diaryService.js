@@ -3,7 +3,7 @@ import  Diary from '../models/diary.js';
 //FUcntion to create a  diary entry
  export const createDiaryEntry=async(data)=>{
    try {
-        const { title, entry, mood, images, videos, links, user } = data;
+        const { title, entry, mood, images, videos, links, userId } = data;
         const newDiaryEntry = new Diary({
              title,
              entry,
@@ -11,7 +11,7 @@ import  Diary from '../models/diary.js';
              images,
              videos,
              links,
-             user
+             userId
         });
         await newDiaryEntry.save();
         return newDiaryEntry;
@@ -26,7 +26,8 @@ import  Diary from '../models/diary.js';
 
  export const getAllDiaryEntries=async(userId)=>{
      try {
-        const diaryEntries=await Diary.find({user:userId},{sort:-1});
+        const diaryEntries=await Diary.find({userId:userId}).sort({ createdAt: -1 }).populate('todoIds');
+        //console.log("Diary Entries: ",diaryEntries);
         return diaryEntries;
         
      } catch (err) {
@@ -74,7 +75,8 @@ export const getDiaryInRange = async(userId, startDate, endDate) => {
                 $gte: new Date(startDate),
                 $lte: new Date(endDate)
             }
-        },{sort:-1});
+        },{sort:-1}).populate('todoIds');
+        //console.log("Diary Entries in range: ",diaryEntries);
         return diaryEntries;
    } catch (err) {
     console.error("Error fetching diary entries in range:", err.message);
@@ -104,5 +106,6 @@ export const getEntriesByTime = async (userId, type, value) => {
       { $match: matchStage },
       { $project: projectStage },
       { $sort: { date: -1 } }
-    ]);
+    ]).populate('todoIds');
+  //console.log("Diary Entries by time: ",diaryEntries);
   };

@@ -24,14 +24,10 @@ const todoSchema = new mongoose.Schema({
     enum: ['low', 'medium', 'high'],
     default: 'medium',
   },
-  user: {
+  userId:  {
     type: mongoose.Schema.Types.ObjectId,
     ref: 'User',
     required: true, 
-  },
-  createdAt: {
-    type: Date,
-    default: Date.now,
   },
 },{
   timestamps: { createdAt: 'createdAt', updatedAt: 'updatedAt' }
@@ -50,6 +46,6 @@ todoSchema.pre('save', function (next) {
 });
 
 // Create a model based on the schema
-const Todo = mongoose.model('Todo', todoSchema);
+const Todo =  mongoose.models.Todo || mongoose.model('Todo', todoSchema);
 
 export default Todo;
