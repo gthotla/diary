@@ -1,47 +1,370 @@
-[2025-04-23T11:01:29.053Z] info: Connected to MongoDb
-[2025-04-25T09:11:15.426Z] info: 🚀 Server running on port 4500
-[2025-04-25T09:11:15.459Z] info: Connected to MongoDb
-[2025-04-25T09:12:09.160Z] info: 🚀 Server running on port 5000
-[2025-04-25T09:12:09.173Z] info: Connected to MongoDb
-[2025-04-25T09:12:54.805Z] info: 🚀 Server running on port 5000
-[2025-04-25T09:12:54.819Z] info: Connected to MongoDb
-[2025-04-25T09:13:06.784Z] info: 🚀 Server running on port 5000
-[2025-04-25T09:13:06.797Z] info: Connected to MongoDb
-[2025-04-25T09:13:14.344Z] info: 🚀 Server running on port 5000
-[2025-04-25T09:13:14.359Z] info: Connected to MongoDb
-[2025-04-25T09:15:34.400Z] info: 🚀 Server running on port 5000
-[2025-04-25T09:15:34.416Z] info: Connected to MongoDb
-[2025-04-25T09:15:36.639Z] info: 🚀 Server running on port 5000
-[2025-04-25T09:15:36.674Z] info: Connected to MongoDb
-[2025-05-05T10:19:52.798Z] info: 🚀 Server running on port 5000
-[2025-05-05T10:19:52.838Z] info: Connected to MongoDb
-[2025-05-05T10:25:01.989Z] info: 🚀 Server running on port 5000
-[2025-05-05T10:25:02.004Z] info: Connected to MongoDb
-[2025-05-05T10:25:14.406Z] info: 🚀 Server running on port 5000
-[2025-05-05T10:25:14.422Z] info: Connected to MongoDb
-[2025-05-05T10:25:48.375Z] info: 🚀 Server running on port 5000
-[2025-05-05T10:25:48.396Z] info: Connected to MongoDb
-[2025-05-05T10:25:57.629Z] info: 🚀 Server running on port 5000
-[2025-05-05T10:25:57.652Z] info: Connected to MongoDb
-[2025-05-05T10:29:31.553Z] info: 🚀 Server running on port 5000
-[2025-05-05T10:29:31.569Z] info: Connected to MongoDb
-[2025-05-05T10:30:10.123Z] info: 🚀 Server running on port 5000
-[2025-05-05T10:30:10.145Z] info: Connected to MongoDb
-[2025-05-05T10:30:13.044Z] info: 🚀 Server running on port 5000
-[2025-05-05T10:30:13.063Z] info: Connected to MongoDb
-[2025-05-05T10:33:07.671Z] info: 🚀 Server running on port 5000
-[2025-05-05T10:33:07.699Z] info: Connected to MongoDb
-[2025-05-05T10:34:23.408Z] info: 🚀 Server running on port 5000
-[2025-05-05T10:34:23.425Z] info: Connected to MongoDb
-[2025-05-05T10:35:03.740Z] info: 🚀 Server running on port 5000
-[2025-05-05T10:35:03.760Z] info: Connected to MongoDb
-[2025-05-05T10:36:03.610Z] info: 🚀 Server running on port 5000
-[2025-05-05T10:36:03.628Z] info: Connected to MongoDb
-[2025-05-06T10:02:39.764Z] info: 🚀 Server running on port 5000
-[2025-05-06T10:02:39.784Z] info: Connected to MongoDb
-[2025-05-06T10:04:00.483Z] info: 🚀 Server running on port 5000
-[2025-05-06T10:04:00.499Z] info: Connected to MongoDb
-[2025-05-06T10:06:31.263Z] info: 🚀 Server running on port 5000
-[2025-05-06T10:06:31.290Z] info: Connected to MongoDb
-[2025-05-06T10:40:25.793Z] info: 🚀 Server running on port 5000
-[2025-05-06T10:40:25.817Z] info: Connected to MongoDb
+[2025-05-15T07:14:29.113Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:14:29.139Z] info: Connected to MongoDb
+[2025-05-15T07:18:28.914Z] info: POST /api/users/login 200 - 131.60ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:18:38.681Z] info: GET /api/users/me 200 - 13.16ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:21:11.706Z] info: POST /api/todos 400 - 18.58ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:23:09.234Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:23:09.257Z] info: Connected to MongoDb
+[2025-05-15T07:23:17.440Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:23:17.470Z] info: Connected to MongoDb
+[2025-05-15T07:23:19.627Z] info: POST /api/todos 400 - 13.10ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:23:30.052Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:23:30.075Z] info: Connected to MongoDb
+[2025-05-15T07:23:32.270Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:23:32.301Z] info: Connected to MongoDb
+[2025-05-15T07:23:33.371Z] info: POST /api/todos 400 - 21.89ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:24:50.797Z] info: POST /api/todos 401 - 0.72ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:25:15.238Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:25:15.254Z] info: Connected to MongoDb
+[2025-05-15T07:25:20.017Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:25:20.043Z] info: Connected to MongoDb
+[2025-05-15T07:25:21.596Z] info: POST /api/todos 401 - 3.25ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:28:13.338Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:28:13.369Z] info: Connected to MongoDb
+[2025-05-15T07:28:15.012Z] error: ReferenceError: Cannot access 'verifyRefreshToken' before initialization
+    at authMiddleware (file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/middleware/auth.js:24:9)
+    at Layer.handleRequest (C:\Users\gytho\OneDrive\Desktop\master\personal\diary\backend\node_modules\router\lib\layer.js:152:17)
+    at next (C:\Users\gytho\OneDrive\Desktop\master\personal\diary\backend\node_modules\router\lib\route.js:157:13)
+    at Route.dispatch (C:\Users\gytho\OneDrive\Desktop\master\personal\diary\backend\node_modules\router\lib\route.js:117:3)
+    at handle (C:\Users\gytho\OneDrive\Desktop\master\personal\diary\backend\node_modules\router\index.js:435:11)
+    at Layer.handleRequest (C:\Users\gytho\OneDrive\Desktop\master\personal\diary\backend\node_modules\router\lib\layer.js:152:17)
+    at C:\Users\gytho\OneDrive\Desktop\master\personal\diary\backend\node_modules\router\index.js:295:15
+    at processParams (C:\Users\gytho\OneDrive\Desktop\master\personal\diary\backend\node_modules\router\index.js:582:12)
+    at next (C:\Users\gytho\OneDrive\Desktop\master\personal\diary\backend\node_modules\router\index.js:291:5)
+    at Function.handle (C:\Users\gytho\OneDrive\Desktop\master\personal\diary\backend\node_modules\router\index.js:186:3)
+[2025-05-15T07:28:15.016Z] info: POST /api/todos 500 - 5.79ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:28:54.729Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:28:54.747Z] info: Connected to MongoDb
+[2025-05-15T07:28:58.552Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:28:58.574Z] info: Connected to MongoDb
+[2025-05-15T07:29:00.712Z] info: POST /api/todos 400 - 23.85ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:32:45.423Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:32:45.451Z] info: Connected to MongoDb
+[2025-05-15T07:39:14.322Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:39:14.385Z] info: Connected to MongoDb
+[2025-05-15T07:39:18.098Z] info: POST /api/todos 400 - 12.70ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:39:40.323Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:39:40.344Z] info: Connected to MongoDb
+[2025-05-15T07:39:55.628Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:39:55.645Z] info: Connected to MongoDb
+[2025-05-15T07:40:19.813Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:40:19.836Z] info: Connected to MongoDb
+[2025-05-15T07:40:22.194Z] info: POST /api/todos 400 - 12.88ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:45:26.778Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:45:26.811Z] info: Connected to MongoDb
+[2025-05-15T07:45:33.384Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:45:33.403Z] info: Connected to MongoDb
+[2025-05-15T07:45:34.849Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:45:34.870Z] info: Connected to MongoDb
+[2025-05-15T07:45:46.007Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:45:46.031Z] info: Connected to MongoDb
+[2025-05-15T07:45:47.102Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:45:47.125Z] info: Connected to MongoDb
+[2025-05-15T07:45:57.058Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:45:57.074Z] info: Connected to MongoDb
+[2025-05-15T07:46:01.031Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:46:01.047Z] info: Connected to MongoDb
+[2025-05-15T07:47:53.632Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:47:53.652Z] info: Connected to MongoDb
+[2025-05-15T07:48:13.966Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:48:13.982Z] info: Connected to MongoDb
+[2025-05-15T07:48:27.928Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:48:27.951Z] info: Connected to MongoDb
+[2025-05-15T07:48:29.470Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:48:29.494Z] info: Connected to MongoDb
+[2025-05-15T07:48:32.113Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:48:32.130Z] info: Connected to MongoDb
+[2025-05-15T07:48:46.629Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:48:46.652Z] info: Connected to MongoDb
+[2025-05-15T07:48:49.683Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:48:49.703Z] info: Connected to MongoDb
+[2025-05-15T07:49:01.354Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:49:01.374Z] info: Connected to MongoDb
+[2025-05-15T07:49:06.062Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:49:06.083Z] info: Connected to MongoDb
+[2025-05-15T07:49:48.936Z] info: GET /api/users/me 200 - 37.98ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:51:15.334Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:51:15.350Z] info: Connected to MongoDb
+[2025-05-15T07:51:27.166Z] error: Error: Error creating diary entry: Diary validation failed: user: Path `user` is required.
+    at createDiaryEntry (file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/services/diaryService.js:21:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:21:17
+[2025-05-15T07:51:27.204Z] info: POST /api/diary 500 - 58.46ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:53:09.540Z] info: POST /api/todos 400 - 6.50ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:53:15.090Z] info: POST /api/todos 400 - 6.51ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:53:30.731Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:53:30.747Z] info: Connected to MongoDb
+[2025-05-15T07:53:33.455Z] info: POST /api/todos 400 - 17.72ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T07:58:53.232Z] info: 🚀 Server running on port 5000
+[2025-05-15T07:58:53.259Z] info: Connected to MongoDb
+[2025-05-15T07:58:55.600Z] info: POST /api/todos 403 - 8.19ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T08:00:34.075Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:00:34.098Z] info: Connected to MongoDb
+[2025-05-15T08:00:36.058Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:00:36.082Z] info: Connected to MongoDb
+[2025-05-15T08:00:38.508Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:00:38.531Z] info: Connected to MongoDb
+[2025-05-15T08:00:39.623Z] info: POST /api/todos 403 - 6.10ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T08:01:31.732Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:01:31.747Z] info: Connected to MongoDb
+[2025-05-15T08:01:37.776Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:01:37.794Z] info: Connected to MongoDb
+[2025-05-15T08:03:29.683Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:03:29.703Z] info: Connected to MongoDb
+[2025-05-15T08:04:21.380Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:04:21.399Z] info: Connected to MongoDb
+[2025-05-15T08:04:35.659Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:04:35.678Z] info: Connected to MongoDb
+[2025-05-15T08:04:40.659Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:04:40.685Z] info: Connected to MongoDb
+[2025-05-15T08:04:54.983Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:04:55.006Z] info: Connected to MongoDb
+[2025-05-15T08:05:07.569Z] info: POST /api/todos 403 - 7.69ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T08:07:15.060Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:07:15.082Z] info: Connected to MongoDb
+[2025-05-15T08:07:18.490Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:07:18.530Z] info: Connected to MongoDb
+[2025-05-15T08:07:23.520Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:07:23.547Z] info: Connected to MongoDb
+[2025-05-15T08:07:28.624Z] info: POST /api/users/login 200 - 95.20ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T08:08:26.678Z] info: POST /api/users/login 200 - 78.92ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T08:08:30.495Z] info: POST /api/todos 201 - 34.58ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T08:12:22.178Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:12:22.198Z] info: Connected to MongoDb
+[2025-05-15T08:12:26.981Z] info: POST /api/todos 201 - 19.84ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T08:13:21.076Z] info: GET /api/todos 200 - 16.86ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T08:13:33.530Z] error: Error: Error creating diary entry: Diary validation failed: user: Path `user` is required.
+    at createDiaryEntry (file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/services/diaryService.js:21:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:21:17
+[2025-05-15T08:13:33.531Z] info: POST /api/diary 500 - 5.87ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T08:13:39.572Z] info: GET /api/diaries 404 - 4.83ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T08:24:18.277Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:24:18.315Z] info: Connected to MongoDb
+[2025-05-15T08:24:21.163Z] info: GET /api/diaries 404 - 3.51ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T08:24:25.251Z] error: Error: Error creating diary entry: Diary validation failed: userId: Path `userId` is required.
+    at createDiaryEntry (file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/services/diaryService.js:21:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:21:17
+[2025-05-15T08:24:25.254Z] info: POST /api/diary 500 - 19.95ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T08:24:48.418Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:24:48.442Z] info: Connected to MongoDb
+[2025-05-15T08:24:56.248Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:24:56.273Z] info: Connected to MongoDb
+[2025-05-15T08:24:57.453Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:24:57.469Z] info: Connected to MongoDb
+[2025-05-15T08:25:05.226Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:25:05.249Z] info: Connected to MongoDb
+[2025-05-15T08:25:10.260Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:25:10.286Z] info: Connected to MongoDb
+[2025-05-15T08:25:11.527Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:25:11.550Z] info: Connected to MongoDb
+[2025-05-15T08:25:16.963Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:25:16.982Z] info: Connected to MongoDb
+[2025-05-15T08:25:18.435Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:25:18.457Z] info: Connected to MongoDb
+[2025-05-15T08:25:26.613Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:25:26.628Z] info: Connected to MongoDb
+[2025-05-15T08:25:28.268Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:25:28.288Z] info: Connected to MongoDb
+[2025-05-15T08:25:35.200Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:25:35.222Z] info: Connected to MongoDb
+[2025-05-15T08:25:41.695Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:25:41.722Z] info: Connected to MongoDb
+[2025-05-15T08:25:51.724Z] error: Error: Error creating diary entry: Diary validation failed: userId: Path `userId` is required.
+    at createDiaryEntry (file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/services/diaryService.js:21:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:21:17
+[2025-05-15T08:25:51.728Z] info: POST /api/diary 500 - 19.54ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T08:26:12.140Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:26:12.159Z] info: Connected to MongoDb
+[2025-05-15T08:26:13.813Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:26:13.838Z] info: Connected to MongoDb
+[2025-05-15T08:26:17.891Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:26:17.909Z] info: Connected to MongoDb
+[2025-05-15T08:26:29.987Z] info: 🚀 Server running on port 5000
+[2025-05-15T08:26:30.003Z] info: Connected to MongoDb
+[2025-05-15T08:26:41.739Z] info: POST /api/diary 201 - 22.13ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T10:10:00.689Z] info: GET /api/diaries 404 - 1.92ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T10:10:10.222Z] info: GET /api/users/me 200 - 17.40ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T14:48:50.671Z] info: GET /api/diary 200 - 14.61ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T14:50:19.380Z] info: POST /api/diary 201 - 15.17ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T14:50:38.213Z] info: GET /api/diary 200 - 8.80ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T15:23:23.049Z] info: 🚀 Server running on port 5000
+[2025-05-15T15:23:23.073Z] info: Connected to MongoDb
+[2025-05-15T15:23:25.598Z] info: 🚀 Server running on port 5000
+[2025-05-15T15:23:25.644Z] info: Connected to MongoDb
+[2025-05-15T15:23:27.628Z] info: GET /api/diary 200 - 22.89ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T15:25:04.964Z] info: 🚀 Server running on port 5000
+[2025-05-15T15:25:05.011Z] info: Connected to MongoDb
+[2025-05-15T15:25:20.688Z] info: 🚀 Server running on port 5000
+[2025-05-15T15:25:20.713Z] info: Connected to MongoDb
+[2025-05-15T15:25:24.884Z] info: 🚀 Server running on port 5000
+[2025-05-15T15:25:24.925Z] info: Connected to MongoDb
+[2025-05-15T15:26:07.027Z] info: 🚀 Server running on port 5000
+[2025-05-15T15:26:07.052Z] info: Connected to MongoDb
+[2025-05-15T15:26:10.648Z] info: 🚀 Server running on port 5000
+[2025-05-15T15:26:10.668Z] info: Connected to MongoDb
+[2025-05-15T15:26:18.207Z] info: 🚀 Server running on port 5000
+[2025-05-15T15:26:18.234Z] info: Connected to MongoDb
+[2025-05-15T15:26:29.117Z] info: 🚀 Server running on port 5000
+[2025-05-15T15:26:29.137Z] info: Connected to MongoDb
+[2025-05-15T15:26:31.396Z] info: GET /api/diary 200 - 22.86ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T15:26:46.761Z] info: 🚀 Server running on port 5000
+[2025-05-15T15:26:46.780Z] info: Connected to MongoDb
+[2025-05-15T15:26:55.469Z] info: GET /api/todos 200 - 37.91ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T15:27:10.161Z] info: GET /api-docs/ 304 - 34.22ms - IP: ::1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+[2025-05-15T15:27:10.264Z] info: GET /api-docs/swagger-ui-init.js 304 - 2.35ms - IP: ::1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+[2025-05-15T15:27:10.300Z] info: GET /api-docs/swagger-ui.css 304 - 69.88ms - IP: ::1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+[2025-05-15T15:27:10.331Z] info: GET /api-docs/swagger-ui-standalone-preset.js 304 - 84.64ms - IP: ::1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+[2025-05-15T15:27:10.352Z] info: GET /api-docs/swagger-ui-bundle.js 304 - 102.45ms - IP: ::1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+[2025-05-15T15:27:29.496Z] info: GET /api-docs/swagger-ui.css 304 - 1.74ms - IP: ::1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+[2025-05-15T15:27:29.525Z] info: GET /.well-known/appspecific/com.chrome.devtools.json 404 - 9.58ms - IP: ::1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+[2025-05-15T15:27:30.468Z] info: GET /api-docs/swagger-ui.css.map 200 - 14.41ms - IP: ::1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36
+[2025-05-15T16:23:22.878Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:23:22.904Z] info: Connected to MongoDb
+[2025-05-15T16:23:24.857Z] info: POST /api/users/register 400 - 13.81ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:23:33.793Z] info: POST /api/users/register 400 - 6.79ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:23:41.262Z] info: POST /api/users/register 201 - 250.81ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:23:53.980Z] info: GET /api/users/me 200 - 15.66ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:24:00.792Z] info: GET /api/users/me 200 - 11.15ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:24:08.972Z] info: POST /api/users/register 400 - 5.57ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:24:37.543Z] info: GET /api/users/me 200 - 14.46ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:24:46.687Z] info: POST /api/users/login 400 - 8.02ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:25:16.397Z] info: POST /api/users/login 200 - 214.53ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:25:22.051Z] info: GET /api/users/me 200 - 8.51ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:25:26.527Z] info: GET /api/users/me 200 - 6.40ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:25:42.932Z] info: GET /api/users/me 401 - 1.19ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:25:47.269Z] info: POST /api/users/login 200 - 214.47ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:25:52.212Z] info: GET /api/users/me 200 - 12.36ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:27:50.930Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:27:50.973Z] info: Connected to MongoDb
+[2025-05-15T16:27:53.047Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:27:53.072Z] info: Connected to MongoDb
+[2025-05-15T16:27:55.111Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:27:55.134Z] info: Connected to MongoDb
+[2025-05-15T16:27:56.931Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:27:56.948Z] info: Connected to MongoDb
+[2025-05-15T16:27:59.554Z] info: GET /api/users/me 500 - 9.33ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:28:58.137Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:28:58.166Z] info: Connected to MongoDb
+[2025-05-15T16:29:00.397Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:29:00.422Z] info: Connected to MongoDb
+[2025-05-15T16:29:02.900Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:29:02.921Z] info: Connected to MongoDb
+[2025-05-15T16:29:04.501Z] info: GET /api/users/me 200 - 53.70ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:29:13.737Z] info: POST /api/users/login 200 - 222.80ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:29:18.062Z] info: GET /api/users/me 200 - 17.14ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:29:43.918Z] info: POST /api/user/logout 404 - 6.35ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:30:26.786Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:30:26.823Z] info: Connected to MongoDb
+[2025-05-15T16:30:34.353Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:30:34.375Z] info: Connected to MongoDb
+[2025-05-15T16:30:36.989Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:30:37.043Z] info: Connected to MongoDb
+[2025-05-15T16:30:40.351Z] info: GET /api/user/logout 404 - 10.48ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:30:59.607Z] info: GET /api/users/logout 200 - 20.90ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:32:15.176Z] info: PUT /api/user/me 404 - 1.72ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:32:20.989Z] info: PUT /api/users/me 401 - 1.84ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:32:28.197Z] info: POST /api/users/login 200 - 237.33ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:32:31.743Z] info: PUT /api/users/me 404 - 39.47ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:33:00.146Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:33:00.165Z] info: Connected to MongoDb
+[2025-05-15T16:33:00.775Z] info: PUT /api/users/me 404 - 19.46ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:33:22.509Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:33:22.533Z] info: Connected to MongoDb
+[2025-05-15T16:33:25.734Z] info: PUT /api/users/me 500 - 11.60ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:35:55.363Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:35:55.385Z] info: Connected to MongoDb
+[2025-05-15T16:35:57.904Z] info: 🚀 Server running on port 5000
+[2025-05-15T16:35:57.927Z] info: Connected to MongoDb
+[2025-05-15T16:35:59.512Z] info: PUT /api/users/me 200 - 41.17ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:36:52.041Z] info: GET /api/users/token 200 - 11.73ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:38:00.116Z] info: POST /api/users/login 200 - 227.00ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:38:13.779Z] info: GET /api/todos/6825a1ea0afbaed0b15da8a1 404 - 21.66ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:38:23.282Z] info: POST /api/users/login 200 - 216.93ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-15T16:38:28.312Z] info: GET /api/todos/6825a1ea0afbaed0b15da8a1 200 - 11.67ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:19:48.677Z] info: 🚀 Server running on port 5000
+[2025-05-16T04:19:48.708Z] info: Connected to MongoDb
+[2025-05-16T04:19:51.714Z] info: POST /api/todos 201 - 63.78ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:19:59.257Z] info: GET /api/todos/6825a1ea0afbaed0b15da8a1 200 - 42.58ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:20:07.544Z] info: GET /api/todos 200 - 13.34ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:27:04.582Z] info: GET /todo/6825a0feb45742f07488b171 404 - 1.90ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:27:09.867Z] info: GET /todos/6825a0feb45742f07488b171 404 - 0.81ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:27:14.684Z] info: GET /api/todos/6825a0feb45742f07488b171 200 - 9.56ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:28:28.992Z] info: PUT /api/todos/6825a0feb45742f07488b171 200 - 22.31ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:29:46.330Z] info: DELETE /api/todos/6825a0feb45742f07488b171 200 - 14.87ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:30:52.859Z] info: GET /api/todos 200 - 5.76ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:31:09.308Z] info: GET /todo/priority/6825a1ea0afbaed0b15da8a1 404 - 1.06ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:31:17.392Z] info: GET /api/todos/priority/6825a1ea0afbaed0b15da8a1 200 - 7.66ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:31:30.749Z] info: GET /api/todos/priority/high 200 - 5.15ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:31:41.019Z] info: PUT /api/todos/6825a0feb45742f07488b171 404 - 6.03ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:32:02.968Z] info: PUT /api/todos/6825a1ea0afbaed0b15da8a1 400 - 24.39ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:32:18.951Z] info: PUT /api/todos/6825a1ea0afbaed0b15da8a1 200 - 6.35ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T04:32:25.893Z] info: GET /api/todos/priority/high 200 - 4.49ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-16T05:52:55.290Z] info: 🚀 Server running on port 5000
+[2025-05-16T05:52:55.313Z] info: Connected to MongoDb
+[2025-05-19T06:16:25.863Z] info: 🚀 Server running on port 5000
+[2025-05-19T06:16:25.906Z] info: Connected to MongoDb
+[2025-05-19T06:17:07.985Z] info: POST /api/users/login 200 - 240.44ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-19T06:17:26.554Z] info: GET /api/diary 200 - 40.03ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-19T06:22:42.771Z] info: 🚀 Server running on port 5000
+[2025-05-19T06:22:42.787Z] info: Connected to MongoDb
+[2025-05-19T06:22:52.523Z] info: 🚀 Server running on port 5000
+[2025-05-19T06:22:52.571Z] info: Connected to MongoDb
+[2025-05-19T06:22:57.479Z] info: GET /api/diary 200 - 23.90ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-19T06:23:12.211Z] info: GET /api/todos/6825a0feb45742f07488b171 404 - 10.00ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-19T07:08:03.218Z] info: GET /api/todos 200 - 24.56ms - IP: ::1 - UA: PostmanRuntime/7.43.4
+[2025-05-19T07:09:31.906Z] info: 🚀 Server running on port 5000
+[2025-05-19T07:09:31.932Z] info: Connected to MongoDb
+[2025-05-22T15:31:13.224Z] info: 🚀 Server running on port 5000
+[2025-05-22T15:31:13.258Z] info: Connected to MongoDb
+[2025-05-22T15:31:14.955Z] info: 🚀 Server running on port 5000
+[2025-05-22T15:31:14.973Z] info: Connected to MongoDb
+[2025-05-22T15:31:21.090Z] info: 🚀 Server running on port 5000
+[2025-05-22T15:31:21.116Z] info: Connected to MongoDb
+[2025-05-22T15:31:23.789Z] info: 🚀 Server running on port 5000
+[2025-05-22T15:31:23.812Z] info: Connected to MongoDb
+[2025-05-22T15:50:57.754Z] info: 🚀 Server running on port 5000
+[2025-05-22T15:50:57.783Z] info: Connected to MongoDb
+[2025-05-28T08:40:17.849Z] info: 🚀 Server running on port 5000
+[2025-05-28T08:40:17.881Z] info: Connected to MongoDb
+[2025-05-28T08:46:28.021Z] info: 🚀 Server running on port 5000
+[2025-05-28T08:46:28.051Z] info: Connected to MongoDb
+[2025-05-28T08:46:31.095Z] info: 🚀 Server running on port 5000
+[2025-05-28T08:46:31.116Z] info: Connected to MongoDb
+[2025-05-28T08:46:47.975Z] info: 🚀 Server running on port 5000
+[2025-05-28T08:46:47.996Z] info: Connected to MongoDb
+[2025-05-28T08:51:56.334Z] info: 🚀 Server running on port 5000
+[2025-05-28T08:51:56.362Z] info: Connected to MongoDb
+[2025-05-28T08:53:11.474Z] info: POST /api/users/register 201 - 177.81ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T08:59:54.028Z] info: 🚀 Server running on port 5000
+[2025-05-28T08:59:54.050Z] info: Connected to MongoDb
+[2025-05-28T09:01:22.509Z] info: GET /api/users/me 200 - 17.42ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T09:01:38.064Z] info: POST /api/todos 201 - 24.42ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T09:01:40.190Z] info: POST /api/todos 201 - 14.00ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T09:01:41.410Z] info: POST /api/todos 201 - 15.80ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T09:01:42.769Z] info: POST /api/todos 201 - 10.97ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T09:01:46.415Z] info: GET /api/todos 200 - 10.95ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T09:01:56.326Z] info: GET /api/todos/priority/high 200 - 4.53ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T09:02:10.863Z] info: POST /api/diary 201 - 17.70ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T09:02:18.491Z] info: GET /api/diary 200 - 15.98ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T09:21:03.378Z] info: 🚀 Server running on port 5000
+[2025-05-28T09:21:03.401Z] info: Connected to MongoDb
+[2025-05-28T09:21:29.296Z] info: POST /api/users/register 201 - 115.37ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T09:22:01.238Z] info: POST /api/todos 201 - 10.38ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T09:22:02.207Z] info: POST /api/todos 201 - 4.61ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T09:22:07.187Z] info: POST /api/diary 201 - 5.77ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T09:22:22.586Z] info: 🚀 Server running on port 5000
+[2025-05-28T09:22:22.610Z] info: Connected to MongoDb
+[2025-05-28T09:49:20.114Z] info: 🚀 Server running on port 5000
+[2025-05-28T09:49:20.136Z] info: Connected to MongoDb
+[2025-05-28T09:49:23.229Z] info: 🚀 Server running on port 5000
+[2025-05-28T09:49:23.250Z] info: Connected to MongoDb
+[2025-05-28T09:49:25.106Z] info: 🚀 Server running on port 5000
+[2025-05-28T09:49:25.132Z] info: Connected to MongoDb
+[2025-05-28T09:49:29.569Z] info: 🚀 Server running on port 5000
+[2025-05-28T09:49:29.598Z] info: Connected to MongoDb
+[2025-05-28T09:50:15.725Z] info: GET /api/diary 200 - 32.33ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T09:51:28.969Z] info: 🚀 Server running on port 5000
+[2025-05-28T09:51:28.993Z] info: Connected to MongoDb

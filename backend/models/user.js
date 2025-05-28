@@ -1,28 +1,8 @@
 import mongoose from 'mongoose';
 import bcrypt from 'bcrypt';
+import TimeZones from '../utils/Timezone.js' 
 const SALT_ROUNDS = 10;
-const TimeZones = [
-    "UTC",
-    "America/New_York",
-    "America/Los_Angeles",
-    "America/Chicago",
-    "America/Denver",
-    "Europe/London",
-    "Europe/Paris",
-    "Europe/Berlin",
-    "Europe/Moscow",
-    "Asia/Kolkata",
-    "Asia/Tokyo",
-    "Asia/Shanghai",
-    "Asia/Dubai",
-    "Asia/Jakarta",
-    "Australia/Sydney",
-    "Australia/Perth",
-    "Africa/Johannesburg",
-    "Africa/Cairo",
-    "Pacific/Auckland",
-    "America/Sao_Paulo"
-  ];  
+ 
 const userSchema=new mongoose.Schema({
     username:{
         type:String,

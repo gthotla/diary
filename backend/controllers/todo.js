@@ -8,13 +8,19 @@ import {
   } from '../services/todo.js';
   
   export const createTodoController = async (req, res) => {
-    try {
-      const todo = await createTodo({ ...req.body, user: req.user.userId });
-      res.status(201).json(todo);
-    } catch (err) {
-      res.status(400).json({ message: err.message });
-    }
-  };
+  try {
+    console.log('req.user:', req.user);  // 🔎 Check if userId exists
+    console.log('req.body:', req.body);  // 🔎 Check incoming data
+
+    const todo = await createTodo({ ...req.body, userId: req.user.userId });
+
+    res.status(201).json(todo);
+  } catch (err) {
+    console.error('Create Todo Error:', err);
+    res.status(400).json({ message: err.message });
+  }
+};
+
   
   export const getAllTodosController = async (req, res) => {
     try {
