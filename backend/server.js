@@ -8,7 +8,8 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './utils/swagger.js'; // Import swagger spec
 import cors from 'cors';
 import cron from 'node-cron';
-import {processTodosForAllUsers} from './cron/eodProcessor.js';
+import multer from 'multer';
+//import {processTodosForAllUsers} from './cron/eodProcessor.js';
 
 // Import Routes
 import todoRoutes from './routes/todo.js';
@@ -21,24 +22,26 @@ config();
 // Initialize Express app
 const app = express();
 
+
 // Connect to MongoDB
 connectDB();
-cron.schedule('*/2 * * * *', async () => {
-  console.log('Running EOD processor...');
-  await processTodosForAllUsers();
-});
+// cron.schedule('*/2 * * * *', async () => {
+//   console.log('Running EOD processor...');
+//   await processTodosForAllUsers();
+// });
 // Middlewares
 app.use(cookieParser()); // ✅ THIS MUST BE FIRST
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:3000',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  methods: ['GET', 'POST', 'PUT', 'DELETE','PATCH'],
   credentials: true,
 }));
 app.use(requestLogger); // if this logs tokens, it must be after cookieParser
 
-
+const stroage = multer.memoryStorage();
+const upload = multer({ storage: stroage });
 // Routes
 app.get('/', (req, res) => res.send('API is running...'));
 app.use('/api/users', userRoutes); 

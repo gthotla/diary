@@ -5,7 +5,8 @@ import {
   getTodoByIdController,
   updateTodoController,
   deleteTodoController,
-  getTodosByPriorityController
+  getTodosByPriorityController,
+  toggleTodoController
 } from '../controllers/todo.js';
 
 import { authMiddleware } from '../middleware/auth.js';
@@ -113,5 +114,5 @@ router.route('/:id')
  *         description: Todos retrieved successfully
  */
 router.get('/priority/:priority', authMiddleware, getTodosByPriorityController);
-
+router.patch('/:id/status/:status',authMiddleware, toggleTodoController);
 export default router;

@@ -17,8 +17,9 @@ const diarySchema = new mongoose.Schema({
     default: 'neutral',
   },
   images: [{
-    type: String,
-    required: false, // Path like: "/uploads/images/abc.jpg"
+    key:String,
+    _id:false, // S3 key like: "uploads/images/xyz.jpg"
+    url:String
   }],
   videos: [{
     type: String,

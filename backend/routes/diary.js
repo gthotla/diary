@@ -10,6 +10,8 @@ import {
 } from '../controllers/diary.js';
 
 import { authMiddleware } from '../middleware/auth.js';
+import uploadImages from '../middleware/uploadImages.js';
+
 
 const router = express.Router();
 
@@ -51,7 +53,7 @@ const router = express.Router();
  *         description: Entries retrieved successfully
  */
 router.route('/')
-  .post(authMiddleware, createEntryController)
+  .post(authMiddleware, uploadImages, createEntryController)
   .get(authMiddleware, getAllEntriesController);
 
 /**

@@ -368,3 +368,817 @@
 [2025-05-28T09:50:15.725Z] info: GET /api/diary 200 - 32.33ms - IP: ::1 - UA: PostmanRuntime/7.44.0
 [2025-05-28T09:51:28.969Z] info: 🚀 Server running on port 5000
 [2025-05-28T09:51:28.993Z] info: Connected to MongoDb
+[2025-05-28T10:43:01.423Z] info: 🚀 Server running on port 5000
+[2025-05-28T10:43:01.439Z] info: Connected to MongoDb
+[2025-05-28T10:43:42.953Z] info: GET /api/todos 200 - 61.27ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T10:44:13.222Z] info: GET /api/todos/6836d5bac08dea6886c8b0bf/toggle-completed 404 - 3.03ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T10:45:24.267Z] info: PATCH /api/todos/6836d5bac08dea6886c8b0bf/toggle-completed 500 - 4.18ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T10:46:12.042Z] info: 🚀 Server running on port 5000
+[2025-05-28T10:46:12.063Z] info: Connected to MongoDb
+[2025-05-28T10:46:15.107Z] info: 🚀 Server running on port 5000
+[2025-05-28T10:46:15.131Z] info: Connected to MongoDb
+[2025-05-28T10:46:19.258Z] info: PATCH /api/todos/6836d5bac08dea6886c8b0bf/toggle-completed 500 - 8.07ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T10:47:22.816Z] info: 🚀 Server running on port 5000
+[2025-05-28T10:47:22.850Z] info: Connected to MongoDb
+[2025-05-28T10:47:25.520Z] info: PATCH /api/todos/6836d5bac08dea6886c8b0bf/toggle-completed 200 - 38.02ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T10:47:29.983Z] info: PATCH /api/todos/6836d5bac08dea6886c8b0bf/toggle-completed 200 - 33.20ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T10:47:32.332Z] info: PATCH /api/todos/6836d5bac08dea6886c8b0bf/toggle-completed 200 - 14.56ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T10:47:33.617Z] info: PATCH /api/todos/6836d5bac08dea6886c8b0bf/toggle-completed 200 - 15.65ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-05-28T10:47:49.699Z] info: 🚀 Server running on port 5000
+[2025-05-28T10:47:49.719Z] info: Connected to MongoDb
+[2025-06-02T10:03:33.780Z] info: 🚀 Server running on port 5000
+[2025-06-02T10:03:33.811Z] info: Connected to MongoDb
+[2025-06-02T10:03:40.711Z] info: POST /api/users/register 500 - 94.56ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-02T10:04:47.454Z] info: POST /api/users/login 200 - 280.70ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-02T10:05:54.274Z] info: 🚀 Server running on port 5000
+[2025-06-02T10:05:54.291Z] info: Connected to MongoDb
+[2025-06-17T08:52:35.402Z] info: 🚀 Server running on port 5000
+[2025-06-17T08:52:35.429Z] info: Connected to MongoDb
+[2025-06-17T08:56:54.249Z] info: 🚀 Server running on port 5000
+[2025-06-17T08:56:54.267Z] info: Connected to MongoDb
+[2025-06-17T08:58:09.751Z] info: 🚀 Server running on port 5000
+[2025-06-17T08:58:09.771Z] info: Connected to MongoDb
+[2025-06-17T08:59:52.579Z] info: 🚀 Server running on port 5000
+[2025-06-17T08:59:52.605Z] info: Connected to MongoDb
+[2025-06-17T09:00:15.614Z] info: 🚀 Server running on port 5000
+[2025-06-17T09:00:15.641Z] info: Connected to MongoDb
+[2025-06-17T09:00:17.303Z] info: 🚀 Server running on port 5000
+[2025-06-17T09:00:17.318Z] info: Connected to MongoDb
+[2025-06-17T09:01:24.437Z] info: POST /api/users/login 200 - 127.03ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-06-17T09:09:41.087Z] error: Error: Error creating diary entry: Diary validation failed: mood: `Happy` is not a valid enum value for path `mood`.
+    at createDiaryEntry (file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/services/diaryService.js:21:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:40:17
+[2025-06-17T09:10:06.042Z] error: Error: Error creating diary entry: Diary validation failed: mood: `Happy` is not a valid enum value for path `mood`.
+    at createDiaryEntry (file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/services/diaryService.js:21:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:40:17
+[2025-06-17T09:10:06.043Z] info: POST /api/diary 500 - 5273.66ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-06-17T09:13:06.299Z] info: POST /api/diary 201 - 3408.48ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-06-17T09:13:33.985Z] info: GET /api/diary 200 - 17.16ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-06-17T09:22:39.974Z] info: 🚀 Server running on port 5000
+[2025-06-17T09:22:39.987Z] info: Connected to MongoDb
+[2025-06-17T09:22:45.508Z] info: GET /api/diary 200 - 34.00ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-06-17T09:23:39.645Z] info: POST /api/diary 201 - 3427.90ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-06-17T09:25:19.309Z] info: 🚀 Server running on port 5000
+[2025-06-17T09:25:19.326Z] info: Connected to MongoDb
+[2025-06-17T09:25:22.624Z] info: 🚀 Server running on port 5000
+[2025-06-17T09:25:22.638Z] info: Connected to MongoDb
+[2025-06-17T09:25:43.504Z] info: POST /api/diary 201 - 4735.77ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-06-17T09:27:09.563Z] info: 🚀 Server running on port 5000
+[2025-06-17T09:27:09.581Z] info: Connected to MongoDb
+[2025-06-17T09:27:11.374Z] info: 🚀 Server running on port 5000
+[2025-06-17T09:27:11.395Z] info: Connected to MongoDb
+[2025-06-17T09:27:21.445Z] info: POST /api/diary 201 - 3561.75ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-06-17T09:27:29.649Z] info: GET /api/diary 200 - 31.84ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-06-17T09:28:07.544Z] info: 🚀 Server running on port 5000
+[2025-06-17T09:28:07.560Z] info: Connected to MongoDb
+[2025-06-17T09:28:16.202Z] info: 🚀 Server running on port 5000
+[2025-06-17T09:28:16.218Z] info: Connected to MongoDb
+[2025-06-17T09:28:17.066Z] info: GET /api/diary 200 - 84.57ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-06-17T09:30:02.301Z] info: 🚀 Server running on port 5000
+[2025-06-17T09:30:02.318Z] info: Connected to MongoDb
+[2025-06-17T09:30:03.485Z] info: GET /api/diary 200 - 52.92ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-06-17T09:30:38.286Z] info: 🚀 Server running on port 5000
+[2025-06-17T09:30:38.307Z] info: Connected to MongoDb
+[2025-06-17T09:30:39.649Z] info: GET /api/diary 200 - 43.77ms - IP: ::1 - UA: PostmanRuntime/7.44.0
+[2025-06-17T14:22:10.520Z] info: 🚀 Server running on port 5000
+[2025-06-17T14:22:10.540Z] info: Connected to MongoDb
+[2025-06-17T14:30:01.545Z] info: GET /api/auth/verify 404 - 12.78ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:38:05.083Z] info: 🚀 Server running on port 5000
+[2025-06-17T14:38:05.139Z] info: Connected to MongoDb
+[2025-06-17T14:38:16.638Z] info: POST /api/auth/register 404 - 11.83ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:38:34.832Z] info: GET /docs 404 - 4.60ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:38:41.947Z] info: GET /admin/getAdmin 404 - 1.39ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:38:52.323Z] info: GET /api-docs 301 - 3.85ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:38:52.344Z] info: GET /api-docs/ 200 - 9.93ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:38:52.416Z] info: GET /api-docs/swagger-ui-init.js 200 - 2.79ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:38:52.437Z] info: GET /api-docs/swagger-ui.css 200 - 27.83ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:38:52.449Z] info: GET /api-docs/swagger-ui-standalone-preset.js 200 - 25.16ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:38:52.464Z] info: GET /api-docs/swagger-ui-bundle.js 200 - 52.73ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:38:52.744Z] info: GET /api-docs/favicon-32x32.png 200 - 6.06ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:39:48.364Z] info: 🚀 Server running on port 5000
+[2025-06-17T14:39:48.386Z] info: Connected to MongoDb
+[2025-06-17T14:39:54.880Z] info: 🚀 Server running on port 5000
+[2025-06-17T14:39:54.898Z] info: Connected to MongoDb
+[2025-06-17T14:41:40.232Z] info: POST /api/users/register 500 - 91.83ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:44:20.114Z] info: 🚀 Server running on port 5000
+[2025-06-17T14:44:20.143Z] info: Connected to MongoDb
+[2025-06-17T14:46:54.054Z] info: 🚀 Server running on port 5000
+[2025-06-17T14:46:54.102Z] info: Connected to MongoDb
+[2025-06-17T14:48:19.756Z] info: 🚀 Server running on port 5000
+[2025-06-17T14:48:19.800Z] info: Connected to MongoDb
+[2025-06-17T14:50:04.471Z] info: POST /api/users/register 500 - 78.53ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:50:47.173Z] info: 🚀 Server running on port 5000
+[2025-06-17T14:50:47.195Z] info: Connected to MongoDb
+[2025-06-17T14:50:57.187Z] info: 🚀 Server running on port 5000
+[2025-06-17T14:50:57.204Z] info: Connected to MongoDb
+[2025-06-17T14:51:00.782Z] info: 🚀 Server running on port 5000
+[2025-06-17T14:51:00.808Z] info: Connected to MongoDb
+[2025-06-17T14:51:37.076Z] info: 🚀 Server running on port 5000
+[2025-06-17T14:51:37.091Z] info: Connected to MongoDb
+[2025-06-17T14:51:45.085Z] info: 🚀 Server running on port 5000
+[2025-06-17T14:51:45.110Z] info: Connected to MongoDb
+[2025-06-17T14:51:57.303Z] info: POST /api/users/register 500 - 73.06ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:53:05.796Z] info: POST /api/users/register 500 - 12.18ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:53:49.369Z] info: 🚀 Server running on port 5000
+[2025-06-17T14:53:49.404Z] info: Connected to MongoDb
+[2025-06-17T14:53:54.005Z] info: 🚀 Server running on port 5000
+[2025-06-17T14:53:54.025Z] info: Connected to MongoDb
+[2025-06-17T14:54:05.374Z] info: POST /api/users/register 500 - 65.20ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T14:56:17.021Z] info: POST /api/users/register 201 - 193.63ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:08:02.857Z] info: GET /api/users/verify 404 - 4.99ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:08:04.176Z] info: GET /api/users/verify 404 - 1.35ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:08:04.178Z] info: GET /api/users/verify 404 - 0.80ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:12:55.178Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:12:55.204Z] info: Connected to MongoDb
+[2025-06-17T15:12:58.695Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:12:58.714Z] info: Connected to MongoDb
+[2025-06-17T15:13:19.673Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:13:19.707Z] info: Connected to MongoDb
+[2025-06-17T15:13:27.418Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:13:27.444Z] info: Connected to MongoDb
+[2025-06-17T15:13:39.641Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:13:39.665Z] info: Connected to MongoDb
+[2025-06-17T15:14:53.260Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:14:53.283Z] info: Connected to MongoDb
+[2025-06-17T15:14:55.229Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:14:55.247Z] info: Connected to MongoDb
+[2025-06-17T15:15:50.186Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:15:50.201Z] info: Connected to MongoDb
+[2025-06-17T15:15:56.549Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:15:56.573Z] info: Connected to MongoDb
+[2025-06-17T15:16:00.196Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:16:00.212Z] info: Connected to MongoDb
+[2025-06-17T15:16:03.350Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:16:03.374Z] info: Connected to MongoDb
+[2025-06-17T15:16:05.399Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:16:05.417Z] info: Connected to MongoDb
+[2025-06-17T15:17:06.184Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:17:06.206Z] info: Connected to MongoDb
+[2025-06-17T15:17:13.256Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:17:13.272Z] info: Connected to MongoDb
+[2025-06-17T15:17:18.609Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:17:18.633Z] info: Connected to MongoDb
+[2025-06-17T15:17:26.489Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:17:26.514Z] info: Connected to MongoDb
+[2025-06-17T15:17:38.303Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:17:38.320Z] info: Connected to MongoDb
+[2025-06-17T15:17:40.821Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:17:40.845Z] info: Connected to MongoDb
+[2025-06-17T15:17:47.999Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:17:48.028Z] info: Connected to MongoDb
+[2025-06-17T15:17:54.335Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:17:54.378Z] info: Connected to MongoDb
+[2025-06-17T15:18:07.950Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:18:07.967Z] info: Connected to MongoDb
+[2025-06-17T15:18:21.797Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:18:21.816Z] info: Connected to MongoDb
+[2025-06-17T15:19:09.367Z] info: POST /api/users/register 400 - 38.51ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:19:50.878Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:19:50.907Z] info: Connected to MongoDb
+[2025-06-17T15:20:10.530Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:20:10.545Z] info: Connected to MongoDb
+[2025-06-17T15:20:34.768Z] info: POST /api/users/register 500 - 29.01ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:21:48.199Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:21:48.219Z] info: Connected to MongoDb
+[2025-06-17T15:21:54.105Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:21:54.148Z] info: Connected to MongoDb
+[2025-06-17T15:23:47.570Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:23:47.607Z] info: Connected to MongoDb
+[2025-06-17T15:24:01.246Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:24:01.264Z] info: Connected to MongoDb
+[2025-06-17T15:24:06.076Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:24:06.107Z] info: Connected to MongoDb
+[2025-06-17T15:24:10.471Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:24:10.506Z] info: Connected to MongoDb
+[2025-06-17T15:24:23.321Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:24:23.362Z] info: Connected to MongoDb
+[2025-06-17T15:24:41.808Z] info: POST /api/users/register 400 - 46.85ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:29:33.614Z] info: POST /api/users/register 500 - 31.13ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:30:04.714Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:30:04.734Z] info: Connected to MongoDb
+[2025-06-17T15:30:11.685Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:30:11.702Z] info: Connected to MongoDb
+[2025-06-17T15:31:03.979Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:31:03.998Z] info: Connected to MongoDb
+[2025-06-17T15:31:53.420Z] info: POST /api/users/register 201 - 151.40ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:32:45.854Z] info: POST /api/users/register 201 - 247.99ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:39:52.527Z] info: GET /api/users/verify 404 - 6.81ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:39:52.532Z] info: GET /api/users/verify 404 - 2.65ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:39:52.950Z] info: GET /api/users/verify 404 - 0.89ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:39:52.951Z] info: GET /api/users/verify 404 - 0.68ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:40:12.879Z] info: POST /api/users/register 201 - 146.38ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:44:34.952Z] info: POST /api/users/register 201 - 233.76ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:48:04.129Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:48:04.145Z] info: Connected to MongoDb
+[2025-06-17T15:48:08.360Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:48:08.375Z] info: Connected to MongoDb
+[2025-06-17T15:48:12.654Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:48:12.670Z] info: Connected to MongoDb
+[2025-06-17T15:48:14.796Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:48:14.813Z] info: Connected to MongoDb
+[2025-06-17T15:48:19.844Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:48:19.865Z] info: Connected to MongoDb
+[2025-06-17T15:48:25.109Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:48:25.124Z] info: Connected to MongoDb
+[2025-06-17T15:48:28.947Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:48:28.979Z] info: Connected to MongoDb
+[2025-06-17T15:48:31.131Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:48:31.147Z] info: Connected to MongoDb
+[2025-06-17T15:48:35.427Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:48:35.443Z] info: Connected to MongoDb
+[2025-06-17T15:48:38.398Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:48:38.414Z] info: Connected to MongoDb
+[2025-06-17T15:48:45.427Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:48:45.441Z] info: Connected to MongoDb
+[2025-06-17T15:49:20.196Z] info: POST /api/users/register 201 - 202.68ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:50:01.994Z] info: 🚀 Server running on port 5000
+[2025-06-17T15:50:02.022Z] info: Connected to MongoDb
+[2025-06-17T15:50:31.324Z] info: POST /api/users/register 201 - 110.42ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:56:03.951Z] info: POST /api/users/logout 404 - 5.37ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T15:57:27.607Z] info: POST /api/users/register 201 - 105.93ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:00:15.198Z] info: POST /api/users/register 201 - 224.82ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:01:50.248Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:01:50.276Z] info: Connected to MongoDb
+[2025-06-17T16:01:56.300Z] info: PATCH /api/users/update-profile 400 - 4.89ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:04:02.849Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:04:02.872Z] info: Connected to MongoDb
+[2025-06-17T16:04:05.021Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:04:05.040Z] info: Connected to MongoDb
+[2025-06-17T16:04:07.836Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:04:07.851Z] info: Connected to MongoDb
+[2025-06-17T16:04:16.703Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:04:16.717Z] info: Connected to MongoDb
+[2025-06-17T16:04:19.416Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:04:19.430Z] info: Connected to MongoDb
+[2025-06-17T16:04:22.618Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:04:22.634Z] info: Connected to MongoDb
+[2025-06-17T16:04:28.720Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:04:28.736Z] info: Connected to MongoDb
+[2025-06-17T16:04:34.347Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:04:34.361Z] info: Connected to MongoDb
+[2025-06-17T16:04:43.160Z] info: PATCH /api/users/update-profile 400 - 22.49ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:06:46.964Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:06:46.980Z] info: Connected to MongoDb
+[2025-06-17T16:06:49.554Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:06:49.573Z] info: Connected to MongoDb
+[2025-06-17T16:06:56.890Z] info: PATCH /api/users/update-profile 400 - 21.50ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:07:34.979Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:07:34.996Z] info: Connected to MongoDb
+[2025-06-17T16:10:28.973Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:10:28.989Z] info: Connected to MongoDb
+[2025-06-17T16:10:33.293Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:10:33.315Z] info: Connected to MongoDb
+[2025-06-17T16:10:38.273Z] info: PATCH /api/users/update-profile 400 - 4.99ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:11:40.073Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:11:40.093Z] info: Connected to MongoDb
+[2025-06-17T16:11:43.899Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:11:43.913Z] info: Connected to MongoDb
+[2025-06-17T16:11:53.495Z] info: PATCH /api/users/update-profile 401 - 7.52ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:11:56.149Z] info: GET /api/users/verify 404 - 2.18ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:11:56.151Z] info: GET /api/users/verify 404 - 0.71ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:12:31.746Z] info: POST /api/users/register 201 - 176.59ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:12:49.307Z] info: PATCH /api/users/update-profile 401 - 4.76ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:12:51.871Z] info: GET /api/users/verify 404 - 3.21ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:12:51.875Z] info: GET /api/users/verify 404 - 1.07ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:13:55.081Z] info: POST /api/users/register 400 - 7.22ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:14:02.267Z] info: POST /api/users/register 201 - 169.77ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:14:11.394Z] info: PATCH /api/users/update-profile 401 - 4.44ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:14:14.067Z] info: GET /api/users/verify 404 - 0.78ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:14:14.075Z] info: GET /api/users/verify 404 - 0.78ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:18:22.958Z] info: POST /api/users/register 201 - 127.56ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:18:37.447Z] info: GET /api/users/verify 404 - 0.87ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:19:47.635Z] info: GET /api/users/me 200 - 8.40ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:19:47.640Z] info: GET /api/users/me 200 - 3.67ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:20:03.939Z] info: POST /api/users/register 201 - 164.25ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:20:18.618Z] info: GET /api/users/me 200 - 4.41ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:20:59.259Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:20:59.274Z] info: Connected to MongoDb
+[2025-06-17T16:21:00.848Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:21:00.869Z] info: Connected to MongoDb
+[2025-06-17T16:21:06.853Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:21:06.870Z] info: Connected to MongoDb
+[2025-06-17T16:21:09.541Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:21:09.567Z] info: Connected to MongoDb
+[2025-06-17T16:21:11.784Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:21:11.799Z] info: Connected to MongoDb
+[2025-06-17T16:21:16.015Z] info: POST /api/users/register 400 - 27.93ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:21:26.626Z] info: POST /api/users/register 201 - 144.90ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:21:33.698Z] info: GET /api/users/me 200 - 11.70ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:21:33.728Z] info: PATCH /api/users/update-profile 401 - 11.52ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:21:36.273Z] info: GET /api/users/me 304 - 10.36ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:21:36.275Z] info: GET /api/users/me 200 - 7.61ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:31:33.364Z] info: GET /api/users/logout 200 - 6.53ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:31:49.394Z] info: POST /api/users/register 201 - 107.27ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:32:03.162Z] info: PATCH /api/users/update-profile 401 - 7.57ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:33:33.402Z] info: 🚀 Server running on port 5000
+[2025-06-17T16:33:33.416Z] info: Connected to MongoDb
+[2025-06-17T16:33:35.929Z] info: PATCH /api/users/update-profile 200 - 23.80ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:33:44.779Z] info: POST /api/users/login 200 - 155.19ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-17T16:33:50.777Z] info: GET /api/users/logout 200 - 4.88ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T09:06:01.391Z] info: 🚀 Server running on port 5000
+[2025-06-18T09:06:01.411Z] info: Connected to MongoDb
+[2025-06-18T09:06:41.317Z] info: GET /api/users/me 401 - 10.02ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T09:06:41.324Z] info: GET /api/users/me 401 - 2.21ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T09:07:00.365Z] info: POST /api/users/login 200 - 138.90ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T09:07:23.004Z] info: GET /api/users/logout 200 - 4.91ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T14:37:44.251Z] info: 🚀 Server running on port 5000
+[2025-06-18T14:37:44.277Z] info: Connected to MongoDb
+[2025-06-18T14:37:50.597Z] info: POST /api/users/login 400 - 14.20ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T14:49:16.315Z] info: POST /api/users/register 201 - 359.03ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:10:52.150Z] info: 🚀 Server running on port 5000
+[2025-06-18T16:10:52.165Z] info: Connected to MongoDb
+[2025-06-18T16:11:05.707Z] info: POST /api/users/login 200 - 102.65ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:11:21.533Z] info: GET /api/users/logout 200 - 5.77ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:12:02.457Z] info: POST /api/users/register 201 - 156.72ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:12:24.137Z] info: PATCH /api/users/update-profile 200 - 39.78ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:17:17.293Z] info: GET /api/users/me 200 - 13.33ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:17:17.295Z] info: GET /api/users/me 200 - 8.63ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:17:18.953Z] info: GET /api/users/logout 200 - 2.43ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:17:31.661Z] info: GET /api/users/me 401 - 0.55ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:17:31.663Z] info: GET /api/users/me 401 - 0.75ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:17:46.111Z] info: GET /api/users/me 401 - 6.06ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:17:46.113Z] info: GET /api/users/me 401 - 1.22ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:17:56.124Z] info: GET /api/users/me 401 - 0.58ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:17:56.126Z] info: GET /api/users/me 401 - 0.58ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:18:18.066Z] info: GET /api/users/me 401 - 0.74ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:18:18.069Z] info: GET /api/users/me 401 - 0.78ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:18:49.566Z] info: GET /api/users/me 401 - 0.76ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:18:49.568Z] info: GET /api/users/me 401 - 0.61ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:18:59.242Z] info: GET /api/users/me 401 - 0.64ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:18:59.243Z] info: GET /api/users/me 401 - 0.60ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:19:17.375Z] info: GET /api/users/me 401 - 0.49ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:19:17.376Z] info: GET /api/users/me 401 - 0.60ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:19:22.269Z] info: GET /api/users/me 401 - 0.56ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:19:22.277Z] info: GET /api/users/me 401 - 0.61ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:19:26.528Z] info: GET /api/users/me 401 - 0.67ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:19:26.532Z] info: GET /api/users/me 401 - 0.61ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:19:35.119Z] info: GET /api/users/me 401 - 1.32ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:19:35.121Z] info: GET /api/users/me 401 - 1.05ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:23:54.717Z] info: GET /api/users/me 401 - 0.88ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:23:54.722Z] info: GET /api/users/me 401 - 0.57ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:31:44.110Z] info: GET /api/users/me 401 - 1.64ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:31:44.113Z] info: GET /api/users/me 401 - 1.33ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:33:43.950Z] info: POST /api/users/register 201 - 238.01ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:33:54.844Z] info: PATCH /api/users/update-profile 200 - 10.04ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:34:07.622Z] info: POST /api/users/login 200 - 198.20ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:36:04.271Z] info: 🚀 Server running on port 5000
+[2025-06-18T16:36:04.294Z] info: Connected to MongoDb
+[2025-06-18T16:44:24.547Z] info: GET /api/users/logout 200 - 18.78ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:45:07.842Z] info: 🚀 Server running on port 5000
+[2025-06-18T16:45:07.868Z] info: Connected to MongoDb
+[2025-06-18T16:45:18.741Z] info: GET /api/users/me 401 - 0.90ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:45:18.742Z] info: GET /api/users/me 401 - 0.55ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:55:51.215Z] info: GET /api/users/me 401 - 2.04ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-18T16:55:51.218Z] info: GET /api/users/me 401 - 1.51ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T06:45:09.006Z] info: 🚀 Server running on port 5000
+[2025-06-19T06:45:09.023Z] info: Connected to MongoDb
+[2025-06-19T06:45:11.926Z] info: POST /api/users/register 201 - 139.55ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T06:45:27.619Z] info: PATCH /api/users/update-profile 200 - 22.32ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T06:45:32.422Z] info: POST /api/users/login 400 - 4.89ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T06:45:43.066Z] info: POST /api/users/login 400 - 8.58ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:38:59.619Z] info: 🚀 Server running on port 5000
+[2025-06-19T07:38:59.651Z] info: Connected to MongoDb
+[2025-06-19T07:39:02.715Z] info: POST /api/users/login 400 - 15.50ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:39:17.054Z] info: POST /api/users/login 400 - 9.71ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:39:33.068Z] info: POST /api/users/register 201 - 277.71ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:39:40.488Z] info: PATCH /api/users/update-profile 200 - 64.03ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:40:05.146Z] info: POST /api/users/register 201 - 229.85ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:40:08.976Z] info: PATCH /api/users/update-profile 200 - 17.30ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:40:13.441Z] info: POST /api/users/login 200 - 214.03ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:40:13.595Z] info: GET /api/todo 404 - 18.02ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:40:13.600Z] info: GET /api/diary 200 - 20.21ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:40:13.609Z] info: GET /api/diary 200 - 48.67ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:40:13.614Z] info: GET /api/todo 404 - 2.09ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:40:26.931Z] info: GET /api/diary 304 - 15.51ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:40:26.936Z] info: GET /api/diary 200 - 13.47ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:40:27.740Z] info: GET /api/todo 404 - 2.95ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:40:27.748Z] info: GET /api/todo 404 - 2.67ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:41:01.907Z] info: PATCH /api/users/update-profile 200 - 14.97ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:41:11.490Z] info: PATCH /api/users/update-profile 200 - 15.80ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:41:39.065Z] info: GET /api/todo 404 - 0.99ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:41:39.068Z] info: GET /api/todo 404 - 1.17ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:41:39.387Z] info: GET /api/diary 200 - 13.98ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:41:39.391Z] info: GET /api/diary 200 - 10.69ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:42:31.164Z] info: GET /api/todo 404 - 1.30ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:42:31.170Z] info: GET /api/todo 404 - 2.25ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:42:34.117Z] info: GET /api/todo 404 - 2.40ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:42:34.125Z] info: GET /api/todo 404 - 4.69ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:42:36.971Z] info: GET /api/todo 404 - 1.89ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:42:36.974Z] info: GET /api/todo 404 - 1.03ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:42:52.204Z] info: POST /api/users/login 400 - 6.05ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T07:43:16.819Z] info: POST /api/users/login 200 - 191.11ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T07:43:30.679Z] info: POST /api/diary 201 - 7767.80ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T07:43:38.443Z] info: GET /api/todo 404 - 1.27ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:43:38.446Z] info: GET /api/todo 404 - 1.60ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:43:43.028Z] info: GET /api/users/me 200 - 7.87ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:43:43.032Z] info: GET /api/users/me 200 - 7.96ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:43:43.093Z] info: GET /api/todo 404 - 0.72ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:43:43.113Z] info: GET /api/diary 200 - 24.21ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:43:43.120Z] info: GET /api/todo 404 - 0.65ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:43:43.131Z] info: GET /api/diary 200 - 16.41ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:44:00.207Z] info: GET /api/todo 404 - 1.22ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:44:00.211Z] info: GET /api/todo 404 - 1.41ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:47:17.291Z] info: POST /api/todos 201 - 19.22ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T07:48:24.395Z] info: GET /api/users/me 304 - 21.11ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:48:24.404Z] info: GET /api/users/me 200 - 21.00ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:48:24.534Z] info: GET /api/todos 200 - 32.05ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:48:24.594Z] info: GET /api/diary 200 - 81.40ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:48:24.669Z] info: GET /api/diary 200 - 67.16ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:48:24.676Z] info: GET /api/todos 200 - 63.32ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:48:33.461Z] info: GET /api/todos 200 - 13.48ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:48:33.466Z] info: GET /api/todos 304 - 12.51ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:48:40.931Z] info: PATCH /api/todos/6853c0853320467eb570364f/toggle-completed 200 - 29.16ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:48:40.963Z] info: GET /api/todos 200 - 14.41ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:49:05.614Z] info: POST /api/todos 201 - 8.58ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:49:05.659Z] info: GET /api/todos 200 - 19.43ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:49:29.793Z] info: GET /api/todos 304 - 16.97ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:49:29.802Z] info: GET /api/todos 200 - 19.59ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:49:30.838Z] info: GET /api/diary 200 - 63.36ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:49:30.901Z] info: GET /api/diary 200 - 118.04ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:49:36.318Z] info: GET /api/users/me 304 - 7.62ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:49:36.336Z] info: GET /api/users/me 304 - 10.16ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:49:36.429Z] info: GET /api/diary 200 - 37.53ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:49:36.435Z] info: GET /api/todos 304 - 38.35ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:49:36.489Z] info: GET /api/diary 200 - 50.39ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:49:36.496Z] info: GET /api/todos 200 - 46.74ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:49:41.024Z] info: GET /api/diary 200 - 46.44ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:49:41.083Z] info: GET /api/diary 200 - 100.07ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:03.623Z] info: POST /api/users/login 200 - 193.52ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:03.807Z] info: GET /api/diary 200 - 55.69ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:03.814Z] info: GET /api/todos 304 - 54.07ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:03.860Z] info: GET /api/diary 200 - 92.08ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:03.865Z] info: GET /api/todos 200 - 43.60ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:07.893Z] info: GET /api/users/me 304 - 14.09ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:07.918Z] info: GET /api/users/me 304 - 15.82ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:08.068Z] info: GET /api/diary 200 - 59.23ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:08.074Z] info: GET /api/todos 304 - 55.49ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:08.123Z] info: GET /api/diary 200 - 97.10ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:08.143Z] info: GET /api/todos 200 - 111.05ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:10.560Z] info: GET /api/diary 200 - 42.76ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:10.590Z] info: GET /api/todos 304 - 66.11ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:10.639Z] info: GET /api/diary 200 - 74.54ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:10.651Z] info: GET /api/todos 200 - 73.67ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:10.844Z] info: GET /api/diary 304 - 50.45ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:10.857Z] info: GET /api/todos 304 - 57.94ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:10.902Z] info: GET /api/diary 200 - 97.20ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:10.910Z] info: GET /api/todos 200 - 100.48ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:11.279Z] info: GET /api/diary 304 - 49.83ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:11.283Z] info: GET /api/todos 304 - 47.70ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:11.333Z] info: GET /api/diary 200 - 90.52ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:11.338Z] info: GET /api/todos 200 - 89.76ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:11.571Z] info: GET /api/diary 200 - 55.11ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:11.582Z] info: GET /api/todos 304 - 58.69ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:11.640Z] info: GET /api/diary 200 - 109.63ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:11.651Z] info: GET /api/todos 200 - 114.23ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:11.864Z] info: GET /api/diary 304 - 44.47ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:11.871Z] info: GET /api/todos 304 - 47.60ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:11.914Z] info: GET /api/diary 200 - 86.01ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:11.922Z] info: GET /api/todos 200 - 87.92ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:12.082Z] info: GET /api/diary 304 - 40.77ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:12.087Z] info: GET /api/todos 304 - 40.76ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:12.133Z] info: GET /api/diary 200 - 82.97ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:12.139Z] info: GET /api/todos 200 - 84.83ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:14.279Z] info: GET /api/users/me 200 - 12.39ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:14.284Z] info: GET /api/users/me 304 - 11.74ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:14.408Z] info: GET /api/diary 200 - 53.94ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:14.442Z] info: GET /api/todos 304 - 79.77ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:14.493Z] info: GET /api/diary 200 - 82.01ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:14.505Z] info: GET /api/todos 200 - 85.49ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:16.147Z] info: GET /api/users/me 304 - 13.62ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:16.151Z] info: GET /api/users/me 200 - 11.18ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:16.327Z] info: GET /api/diary 200 - 60.19ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:16.341Z] info: GET /api/todos 304 - 66.29ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:16.391Z] info: GET /api/diary 200 - 108.92ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:16.398Z] info: GET /api/todos 200 - 109.52ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:34.024Z] info: GET /api/todos 200 - 17.29ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:34.031Z] info: GET /api/todos 304 - 17.73ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:50:37.134Z] info: GET /api/users/logout 200 - 3.92ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:56:45.419Z] info: 🚀 Server running on port 5000
+[2025-06-19T07:56:45.443Z] info: Connected to MongoDb
+[2025-06-19T07:56:50.812Z] info: POST /api/users/login 200 - 135.86ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:56:50.911Z] info: GET /api/diary 200 - 37.01ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:56:50.914Z] info: GET /api/todos 304 - 33.29ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:56:50.929Z] info: GET /api/diary 200 - 45.19ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:56:50.937Z] info: GET /api/todos 200 - 50.24ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:56:53.864Z] info: GET /api/diary 200 - 23.98ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:56:53.882Z] info: GET /api/diary 200 - 36.34ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:56:59.180Z] info: GET /api/users/me 304 - 25.87ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:56:59.189Z] info: GET /api/users/me 304 - 6.00ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:56:59.264Z] info: GET /api/diary 200 - 12.79ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:56:59.283Z] info: GET /api/diary 200 - 16.87ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:56:59.286Z] info: GET /api/todos 200 - 16.83ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:56:59.288Z] info: GET /api/todos 304 - 16.19ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:57:54.724Z] info: GET /api/todos 304 - 6.02ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:57:54.734Z] info: GET /api/todos 304 - 5.54ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:58:00.852Z] info: GET /api/diary 200 - 18.07ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T07:58:00.880Z] info: GET /api/diary 200 - 26.48ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:06:49.203Z] info: GET /api/users/me 200 - 8.81ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:06:49.205Z] info: GET /api/users/me 304 - 7.10ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:06:49.315Z] info: GET /api/diary 200 - 19.17ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:06:49.326Z] info: GET /api/todos 304 - 27.03ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:06:49.349Z] info: GET /api/diary 200 - 31.66ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:06:49.355Z] info: GET /api/todos 200 - 33.88ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:06:50.521Z] info: GET /api/todos 304 - 9.47ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:06:50.525Z] info: GET /api/todos 200 - 10.57ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:06:58.930Z] info: PUT /api/todos/6853c0f13320467eb570365c 200 - 13.36ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:06:58.941Z] info: GET /api/todos 200 - 3.98ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:07:04.036Z] info: GET /api/diary 200 - 21.62ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:07:04.058Z] info: GET /api/diary 200 - 17.91ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:07:16.293Z] info: GET /api/users/me 304 - 7.10ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:07:16.302Z] info: GET /api/users/me 200 - 6.07ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:07:16.427Z] info: GET /api/diary 200 - 11.46ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:07:16.433Z] info: GET /api/todos 304 - 3.85ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:07:16.457Z] info: GET /api/diary 200 - 9.24ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:07:16.461Z] info: GET /api/todos 304 - 3.12ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:09:04.047Z] info: GET /api/diary 200 - 10.06ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:09:04.055Z] info: GET /api/diary 200 - 15.59ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:09:09.830Z] info: GET /api/diary 200 - 11.99ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:09:09.839Z] info: GET /api/diary 200 - 18.30ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:09:13.187Z] info: GET /api/diary 200 - 9.24ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:09:13.196Z] info: GET /api/diary 200 - 17.19ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:09:16.707Z] info: GET /api/todos 200 - 5.11ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:09:16.708Z] info: GET /api/todos 200 - 4.45ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:09:43.626Z] info: PATCH /api/users/update-profile 200 - 13.33ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:09:56.946Z] info: PATCH /api/users/update-profile 200 - 5.83ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:10:32.621Z] info: GET /api/diary 200 - 19.20ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:10:32.642Z] info: GET /api/diary 200 - 36.41ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:10:37.716Z] info: GET /api/diary 200 - 11.22ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:10:37.725Z] info: GET /api/diary 200 - 18.42ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:10:49.621Z] info: GET /api/todos 200 - 6.52ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:10:49.622Z] info: GET /api/todos 200 - 5.28ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:10:54.110Z] info: GET /api/todos 200 - 6.43ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:10:54.112Z] info: GET /api/todos 200 - 5.55ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:10:55.129Z] info: GET /api/diary 200 - 11.20ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:10:55.138Z] info: GET /api/diary 200 - 18.18ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:11:52.736Z] info: GET /api/diary 200 - 13.70ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:11:52.748Z] info: GET /api/diary 200 - 21.64ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:22:36.564Z] info: GET /api/users/me 200 - 5.99ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:22:36.566Z] info: GET /api/users/me 200 - 4.93ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:22:37.265Z] info: GET /api/users/me 200 - 6.61ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:22:37.267Z] info: GET /api/users/me 200 - 5.50ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:22:37.379Z] info: GET /api/diary 200 - 21.60ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:22:37.390Z] info: GET /api/diary 200 - 29.26ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:22:37.392Z] info: GET /api/todos 200 - 28.22ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:22:37.394Z] info: GET /api/todos 304 - 26.91ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:23:25.463Z] info: GET /api/diary 200 - 25.90ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:23:25.501Z] info: GET /api/diary 200 - 59.69ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:23:48.779Z] info: GET /api/todos 200 - 8.27ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:23:48.782Z] info: GET /api/todos 200 - 6.92ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:00.866Z] info: GET /api/diary 200 - 24.08ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:00.892Z] info: GET /api/diary 200 - 46.11ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:30.338Z] info: GET /api/users/me 200 - 4.73ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:30.350Z] info: GET /api/users/me 304 - 4.08ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:30.505Z] info: GET /api/diary 200 - 30.04ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:30.506Z] info: GET /api/todos 304 - 27.53ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:30.523Z] info: GET /api/diary 200 - 40.48ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:30.526Z] info: GET /api/todos 200 - 41.17ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:50.384Z] info: GET /api/users/me 200 - 9.35ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:50.386Z] info: GET /api/users/me 200 - 6.43ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:50.460Z] info: GET /api/diary 200 - 19.05ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:50.469Z] info: GET /api/todos 304 - 25.29ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:50.485Z] info: GET /api/diary 200 - 23.51ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:50.487Z] info: GET /api/todos 200 - 23.00ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:52.467Z] info: GET /api/diary 200 - 29.03ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:52.501Z] info: GET /api/diary 200 - 60.29ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:53.432Z] info: GET /api/todos 304 - 9.60ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:53.436Z] info: GET /api/todos 200 - 10.03ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:54.181Z] info: GET /api/diary 200 - 21.61ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:24:54.211Z] info: GET /api/diary 200 - 48.55ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:25:58.861Z] info: PATCH /api/users/update-profile 200 - 8.42ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:27:17.668Z] info: GET /api/todos 304 - 11.54ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:27:17.671Z] info: GET /api/todos 200 - 8.76ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:28:50.020Z] info: GET /api/diary 200 - 24.44ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:28:50.081Z] info: GET /api/diary 200 - 82.05ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:38:37.180Z] info: GET /api/diary 200 - 15.39ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:38:49.619Z] info: GET /api/diary 200 - 17.47ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:38:49.621Z] info: GET /api/todos 304 - 15.11ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:38:49.638Z] info: GET /api/diary 200 - 14.88ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:38:49.640Z] info: GET /api/todos 200 - 12.41ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:28.014Z] info: GET /api/users/me 200 - 5.28ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:28.023Z] info: GET /api/users/me 304 - 3.09ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:28.132Z] info: GET /api/diary 200 - 12.70ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:28.147Z] info: GET /api/todos 304 - 13.56ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:28.159Z] info: GET /api/diary 200 - 19.42ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:28.160Z] info: GET /api/todos 200 - 18.30ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:35.441Z] info: GET /api/diary 200 - 19.21ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:35.469Z] info: GET /api/diary 200 - 25.33ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:36.419Z] error: Error: Entry not found
+    at file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:80:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-06-19T08:39:36.420Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 6.32ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:36.421Z] error: Error: Entry not found
+    at file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:80:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-06-19T08:39:36.422Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 5.26ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:37.987Z] info: GET /api/diary 200 - 45.22ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:37.992Z] info: GET /api/todos 304 - 46.55ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:38.029Z] info: GET /api/diary 200 - 78.03ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:38.037Z] info: GET /api/todos 200 - 82.12ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:39.019Z] info: GET /api/todos 304 - 7.45ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:39.021Z] info: GET /api/todos 200 - 6.63ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:46.488Z] info: PUT /api/todos/6853c0f13320467eb570365c 200 - 6.83ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:46.500Z] info: GET /api/todos 200 - 5.51ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:53.296Z] info: PUT /api/todos/6853c0f13320467eb570365c 200 - 6.80ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:39:53.308Z] info: GET /api/todos 200 - 5.40ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:40:00.428Z] info: PUT /api/todos/6853c0f13320467eb570365c 200 - 6.08ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:40:00.444Z] info: GET /api/todos 200 - 7.60ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:40:03.406Z] info: PUT /api/todos/6853c0853320467eb570364f 200 - 6.21ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:40:03.421Z] info: GET /api/todos 200 - 5.49ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:40:07.133Z] info: PUT /api/todos/6853c0853320467eb570364f 200 - 7.21ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:40:07.149Z] info: GET /api/todos 200 - 5.20ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:40:18.761Z] info: PUT /api/todos/6853c0f13320467eb570365c 200 - 5.88ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:40:18.799Z] info: GET /api/todos 200 - 6.33ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:40:36.676Z] info: GET /api/diary 200 - 29.45ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:40:36.698Z] info: GET /api/diary 200 - 48.07ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:40:44.483Z] error: Error: Entry not found
+    at file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:80:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-06-19T08:40:44.486Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 12.07ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:40:44.498Z] error: Error: Entry not found
+    at file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:80:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-06-19T08:40:44.501Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 11.71ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:41:50.718Z] info: GET /api/todos/6825a0feb45742f07488b171 404 - 11.17ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T08:42:03.604Z] info: GET /api/todos/6853bfa23320467eb5703649 404 - 6.84ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T08:42:09.164Z] info: GET /api/todos 200 - 4.90ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T08:42:22.518Z] info: GET /api/todos/6853c0853320467eb570364f 200 - 9.37ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T08:42:29.326Z] info: GET /api/diary 200 - 27.09ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:42:29.364Z] info: GET /api/todos 304 - 60.27ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:42:29.388Z] info: GET /api/diary 200 - 59.67ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:42:29.390Z] info: GET /api/todos 200 - 46.45ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:42:30.890Z] info: GET /api/diary 200 - 9.70ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:42:30.900Z] info: GET /api/diary 200 - 9.85ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:43:16.968Z] error: Error: Entry not found
+    at file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:80:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-06-19T08:43:16.969Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 6.24ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:43:16.969Z] error: Error: Entry not found
+    at file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:80:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-06-19T08:43:16.970Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 3.78ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:50:07.626Z] info: GET /api/diary 200 - 43.17ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:50:07.682Z] info: GET /api/todos 304 - 92.91ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:50:07.704Z] info: GET /api/diary 200 - 70.49ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:50:07.707Z] info: GET /api/todos 200 - 64.20ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:50:13.477Z] info: GET /api/diary 200 - 20.21ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:50:13.533Z] info: GET /api/diary 200 - 54.16ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:50:17.146Z] error: Error: Entry not found
+    at file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:80:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-06-19T08:50:17.148Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 5.85ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:50:17.152Z] error: Error: Entry not found
+    at file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:80:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-06-19T08:50:17.153Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 4.26ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:51:17.398Z] info: GET /api/diary 200 - 11.57ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T08:52:44.441Z] error: Error: Entry not found
+    at file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:80:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-06-19T08:52:44.442Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 4.38ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T08:53:10.681Z] info: 🚀 Server running on port 5000
+[2025-06-19T08:53:10.699Z] info: Connected to MongoDb
+[2025-06-19T08:53:21.006Z] info: 🚀 Server running on port 5000
+[2025-06-19T08:53:21.024Z] info: Connected to MongoDb
+[2025-06-19T08:53:26.575Z] info: 🚀 Server running on port 5000
+[2025-06-19T08:53:26.590Z] info: Connected to MongoDb
+[2025-06-19T08:53:38.123Z] error: Error: Entry not found
+    at file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:80:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-06-19T08:53:38.140Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 38.09ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T08:55:31.692Z] info: 🚀 Server running on port 5000
+[2025-06-19T08:55:31.713Z] info: Connected to MongoDb
+[2025-06-19T08:55:33.356Z] info: 🚀 Server running on port 5000
+[2025-06-19T08:55:33.375Z] info: Connected to MongoDb
+[2025-06-19T08:55:35.594Z] error: Error: Entry not found
+    at file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:80:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-06-19T08:55:35.597Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 42.50ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T08:55:51.795Z] info: 🚀 Server running on port 5000
+[2025-06-19T08:55:51.820Z] info: Connected to MongoDb
+[2025-06-19T08:56:30.201Z] info: 🚀 Server running on port 5000
+[2025-06-19T08:56:30.217Z] info: Connected to MongoDb
+[2025-06-19T08:56:33.055Z] info: 🚀 Server running on port 5000
+[2025-06-19T08:56:33.085Z] info: Connected to MongoDb
+[2025-06-19T08:56:35.408Z] info: 🚀 Server running on port 5000
+[2025-06-19T08:56:35.437Z] info: Connected to MongoDb
+[2025-06-19T08:56:37.847Z] error: Error: Diary entry not found or you do not have permission to access it.
+    at getDiaryEntryById (file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/services/diaryService.js:45:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:78:17
+[2025-06-19T08:56:37.851Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 17.21ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T08:56:56.448Z] info: 🚀 Server running on port 5000
+[2025-06-19T08:56:56.473Z] info: Connected to MongoDb
+[2025-06-19T08:56:59.700Z] info: 🚀 Server running on port 5000
+[2025-06-19T08:56:59.714Z] info: Connected to MongoDb
+[2025-06-19T08:57:02.231Z] info: 🚀 Server running on port 5000
+[2025-06-19T08:57:02.246Z] info: Connected to MongoDb
+[2025-06-19T08:57:03.171Z] error: Error: Diary entry not found or you do not have permission to access it.
+    at getDiaryEntryById (file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/services/diaryService.js:46:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:78:17
+[2025-06-19T08:57:03.175Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 27.80ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T08:59:47.060Z] info: 🚀 Server running on port 5000
+[2025-06-19T08:59:47.075Z] info: Connected to MongoDb
+[2025-06-19T08:59:48.834Z] info: GET /api/diary/6853bfa23320467eb5703649 200 - 53.57ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T08:59:55.326Z] info: GET /api/diary 200 - 132.12ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:59:55.335Z] info: GET /api/todos 304 - 121.90ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:59:55.362Z] info: GET /api/diary 200 - 137.75ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:59:55.373Z] info: GET /api/todos 200 - 132.10ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:59:58.929Z] info: GET /api/diary 200 - 39.50ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:59:58.986Z] info: GET /api/diary 200 - 52.22ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:59:59.970Z] info: GET /api/diary/6853bfa23320467eb5703649 200 - 27.97ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T08:59:59.985Z] info: GET /api/diary/6853bfa23320467eb5703649 200 - 34.76ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:00:22.535Z] info: GET /api/diary 200 - 47.19ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:00:22.581Z] info: GET /api/todos 304 - 86.22ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:00:22.614Z] info: GET /api/diary 200 - 73.80ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:00:22.619Z] info: GET /api/todos 200 - 68.22ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:00:59.091Z] info: GET /api/users/me 304 - 14.01ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:00:59.113Z] info: GET /api/users/me 304 - 16.83ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:00:59.221Z] info: GET /api/diary 200 - 23.10ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:00:59.224Z] info: GET /api/todos 304 - 23.06ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:00:59.241Z] info: GET /api/diary 200 - 35.39ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:00:59.243Z] info: GET /api/todos 200 - 17.73ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:01:00.460Z] info: GET /api/diary 200 - 28.86ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:01:00.510Z] info: GET /api/diary 200 - 74.01ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:01:01.422Z] info: GET /api/diary/6853bf523320467eb5703645 200 - 47.03ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:01:01.450Z] info: GET /api/diary/6853bf523320467eb5703645 200 - 71.23ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:01:02.952Z] info: GET /api/diary 200 - 27.95ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:01:02.982Z] info: GET /api/todos 304 - 55.13ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:01:03.006Z] info: GET /api/diary 200 - 49.50ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:01:03.016Z] info: GET /api/todos 200 - 46.88ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:01:16.070Z] info: GET /api/diary 200 - 14.31ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:01:16.085Z] info: GET /api/diary 200 - 26.79ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:01:16.487Z] info: GET /api/todos 200 - 10.61ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:01:16.490Z] info: GET /api/todos 304 - 8.73ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:51:19.925Z] info: GET /api/diary 200 - 24.93ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:51:19.972Z] info: GET /api/diary 200 - 44.06ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:51:21.346Z] info: GET /api/diary/6853bfa23320467eb5703649 200 - 36.72ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:51:21.377Z] info: GET /api/diary/6853bfa23320467eb5703649 200 - 63.77ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T09:53:12.943Z] info: 🚀 Server running on port 5000
+[2025-06-19T09:53:12.957Z] info: Connected to MongoDb
+[2025-06-19T09:53:13.142Z] error: TypeError: Assignment to constant variable.
+    at file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:94:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-06-19T09:53:13.147Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 36.69ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T09:54:29.953Z] info: 🚀 Server running on port 5000
+[2025-06-19T09:54:29.968Z] info: Connected to MongoDb
+[2025-06-19T09:54:31.421Z] error: TypeError: Assignment to constant variable.
+    at file:///C:/Users/gytho/OneDrive/Desktop/master/personal/diary/backend/controllers/diary.js:94:11
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-06-19T09:54:31.425Z] info: GET /api/diary/6853bfa23320467eb5703649 500 - 46.25ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T09:55:08.431Z] info: 🚀 Server running on port 5000
+[2025-06-19T09:55:08.447Z] info: Connected to MongoDb
+[2025-06-19T09:55:09.095Z] info: GET /api/diary/6853bfa23320467eb5703649 200 - 37.47ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T09:56:47.310Z] info: 🚀 Server running on port 5000
+[2025-06-19T09:56:47.332Z] info: Connected to MongoDb
+[2025-06-19T09:56:48.156Z] info: GET /api/diary/6853bfa23320467eb5703649 200 - 33.50ms - IP: ::1 - UA: PostmanRuntime/7.44.1
+[2025-06-19T09:57:32.857Z] info: 🚀 Server running on port 5000
+[2025-06-19T09:57:32.875Z] info: Connected to MongoDb
+[2025-06-19T09:58:20.397Z] info: 🚀 Server running on port 5000
+[2025-06-19T09:58:20.429Z] info: Connected to MongoDb
+[2025-06-19T09:58:28.887Z] info: 🚀 Server running on port 5000
+[2025-06-19T09:58:28.903Z] info: Connected to MongoDb
+[2025-06-19T09:59:48.315Z] info: 🚀 Server running on port 5000
+[2025-06-19T09:59:48.333Z] info: Connected to MongoDb
+[2025-06-19T10:01:54.303Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:01:54.317Z] info: Connected to MongoDb
+[2025-06-19T10:01:57.163Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:01:57.178Z] info: Connected to MongoDb
+[2025-06-19T10:05:10.674Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:05:10.700Z] info: Connected to MongoDb
+[2025-06-19T10:05:15.191Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:05:15.207Z] info: Connected to MongoDb
+[2025-06-19T10:05:16.814Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:05:16.830Z] info: Connected to MongoDb
+[2025-06-19T10:05:31.316Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:05:31.335Z] info: Connected to MongoDb
+[2025-06-19T10:05:39.286Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:05:39.302Z] info: Connected to MongoDb
+[2025-06-19T10:05:43.422Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:05:43.442Z] info: Connected to MongoDb
+[2025-06-19T10:05:45.305Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:05:45.319Z] info: Connected to MongoDb
+[2025-06-19T10:05:48.946Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:05:48.962Z] info: Connected to MongoDb
+[2025-06-19T10:06:08.202Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:06:08.225Z] info: Connected to MongoDb
+[2025-06-19T10:06:37.344Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:06:37.359Z] info: Connected to MongoDb
+[2025-06-19T10:07:02.678Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:07:02.692Z] info: Connected to MongoDb
+[2025-06-19T10:07:06.346Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:07:06.361Z] info: Connected to MongoDb
+[2025-06-19T10:07:10.576Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:07:10.592Z] info: Connected to MongoDb
+[2025-06-19T10:07:15.838Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:07:15.867Z] info: Connected to MongoDb
+[2025-06-19T10:07:18.020Z] info: 🚀 Server running on port 5000
+[2025-06-19T10:07:18.034Z] info: Connected to MongoDb
+[2025-06-19T10:07:45.115Z] info: GET /api/diary 200 - 51.64ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T10:07:45.120Z] info: GET /api/todos 200 - 40.53ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T10:07:45.131Z] info: GET /api/diary 200 - 47.71ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T10:07:45.139Z] info: GET /api/todos 200 - 52.55ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T10:07:47.679Z] info: GET /api/diary 200 - 15.67ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0
+[2025-06-19T10:07:47.691Z] info: GET /api/diary 200 - 23.93ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:139.0) Gecko/20100101 Firefox/139.0

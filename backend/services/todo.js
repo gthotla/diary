@@ -10,6 +10,22 @@ export const getUserTodos = async (userId) => {
   return await Todo.find({ userId }).sort({ createdAt: -1 });
 };
 
+export const toggleTodo = async (id, status, userId) => {
+  if (!['To Do', 'In Progress', 'Done'].includes(status)) {
+    return res.status(400).json({ message: 'Invalid status value. Must be one of: To Do, In Progress, Done' });
+  }
+  const updatedTodo = await Todo.findByIdAndUpdate(
+    id,
+    { status },
+    { new: true } // Return the updated task
+  );
+
+  if (!updatedTodo) {
+    return res.status(404).json({ message: 'Task not found' });
+  }
+  return updateTodo;
+}
+
 export const getTodoById = async (id, userId) => {
   return await Todo.findOne({ _id: id, userId });
 };
