@@ -15,9 +15,10 @@ const todoSchema = new mongoose.Schema({
     type: Date,
     required: false,
   },
-  completed: {
-    type: Boolean,
-    default: false,
+ status: {
+    type: String,
+    enum: ['To Do', 'In Progress', 'Done'],
+    default: 'To Do'
   },
   priority: {
     type: String,

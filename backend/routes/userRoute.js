@@ -5,6 +5,7 @@ import {
   logout,
   getUser,
   updateUser,
+  UpdateProfile,
   getAccessToken
 } from '../controllers/user.js';
 import { authMiddleware } from '../middleware/auth.js';
@@ -102,6 +103,31 @@ router.get('/logout', authMiddleware, logout);
  *         description: User profile retrieved successfully
  */
 router.get('/me', authMiddleware, getUser);
+
+/**
+ * @swagger
+ * /user/update-profile:
+ *   put:
+ *     summary: Update current user's profile
+ *     tags: [User]
+ *     description: Updates the profile details of the currently logged-in user.
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *                profile:
+ *              
+ *     responses:
+ *       200:
+ *         description: User Profile updated successfully
+ *       404:
+ *         description: User not found or can't update
+ */
+router.patch('/update-profile', authMiddleware, UpdateProfile);
+
 
 /**
  * @swagger

@@ -39,7 +39,12 @@ import  Diary from '../models/diary.js';
 
 //function to get diary netry by id ;
 export const getDiaryEntryById = async (id, userId) => {
-    const entry = await Diary.findOne({ _id: id, user: userId });
+  console.log("Fetching diary entry with ID:", id, "for user:", userId);
+    const entry = await Diary.findOne({ _id: id, userId });
+    console.log("Diary Entry by ID: ", entry);
+    if (!entry) {
+        throw new Error("Diary entry not found or you do not have permission to access it.");
+    }
     return entry;
   };
 
