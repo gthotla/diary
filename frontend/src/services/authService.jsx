@@ -34,8 +34,9 @@ api.interceptors.response.use(
     // 2. User is NOT on a public route
     // 3. User is NOT already on auth page
     if (error.response?.status === 401 && !isPublicRoute(currentPath) && !currentPath.includes("/auth")) {
-      console.log("401 error on protected route, redirecting to auth")
-      window.location.href = "/auth"
+      console.log("401 error on protected route, clearing auth state")
+      localStorage.removeItem("user_data")
+      // Don't redirect immediately, let the auth context handle it
     }
 
     return Promise.reject(error)
@@ -97,12 +98,17 @@ const authService = {
     }
   },
 
-  // Register user
+  // Register user - now supports FormData for file uploads
   register: async (userData) => {
     try {
-      const response = await api.post("/api/users/register", userData, {
+      // Determine if we're sending FormData or regular JSON
+      const isFormData = userData instanceof FormData
+      const config = {
         timeout: 8000,
-      })
+        headers: isFormData ? { "Content-Type": "multipart/form-data" } : { "Content-Type": "application/json" },
+      }
+
+      const response = await api.post("/api/users/register", userData, config)
 
       if (response.data.success || response.data.message === "User created succesfully") {
         return {
@@ -206,7 +212,7 @@ const authService = {
   // Logout user
   logout: async () => {
     try {
-      await api.post("/api/users/logout")
+      await api.get("/api/users/logout")
       return { success: true }
     } catch (error) {
       console.error("Logout error:", error)

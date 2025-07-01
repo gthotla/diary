@@ -17,7 +17,7 @@ import { Badge } from "@/components/ui/badge"
 import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { format } from "date-fns"
-import { CalendarIcon, User, Settings, Bell, Palette, Save, Loader2, Edit, Camera } from "lucide-react"
+import { CalendarIcon, User, Settings, Bell, Palette, Save, Loader2, Edit, Camera, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { motion } from "framer-motion"
 import authService from "../services/authService"
@@ -46,6 +46,8 @@ export default function Profile() {
   const [error, setError] = useState("")
   const [success, setSuccess] = useState("")
   const [dateOfBirth, setDateOfBirth] = useState(null)
+  const [profileImage, setProfileImage] = useState(null)
+  const [profileImagePreview, setProfileImagePreview] = useState("")
 
   const [profileData, setProfileData] = useState({
     name: "",
@@ -74,6 +76,10 @@ export default function Profile() {
           console.error("Invalid date:", user.dob)
         }
       }
+
+      if (user.avatar) {
+        setProfileImagePreview(user.avatar)
+      }
     }
   }, [user, theme])
 
@@ -97,15 +103,35 @@ export default function Profile() {
     handleInputChange("dob", date ? date.toISOString().split("T")[0] : "")
   }
 
-  const fetchUpdatedUserData = async () => {
-    try {
-      const result = await authService.getCurrentUser()
-      if (result.success) {
-        updateUser(result.user)
+  const handleImageSelect = (e) => {
+    const file = e.target.files[0]
+    if (file) {
+      // Validate file size (max 5MB)
+      if (file.size > 5 * 1024 * 1024) {
+        setError("Image size should be less than 5MB")
+        return
       }
-    } catch (error) {
-      console.error("Failed to fetch updated user data:", error)
+
+      // Validate file type
+      if (!file.type.startsWith("image/")) {
+        setError("Please select a valid image file")
+        return
+      }
+
+      setProfileImage(file)
+
+      // Create preview
+      const reader = new FileReader()
+      reader.onload = (e) => {
+        setProfileImagePreview(e.target.result)
+      }
+      reader.readAsDataURL(file)
     }
+  }
+
+  const removeImage = () => {
+    setProfileImage(null)
+    setProfileImagePreview(user?.avatar || "")
   }
 
   const handleSave = async () => {
@@ -114,19 +140,37 @@ export default function Profile() {
     setSuccess("")
 
     try {
-      const result = await updateUserProfile(profileData)
+      // Create FormData if we have a new image
+      let submitData
+      if (profileImage) {
+        submitData = new FormData()
+        Object.keys(profileData).forEach((key) => {
+          if (profileData[key] !== undefined && profileData[key] !== null) {
+            submitData.append(key, profileData[key])
+          }
+        })
+        submitData.append("avatar", profileImage)
+      } else {
+        submitData = profileData
+      }
+
+      const result = await updateUserProfile(submitData)
 
       if (result.success) {
         setSuccess("Profile updated successfully!")
         setIsEditing(false)
-        localStorage.setItem("diary-ui-theme", profileData.theme)
+        setProfileImage(null)
 
-        // Fetch updated user data from backend
-        await fetchUpdatedUserData()
+        // Fetch updated user data
+        const userResult = await authService.getCurrentUser()
+        if (userResult.success) {
+          updateUser(userResult.user)
+        }
       } else {
         setError(result.message || "Failed to update profile")
       }
     } catch (err) {
+      console.error("Profile save error:", err)
       setError("An error occurred while updating profile")
     } finally {
       setIsLoading(false)
@@ -147,6 +191,9 @@ export default function Profile() {
       if (user.dob) {
         setDateOfBirth(new Date(user.dob))
       }
+
+      setProfileImagePreview(user.avatar || "")
+      setProfileImage(null)
     }
     setIsEditing(false)
     setError("")
@@ -172,12 +219,45 @@ export default function Profile() {
             <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
               <div className="relative">
                 <Avatar className="w-24 h-24 border-4 border-background shadow-lg">
-                  <AvatarImage src={user?.avatar || "/placeholder.svg"} alt={user?.name || user?.username} />
+                  <AvatarImage
+                    src={profileImagePreview || user?.avatar || "/placeholder.svg"}
+                    alt={user?.name || user?.username}
+                  />
                   <AvatarFallback className="text-2xl font-bold">{getInitials(user?.name)}</AvatarFallback>
                 </Avatar>
-                <Button size="sm" variant="secondary" className="absolute -bottom-2 -right-2 rounded-full w-8 h-8 p-0">
-                  <Camera className="w-4 h-4" />
-                </Button>
+                {isEditing && (
+                  <>
+                    <Input
+                      type="file"
+                      accept="image/*"
+                      onChange={handleImageSelect}
+                      className="hidden"
+                      id="profile-image-upload"
+                    />
+                    <Label htmlFor="profile-image-upload" className="cursor-pointer">
+                      <Button
+                        size="sm"
+                        variant="secondary"
+                        className="absolute -bottom-2 -right-2 rounded-full w-8 h-8 p-0"
+                        asChild
+                      >
+                        <span>
+                          <Camera className="w-4 h-4" />
+                        </span>
+                      </Button>
+                    </Label>
+                    {profileImage && (
+                      <Button
+                        size="sm"
+                        variant="destructive"
+                        className="absolute -top-2 -left-2 rounded-full w-6 h-6 p-0"
+                        onClick={removeImage}
+                      >
+                        <X className="w-3 h-3" />
+                      </Button>
+                    )}
+                  </>
+                )}
               </div>
 
               <div className="flex-1 text-center md:text-left">
@@ -284,14 +364,18 @@ export default function Profile() {
             <div className="space-y-2">
               <Label htmlFor="bio">Bio</Label>
               {isEditing ? (
-                <Textarea
-                  id="bio"
-                  value={profileData.bio}
-                  onChange={(e) => handleInputChange("bio", e.target.value)}
-                  placeholder="Tell us about yourself..."
-                  rows={3}
-                  className="resize-none"
-                />
+                <div className="space-y-1">
+                  <Textarea
+                    id="bio"
+                    value={profileData.bio}
+                    onChange={(e) => handleInputChange("bio", e.target.value)}
+                    placeholder="Tell us about yourself..."
+                    rows={3}
+                    className="resize-none"
+                    maxLength={500}
+                  />
+                  <p className="text-xs text-muted-foreground">{profileData.bio.length}/500 characters</p>
+                </div>
               ) : (
                 <div className="p-3 bg-muted/50 rounded-md min-h-[80px]">{profileData.bio || "No bio added yet"}</div>
               )}

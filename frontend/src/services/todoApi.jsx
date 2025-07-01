@@ -19,7 +19,7 @@ const todoApi = {
     }
   },
 
-  // Get all todos
+  // Get all todos - always fetch from API
   getAllTodos: async () => {
     try {
       const response = await api.get("/api/todos")
@@ -91,20 +91,20 @@ const todoApi = {
     }
   },
 
-  // Toggle todo completion
-  toggleTodo: async (id) => {
+  // Toggle todo status using new API endpoint
+  toggleTodoStatus: async (id, status) => {
     try {
-      const response = await api.patch(`/api/todos/${id}/toggle-completed`)
+      const response = await api.patch(`/api/todos/${id}/status/${status}`)
       return {
         success: true,
         data: response.data,
-        message: "Todo toggled successfully",
+        message: "Todo status updated successfully",
       }
     } catch (error) {
-      console.error("Toggle todo error:", error)
+      console.error("Toggle todo status error:", error)
       return {
         success: false,
-        message: error.response?.data?.message || "Failed to toggle todo",
+        message: error.response?.data?.message || "Failed to update todo status",
       }
     }
   },

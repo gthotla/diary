@@ -11,8 +11,9 @@ export const getUserTodos = async (userId) => {
 };
 
 export const toggleTodo = async (id, status, userId) => {
-  if (!['To Do', 'In Progress', 'Done'].includes(status)) {
-    return res.status(400).json({ message: 'Invalid status value. Must be one of: To Do, In Progress, Done' });
+
+ if (!['todo', 'in-progress', 'done'].includes(status)) {
+    throw new Error('Invalid status value');
   }
   const updatedTodo = await Todo.findByIdAndUpdate(
     id,
@@ -21,7 +22,7 @@ export const toggleTodo = async (id, status, userId) => {
   );
 
   if (!updatedTodo) {
-    return res.status(404).json({ message: 'Task not found' });
+    throw new Error('Todo not found or you do not have permission to update it');
   }
   return updateTodo;
 }

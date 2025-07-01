@@ -8,9 +8,10 @@ import { Badge } from "@/components/ui/badge"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Skeleton } from "@/components/ui/skeleton"
 import { format } from "date-fns"
-import { ArrowLeft, Calendar, Edit, Trash2, ImageIcon, Link } from "lucide-react"
+import { ArrowLeft, Calendar, Edit, Trash2, Link } from "lucide-react"
 import { motion } from "framer-motion"
 import diaryApi from "../services/diaryApi"
+import ImageSlideshow from "./image-slideshow"
 
 const MOODS = {
   happy: { emoji: "😊", color: "bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400" },
@@ -38,14 +39,18 @@ export default function EntryDetail({ onEdit }) {
     setError("")
 
     try {
+      console.log("🔍 Fetching entry details for ID:", id)
       const result = await diaryApi.getEntryById(id)
 
       if (result.success) {
         setEntry(result.data)
+        console.log("✅ Entry details loaded:", result.data)
       } else {
         setError(result.message)
+        console.error("❌ Failed to fetch entry:", result.message)
       }
     } catch (err) {
+      console.error("❌ Entry fetch error:", err)
       setError("Failed to fetch entry")
     } finally {
       setIsLoading(false)
@@ -58,23 +63,49 @@ export default function EntryDetail({ onEdit }) {
     }
 
     try {
+      console.log("🗑️ Deleting entry:", id)
       const result = await diaryApi.deleteEntry(id)
 
       if (result.success) {
-        navigate("/dashboard")
+        console.log("✅ Entry deleted successfully")
+        navigate("/dashboard?tab=entries")
       } else {
         setError(result.message)
+        console.error("❌ Failed to delete entry:", result.message)
       }
     } catch (err) {
+      console.error("❌ Delete error:", err)
       setError("Failed to delete entry")
     }
   }
 
   const handleEdit = () => {
-    if (onEdit) {
-      onEdit(entry)
+    console.log("✏️ Editing entry from detail view:", entry)
+
+    // Create a properly formatted entry object
+    const editEntry = {
+      ...entry,
+      _id: entry._id,
+      title: entry.title,
+      entry: entry.entry || entry.content,
+      mood: entry.mood || "neutral",
+      date: entry.date,
+      images: entry.images || [],
+      links: entry.links || [],
     }
-    navigate("/dashboard")
+
+    console.log("✏️ Formatted entry for editing:", editEntry)
+
+    if (onEdit) {
+      onEdit(editEntry)
+    }
+
+    // Navigate to dashboard with entries tab and edit mode
+    navigate("/dashboard?tab=entries&edit=true")
+  }
+
+  const handleBackToEntries = () => {
+    navigate("/dashboard?tab=entries")
   }
 
   if (isLoading) {
@@ -93,6 +124,7 @@ export default function EntryDetail({ onEdit }) {
                   <Skeleton className="h-4 w-full" />
                   <Skeleton className="h-4 w-full" />
                   <Skeleton className="h-4 w-3/4" />
+                  <Skeleton className="h-64 w-full" />
                 </div>
               </CardContent>
             </Card>
@@ -107,7 +139,7 @@ export default function EntryDetail({ onEdit }) {
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="max-w-4xl mx-auto">
-            <Button variant="ghost" onClick={() => navigate("/dashboard")} className="mb-6">
+            <Button variant="ghost" onClick={handleBackToEntries} className="mb-6">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Entries
             </Button>
@@ -125,7 +157,7 @@ export default function EntryDetail({ onEdit }) {
       <div className="min-h-screen bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="max-w-4xl mx-auto">
-            <Button variant="ghost" onClick={() => navigate("/dashboard")} className="mb-6">
+            <Button variant="ghost" onClick={handleBackToEntries} className="mb-6">
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Entries
             </Button>
@@ -150,7 +182,7 @@ export default function EntryDetail({ onEdit }) {
             animate={{ opacity: 1, y: 0 }}
             className="flex items-center justify-between"
           >
-            <Button variant="ghost" onClick={() => navigate("/dashboard")}>
+            <Button variant="ghost" onClick={handleBackToEntries}>
               <ArrowLeft className="w-4 h-4 mr-2" />
               Back to Entries
             </Button>
@@ -177,7 +209,7 @@ export default function EntryDetail({ onEdit }) {
                   </Badge>
                   <span className="text-sm text-muted-foreground flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
-                    {format(new Date(entry.date), "EEEE, MMMM d, yyyy")}
+                    {format(new Date(entry.date || entry.createdAt), "EEEE, MMMM d, yyyy")}
                   </span>
                 </div>
                 <CardTitle className="text-3xl font-bold leading-tight">{entry.title}</CardTitle>
@@ -189,22 +221,47 @@ export default function EntryDetail({ onEdit }) {
                   <p className="whitespace-pre-wrap leading-relaxed text-lg">{entry.entry || entry.content}</p>
                 </div>
 
-                {/* Images */}
+                {/* Image Slideshow */}
                 {entry.images && entry.images.length > 0 && (
                   <div className="space-y-4">
                     <h3 className="text-xl font-semibold flex items-center gap-2">
-                      <ImageIcon className="w-5 h-5" />
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                        <circle cx="8.5" cy="8.5" r="1.5" />
+                        <polyline points="21,15 16,10 5,21" />
+                      </svg>
                       Images ({entry.images.length})
                     </h3>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                      {entry.images.map((image, index) => (
+                    <ImageSlideshow images={entry.images} title={entry.title} />
+                  </div>
+                )}
+
+                {/* Videos */}
+                {entry.videos && entry.videos.length > 0 && (
+                  <div className="space-y-4">
+                    <h3 className="text-xl font-semibold flex items-center gap-2">
+                      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <polygon points="23 7 16 12 23 17 23 7" />
+                        <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
+                      </svg>
+                      Videos ({entry.videos.length})
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {entry.videos.map((video, index) => (
                         <Card key={index} className="overflow-hidden">
                           <CardContent className="p-4">
                             <div className="aspect-video bg-muted rounded-lg flex items-center justify-center mb-3">
-                              <ImageIcon className="w-12 h-12 text-muted-foreground" />
+                              <video
+                                src={video.url}
+                                controls
+                                className="w-full h-full object-cover rounded-lg"
+                                poster={video.thumbnail}
+                              >
+                                Your browser does not support the video tag.
+                              </video>
                             </div>
                             <p className="text-sm text-center text-muted-foreground">
-                              {image.name || `Image ${index + 1}`}
+                              {video.name || `Video ${index + 1}`}
                             </p>
                           </CardContent>
                         </Card>
@@ -244,8 +301,8 @@ export default function EntryDetail({ onEdit }) {
 
                 {/* Metadata */}
                 <div className="pt-6 border-t space-y-2 text-sm text-muted-foreground">
-                  <p>Created: {format(new Date(entry.date), "PPP 'at' p")}</p>
-                  {entry.updatedAt && entry.updatedAt !== entry.date && (
+                  <p>Created: {format(new Date(entry.date || entry.createdAt), "PPP 'at' p")}</p>
+                  {entry.updatedAt && entry.updatedAt !== (entry.date || entry.createdAt) && (
                     <p>Last updated: {format(new Date(entry.updatedAt), "PPP 'at' p")}</p>
                   )}
                 </div>
