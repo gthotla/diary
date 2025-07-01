@@ -7,7 +7,7 @@ const allowedImageTypes = [
   'image/webp',
   'image/gif',
 ];
-const MAX_FILE_SIZE = 2 * 1024 * 1024; // 2MB
+const MAX_FILE_SIZE =5 * 1024 * 1024; // 2MB
 const MAX_FILES = 5;
 
 const storage = multer.memoryStorage();

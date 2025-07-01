@@ -41,6 +41,7 @@ export const createEntryController = asyncHandler(async (req, res) => {
   }
 
   const entry = await createDiaryEntry(data);
+  console.log('Created Entry:', entry);
   res.status(201).json(entry);
 });
 
@@ -50,24 +51,21 @@ export const createEntryController = asyncHandler(async (req, res) => {
 export const getAllEntriesController = asyncHandler(async (req, res) => {
   const entries = await getAllDiaryEntries(req.user.userId);
 
-  const updateEntries = await Promise.all(entries.map(async (entry) => ({
-    _id: entry._id,
+ const response= entries.map(entry => ({
+    _id: entry._id,   
     title: entry.title,
-    content: entry.content,
+    content: entry.entry,
     date: entry.date,
     mood: entry.mood,
-    images: await Promise.all(entry.images.map(async (img) => ({
-      url: await getCFSignedUrl(img.key, 3600)
-    }))),
-    videos: entry.videos,
-    links: entry.links,
     createdAt: entry.createdAt,
-    updatedAt: entry.updatedAt,
-  })));
+    updatedAt: entry.updatedAt,     
+ }));
+
+
  // console.log('Updated Entries:', updateEntries);
   // Return the updated entries with signed URLs for images
 
-  res.status(200).json(updateEntries);
+  res.status(200).json(response);
 });
 
 // @desc Get a diary entry by ID
@@ -86,6 +84,7 @@ export const getEntryByIdController = asyncHandler(async (req, res) => {
       const url = await getCFSignedUrl(img.key, 3600);
       return { key: img.key, url };
     }));
+
   } catch (err) {
     console.error("Signed URL error:", err);
     throw new Error("CloudFront URL generation failed");
@@ -102,7 +101,7 @@ export const getEntryByIdController = asyncHandler(async (req, res) => {
     createdAt: entry.createdAt,
     updatedAt: entry.updatedAt
   }
-
+  console.log('Response Entry:', response);
   res.status(200).json(response);
 });
 
@@ -115,6 +114,7 @@ export const updateEntryController = asyncHandler(async (req, res) => {
     res.status(404);
     throw new Error('Entry not found or not authorized');
   }
+  console.log('Updated Entry:', updated);
   res.status(200).json(updated);
 });
 
@@ -143,22 +143,20 @@ export const getEntriesInRangeController = asyncHandler(async (req, res) => {
   const { start, end } = req.query;
   const entries = await getDiaryInRange(req.user.userId, start, end);
 
-  const updateEntries = await Promise.all(entries.map(async (entry) => ({
+  if (!entries || entries.length === 0) {
+    res.status(404);    
+    throw new Error('No entries found for the given date range');  
+  }   
+  const response= entries.map(entry => ({
     _id: entry._id,
     title: entry.title,
     content: entry.content,
     date: entry.date,
     mood: entry.mood,
-    images: await Promise.all(entry.images.map(async (img) => ({
-      url: await getCFSignedUrl(img.key, 3600)
-    }))),
-    videos: entry.videos,
-    links: entry.links,
     createdAt: entry.createdAt,
-    updatedAt: entry.updatedAt,
-  })));
-
-  res.status(200).json(updateEntries);
+    updatedAt: entry.updatedAt
+  }))
+  res.status(200).json(response);
 });
 
 // @desc Get entries by year/month/day
@@ -174,20 +172,18 @@ export const getEntriesByTimeController = asyncHandler(async (req, res) => {
 
   const entries = await getEntriesByTime(req.user.userId, type, value);
 
-  const updateEntries = await Promise.all(entries.map(async (entry) => ({
+  if (!entries || entries.length === 0) {
+    res.status(404);  
+    throw new Error(`No entries found for the given ${type}`);
+  }
+  const updateEntries = entries.map(entry => ({
     _id: entry._id,
     title: entry.title,
     content: entry.content,
     date: entry.date,
     mood: entry.mood,
-    images: await Promise.all(entry.images.map(async (img) => ({
-      url: await getCFSignedUrl(img.key, 3600)
-    }))),
-    videos: entry.videos,
-    links: entry.links,
     createdAt: entry.createdAt,
-    updatedAt: entry.updatedAt,
-  })));
-
+    updatedAt: entry.updatedAt
+  }));
   res.status(200).json(updateEntries);
 });

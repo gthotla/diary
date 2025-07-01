@@ -20,7 +20,20 @@ import { Label } from "@/components/ui/label"
 import { Calendar } from "@/components/ui/calendar"
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
 import { format } from "date-fns"
-import { CalendarIcon, Plus, Edit, Trash2, Check, Clock, AlertCircle, Loader2, Play, GripVertical } from "lucide-react"
+import {
+  CalendarIcon,
+  Plus,
+  Edit,
+  Trash2,
+  Check,
+  Clock,
+  AlertCircle,
+  Loader2,
+  Play,
+  GripVertical,
+  RotateCcw,
+  ArrowRight,
+} from "lucide-react"
 import { cn } from "@/lib/utils"
 import { motion, AnimatePresence } from "framer-motion"
 import todoApi from "../services/todoApi"
@@ -38,6 +51,12 @@ const PRIORITY_ICONS = {
   high: AlertCircle,
 }
 
+const STATUS_TRANSITIONS = {
+  todo: { next: "in-progress", icon: Play, label: "Start" },
+  "in-progress": { next: "done", icon: Check, label: "Complete" },
+  done: { next: "todo", icon: RotateCcw, label: "Restart" },
+}
+
 export default function TodoKanban() {
   const [todos, setTodos] = useState([])
   const [isLoading, setIsLoading] = useState(true)
@@ -47,6 +66,7 @@ export default function TodoKanban() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [dueDate, setDueDate] = useState(null)
   const [draggedTodo, setDraggedTodo] = useState(null)
+  const [dragOverColumn, setDragOverColumn] = useState(null)
 
   const [formData, setFormData] = useState({
     task: "",
@@ -143,7 +163,7 @@ export default function TodoKanban() {
       description: todo.description || "",
       priority: todo.priority,
       dueDate: todo.dueDate || "",
-      status: todo.status || (todo.completed ? "done" : "todo"),
+      status: todo.status || "todo",
     })
     if (todo.dueDate) {
       setDueDate(new Date(todo.dueDate))
@@ -151,16 +171,26 @@ export default function TodoKanban() {
     setIsDialogOpen(true)
   }
 
+  const handleStatusToggle = async (todoId, currentStatus) => {
+    const transition = STATUS_TRANSITIONS[currentStatus]
+    if (!transition) return
+
+    try {
+      const result = await todoApi.toggleTodoStatus(todoId, transition.next)
+
+      if (result.success) {
+        await fetchTodos()
+      } else {
+        setError(result.message)
+      }
+    } catch (err) {
+      setError("Failed to update todo status")
+    }
+  }
+
   const handleStatusChange = async (todoId, newStatus) => {
     try {
-      const todo = todos.find((t) => t._id === todoId)
-      const updatedData = {
-        ...todo,
-        status: newStatus,
-        completed: newStatus === "done",
-      }
-
-      const result = await todoApi.updateTodo(todoId, updatedData)
+      const result = await todoApi.toggleTodoStatus(todoId, newStatus)
 
       if (result.success) {
         await fetchTodos()
@@ -199,6 +229,12 @@ export default function TodoKanban() {
   const handleDragStart = (e, todo) => {
     setDraggedTodo(todo)
     e.dataTransfer.effectAllowed = "move"
+    e.dataTransfer.setData("text/html", e.target.outerHTML)
+  }
+
+  const handleDragEnd = () => {
+    setDraggedTodo(null)
+    setDragOverColumn(null)
   }
 
   const handleDragOver = (e) => {
@@ -206,8 +242,22 @@ export default function TodoKanban() {
     e.dataTransfer.dropEffect = "move"
   }
 
+  const handleDragEnter = (e, columnId) => {
+    e.preventDefault()
+    setDragOverColumn(columnId)
+  }
+
+  const handleDragLeave = (e) => {
+    // Only clear if we're leaving the column entirely
+    if (!e.currentTarget.contains(e.relatedTarget)) {
+      setDragOverColumn(null)
+    }
+  }
+
   const handleDrop = async (e, newStatus) => {
     e.preventDefault()
+    setDragOverColumn(null)
+
     if (draggedTodo && draggedTodo.status !== newStatus) {
       await handleStatusChange(draggedTodo._id, newStatus)
     }
@@ -216,9 +266,9 @@ export default function TodoKanban() {
 
   // Group todos by status
   const todoColumns = {
-    todo: todos.filter((todo) => !todo.completed && (!todo.status || todo.status === "todo")),
-    "in-progress": todos.filter((todo) => !todo.completed && todo.status === "in-progress"),
-    done: todos.filter((todo) => todo.completed || todo.status === "done"),
+    todo: todos.filter((todo) => todo.status === "todo" || (!todo.status && !todo.completed)),
+    "in-progress": todos.filter((todo) => todo.status === "in-progress"),
+    done: todos.filter((todo) => todo.status === "done" || todo.completed),
   }
 
   // Calculate dynamic column widths
@@ -236,24 +286,28 @@ export default function TodoKanban() {
       icon: Clock,
       color: "text-blue-500",
       bgColor: "bg-blue-50 dark:bg-blue-950/20",
+      borderColor: "border-blue-200 dark:border-blue-800",
     },
     "in-progress": {
       title: "In Progress",
       icon: Play,
       color: "text-orange-500",
       bgColor: "bg-orange-50 dark:bg-orange-950/20",
+      borderColor: "border-orange-200 dark:border-orange-800",
     },
     done: {
       title: "Done",
       icon: Check,
       color: "text-green-500",
       bgColor: "bg-green-50 dark:bg-green-950/20",
+      borderColor: "border-green-200 dark:border-green-800",
     },
   }
 
   const TodoCard = ({ todo, columnId }) => {
     const PriorityIcon = PRIORITY_ICONS[todo.priority]
-    const isOverdue = todo.dueDate && new Date(todo.dueDate) < new Date() && !todo.completed
+    const isOverdue = todo.dueDate && new Date(todo.dueDate) < new Date() && todo.status !== "done"
+    const transition = STATUS_TRANSITIONS[todo.status || "todo"]
 
     return (
       <motion.div
@@ -265,25 +319,29 @@ export default function TodoKanban() {
         transition={{ duration: 0.2 }}
         draggable
         onDragStart={(e) => handleDragStart(e, todo)}
+        onDragEnd={handleDragEnd}
         className="cursor-move"
       >
         <Card
           className={cn(
-            "mb-3 transition-all hover:shadow-md group",
-            isOverdue && "border-red-200 bg-red-50 dark:bg-red-950/20",
-            draggedTodo?._id === todo._id && "opacity-50",
+            "mb-3 transition-all hover:shadow-md group border-2",
+            isOverdue && "border-red-300 bg-red-50 dark:bg-red-950/30",
+            draggedTodo?._id === todo._id && "opacity-50 rotate-2 scale-105",
+            !isOverdue && "border-muted",
           )}
         >
           <CardContent className="p-4">
-            <div className="flex items-start justify-between mb-2">
+            <div className="flex items-start justify-between mb-3">
               <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <GripVertical className="w-3 h-3 text-muted-foreground" />
-                  <h4 className="font-medium text-sm">{todo.task}</h4>
+                <div className="flex items-center gap-2 mb-2">
+                  <GripVertical className="w-3 h-3 text-muted-foreground opacity-50 group-hover:opacity-100 transition-opacity" />
+                  <h4 className="font-medium text-sm leading-tight">{todo.task}</h4>
                 </div>
-                {todo.description && <p className="text-xs text-muted-foreground mb-2">{todo.description}</p>}
+                {todo.description && (
+                  <p className="text-xs text-muted-foreground mb-3 leading-relaxed">{todo.description}</p>
+                )}
               </div>
-              <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity ml-2">
                 <Button variant="ghost" size="sm" onClick={() => handleEdit(todo)} className="h-6 w-6 p-0">
                   <Edit className="w-3 h-3" />
                 </Button>
@@ -311,20 +369,19 @@ export default function TodoKanban() {
               )}
             </div>
 
-            {/* Status Change Dropdown */}
-            <Select
-              value={todo.status || (todo.completed ? "done" : "todo")}
-              onValueChange={(value) => handleStatusChange(todo._id, value)}
-            >
-              <SelectTrigger className="h-7 text-xs">
-                <SelectValue />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="todo">To Do</SelectItem>
-                <SelectItem value="in-progress">In Progress</SelectItem>
-                <SelectItem value="done">Done</SelectItem>
-              </SelectContent>
-            </Select>
+            {/* Status Toggle Button */}
+            {transition && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => handleStatusToggle(todo._id, todo.status || "todo")}
+                className="w-full h-8 text-xs flex items-center gap-2 hover:bg-primary hover:text-primary-foreground transition-colors"
+              >
+                <transition.icon className="w-3 h-3" />
+                {transition.label}
+                <ArrowRight className="w-3 h-3 ml-auto" />
+              </Button>
+            )}
           </CardContent>
         </Card>
       </motion.div>
@@ -344,7 +401,7 @@ export default function TodoKanban() {
       <div className="flex justify-between items-center">
         <div>
           <h2 className="text-2xl font-bold">Todo Board</h2>
-          <p className="text-muted-foreground">Drag and drop tasks between columns or use the dropdown</p>
+          <p className="text-muted-foreground">Drag tasks between columns or use the action buttons</p>
         </div>
         <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
           <DialogTrigger asChild>
@@ -477,9 +534,18 @@ export default function TodoKanban() {
             transition={{ delay: Object.keys(columnConfig).indexOf(columnId) * 0.1 }}
             className={getColumnWidth(columnId)}
             onDragOver={handleDragOver}
+            onDragEnter={(e) => handleDragEnter(e, columnId)}
+            onDragLeave={handleDragLeave}
             onDrop={(e) => handleDrop(e, columnId)}
           >
-            <Card className={config.bgColor}>
+            <Card
+              className={cn(
+                config.bgColor,
+                "transition-all duration-200",
+                dragOverColumn === columnId && "ring-2 ring-primary ring-offset-2 scale-105",
+                dragOverColumn === columnId && config.borderColor,
+              )}
+            >
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <config.icon className={`w-5 h-5 ${config.color}`} />
@@ -498,13 +564,20 @@ export default function TodoKanban() {
                     <motion.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
-                      className="text-center py-8 text-muted-foreground"
+                      className={cn(
+                        "text-center py-8 text-muted-foreground transition-all duration-200 rounded-lg border-2 border-dashed",
+                        dragOverColumn === columnId ? "border-primary bg-primary/5 text-primary" : "border-muted",
+                      )}
                     >
                       <config.icon className="w-8 h-8 mx-auto mb-2 opacity-50" />
                       <p className="text-sm">
-                        {columnId === "todo" && "No pending tasks"}
-                        {columnId === "in-progress" && "No tasks in progress"}
-                        {columnId === "done" && "No completed tasks yet"}
+                        {dragOverColumn === columnId
+                          ? "Drop task here"
+                          : columnId === "todo"
+                            ? "No pending tasks"
+                            : columnId === "in-progress"
+                              ? "No tasks in progress"
+                              : "No completed tasks yet"}
                       </p>
                     </motion.div>
                   ) : (

@@ -1,4 +1,5 @@
 import { api } from "./authService"
+import dashboardCache from "./dashboardCache"
 
 const diaryApi = {
   // Create a new diary entry
@@ -24,7 +25,14 @@ const diaryApi = {
         headers: {
           "Content-Type": "multipart/form-data",
         },
+      },{
+        timeout: 10000, // Set timeout to 10 seconds
       })
+
+      if (response.data && response.data.success !== false) {
+        // Add to dashboard cache only
+        dashboardCache.addEntry(response.data)
+      }
 
       return {
         success: true,
@@ -40,7 +48,7 @@ const diaryApi = {
     }
   },
 
-  // Get all diary entries
+  // Get all diary entries - always fetch from API
   getAllEntries: async () => {
     try {
       const response = await api.get("/api/diary")
@@ -58,12 +66,47 @@ const diaryApi = {
     }
   },
 
+  // Get recent entries for dashboard with cache
+  getRecentEntries: async () => {
+    try {
+      // Check cache first
+      const cachedEntries = dashboardCache.getRecentEntries()
+      if (cachedEntries) {
+        return {
+          success: true,
+          data: cachedEntries,
+          message: "Recent entries retrieved from cache",
+        }
+      }
+
+      // Fetch from API and cache
+      const response = await api.get("/api/diary")
+      if (response.data) {
+        dashboardCache.setRecentEntries(response.data)
+        return {
+          success: true,
+          data: response.data.slice(0, 5),
+          message: "Recent entries retrieved successfully",
+        }
+      }
+
+      return {
+        success: false,
+        message: "Failed to fetch recent entries",
+      }
+    } catch (error) {
+      console.error("Get recent entries error:", error)
+      return {
+        success: false,
+        message: error.response?.data?.message || "Failed to fetch recent entries",
+      }
+    }
+  },
+
   // Get entry by ID
   getEntryById: async (id) => {
     try {
-        console.log("Fetching entry with ID:", id)
       const response = await api.get(`/api/diary/${id}`)
-      console.log("Get entry response:", response.data)
       return {
         success: true,
         data: response.data,
@@ -82,6 +125,12 @@ const diaryApi = {
   updateEntry: async (id, entryData) => {
     try {
       const response = await api.put(`/api/diary/${id}`, entryData)
+
+      if (response.data) {
+        // Update dashboard cache only
+        dashboardCache.updateEntry(response.data)
+      }
+
       return {
         success: true,
         data: response.data,
@@ -100,6 +149,10 @@ const diaryApi = {
   deleteEntry: async (id) => {
     try {
       const response = await api.delete(`/api/diary/${id}`)
+
+      // Remove from dashboard cache only
+      dashboardCache.removeEntry(id)
+
       return {
         success: true,
         data: response.data,

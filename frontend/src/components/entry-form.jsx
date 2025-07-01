@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
@@ -29,21 +29,59 @@ export default function EntryForm({ entry = null, onSave, onCancel }) {
   const [success, setSuccess] = useState("")
   const [selectedDate, setSelectedDate] = useState(entry?.date ? new Date(entry.date) : new Date())
   const [selectedImages, setSelectedImages] = useState([])
+  const [existingImages, setExistingImages] = useState(entry?.images || [])
   const [links, setLinks] = useState(entry?.links || [])
   const [newLink, setNewLink] = useState("")
 
   const [formData, setFormData] = useState({
-    title: entry?.title || "",
-    entry: entry?.entry || entry?.content || "",
-    mood: entry?.mood || "neutral",
-    date: entry?.date || new Date().toISOString().split("T")[0],
+    title: "",
+    entry: "",
+    mood: "neutral",
+    date: new Date().toISOString().split("T")[0],
   })
 
+  // Initialize form data when entry prop changes
+  useEffect(() => {
+    if (entry) {
+      console.log("📝 Loading entry for editing:", entry)
+      setFormData({
+        title: entry.title || "",
+        entry: entry.entry || entry.content || "",
+        mood: entry.mood || "neutral",
+        date: entry.date || new Date().toISOString().split("T")[0],
+      })
+      setSelectedDate(entry.date ? new Date(entry.date) : new Date())
+      setExistingImages(entry.images || [])
+      setLinks(entry.links || [])
+      setSelectedImages([]) // Reset new images when editing
+    } else {
+      // Reset form for new entry
+      console.log("📝 Creating new entry")
+      setFormData({
+        title: "",
+        entry: "",
+        mood: "neutral",
+        date: new Date().toISOString().split("T")[0],
+      })
+      setSelectedDate(new Date())
+      setExistingImages([])
+      setLinks([])
+      setSelectedImages([])
+    }
+    setError("")
+    setSuccess("")
+  }, [entry])
+
   const handleInputChange = (field, value) => {
-    setFormData((prev) => ({
-      ...prev,
-      [field]: value,
-    }))
+    console.log(`📝 Updating ${field}:`, value)
+    setFormData((prev) => {
+      const updated = {
+        ...prev,
+        [field]: value,
+      }
+      console.log("📝 Updated form data:", updated)
+      return updated
+    })
 
     if (error) setError("")
     if (success) setSuccess("")
@@ -56,17 +94,47 @@ export default function EntryForm({ entry = null, onSave, onCancel }) {
 
   const handleImageSelect = (e) => {
     const files = Array.from(e.target.files)
-    setSelectedImages((prev) => [...prev, ...files])
+
+    // Validate files
+    const validFiles = files.filter((file) => {
+      if (file.size > 5 * 1024 * 1024) {
+        setError("Some images are too large (max 5MB each)")
+        return false
+      }
+      if (!file.type.startsWith("image/")) {
+        setError("Please select only image files")
+        return false
+      }
+      return true
+    })
+
+    if (validFiles.length > 0) {
+      setSelectedImages((prev) => [...prev, ...validFiles])
+      setError("") // Clear any previous errors
+    }
   }
 
-  const removeImage = (index) => {
+  const removeNewImage = (index) => {
     setSelectedImages((prev) => prev.filter((_, i) => i !== index))
+  }
+
+  const removeExistingImage = (index) => {
+    setExistingImages((prev) => prev.filter((_, i) => i !== index))
   }
 
   const addLink = () => {
     if (newLink.trim()) {
-      setLinks((prev) => [...prev, newLink.trim()])
-      setNewLink("")
+      // Basic URL validation
+      try {
+        new URL(newLink.trim())
+        setLinks((prev) => [...prev, newLink.trim()])
+        setNewLink("")
+      } catch {
+        // If not a valid URL, add http:// prefix
+        const urlWithProtocol = newLink.trim().startsWith("http") ? newLink.trim() : `https://${newLink.trim()}`
+        setLinks((prev) => [...prev, urlWithProtocol])
+        setNewLink("")
+      }
     }
   }
 
@@ -86,31 +154,88 @@ export default function EntryForm({ entry = null, onSave, onCancel }) {
       return
     }
 
-    try {
-      const entryData = {
-        ...formData,
-        links,
-        images: selectedImages,
-      }
+    let result // Declare result variable here
 
-      let result
-      if (entry) {
-        // Update existing entry
-        result = await diaryApi.updateEntry(entry._id, entryData)
+    try {
+      console.log("💾 Submitting entry:", {
+        isEdit: !!entry,
+        entryId: entry?._id,
+        formData,
+        newImages: selectedImages.length,
+        existingImages: existingImages.length,
+        links: links.length,
+      })
+
+      // Prepare data for submission - use regular object for text-only updates
+      if (selectedImages.length === 0) {
+        // No new images, send as JSON
+        const submitData = {
+          title: formData.title.trim(),
+          entry: formData.entry.trim(),
+          mood: formData.mood,
+          date: formData.date,
+          links: links,
+          existingImages: existingImages,
+        }
+
+        console.log("📤 Sending JSON data:", submitData)
+
+        if (entry) {
+          result = await diaryApi.updateEntry(entry._id, submitData)
+        } else {
+          result = await diaryApi.createEntry(submitData)
+        }
       } else {
-        // Create new entry
-        result = await diaryApi.createEntry(entryData)
+        // Has new images, use FormData
+        const submitData = new FormData()
+        submitData.append("title", formData.title.trim())
+        submitData.append("entry", formData.entry.trim())
+        submitData.append("mood", formData.mood)
+        submitData.append("date", formData.date)
+
+        if (links.length > 0) {
+          submitData.append("links", JSON.stringify(links))
+        }
+
+        if (entry && existingImages.length > 0) {
+          submitData.append("existingImages", JSON.stringify(existingImages))
+        }
+
+        selectedImages.forEach((image) => {
+          submitData.append("images", image)
+        })
+
+        console.log("📤 Sending FormData with images")
+
+        if (entry) {
+          result = await diaryApi.updateEntry(entry._id, submitData)
+        } else {
+          result = await diaryApi.createEntry(submitData)
+        }
       }
 
       if (result.success) {
-        setSuccess(entry ? "Entry updated successfully!" : "Entry created successfully!")
-        if (onSave) {
-          onSave(result.data)
+        const message = entry ? "Entry updated successfully!" : "Entry created successfully!"
+        setSuccess(message)
+        console.log("✅", message)
+
+        // Refresh the entry list if available
+        if (window.refreshEntryList) {
+          await window.refreshEntryList()
         }
+
+        // Wait a moment to show success message, then call onSave
+        setTimeout(() => {
+          if (onSave) {
+            onSave(result.data)
+          }
+        }, 1000)
       } else {
-        setError(result.message)
+        console.error("❌ Save failed:", result.message)
+        setError(result.message || "Failed to save entry")
       }
     } catch (err) {
+      console.error("❌ Entry save error:", err)
       setError("An error occurred while saving the entry")
     } finally {
       setIsLoading(false)
@@ -227,9 +352,36 @@ export default function EntryForm({ entry = null, onSave, onCancel }) {
             />
           </div>
 
-          {/* Image Upload */}
+          {/* Existing Images (for edit mode) */}
+          {existingImages.length > 0 && (
+            <div className="space-y-2">
+              <Label>Current Images</Label>
+              <div className="flex flex-wrap gap-2">
+                {existingImages.map((image, index) => (
+                  <div key={index} className="relative">
+                    <Badge variant="secondary" className="pr-6">
+                      <ImageIcon className="w-3 h-3 mr-1" />
+                      Image {index + 1}
+                    </Badge>
+                    <Button
+                      type="button"
+                      variant="ghost"
+                      size="sm"
+                      className="absolute -top-1 -right-1 h-4 w-4 p-0"
+                      onClick={() => removeExistingImage(index)}
+                      disabled={isLoading}
+                    >
+                      <X className="w-3 h-3" />
+                    </Button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* New Image Upload */}
           <div className="space-y-2">
-            <Label>Images</Label>
+            <Label>Add Images</Label>
             <div className="flex items-center gap-2">
               <Input
                 type="file"
@@ -241,7 +393,7 @@ export default function EntryForm({ entry = null, onSave, onCancel }) {
                 id="image-upload"
               />
               <Label htmlFor="image-upload" className="cursor-pointer">
-                <Button type="button" variant="outline" asChild>
+                <Button type="button" variant="outline" asChild disabled={isLoading}>
                   <span>
                     <Upload className="w-4 h-4 mr-2" />
                     Upload Images
@@ -263,7 +415,8 @@ export default function EntryForm({ entry = null, onSave, onCancel }) {
                       variant="ghost"
                       size="sm"
                       className="absolute -top-1 -right-1 h-4 w-4 p-0"
-                      onClick={() => removeImage(index)}
+                      onClick={() => removeNewImage(index)}
+                      disabled={isLoading}
                     >
                       <X className="w-3 h-3" />
                     </Button>
@@ -282,8 +435,14 @@ export default function EntryForm({ entry = null, onSave, onCancel }) {
                 onChange={(e) => setNewLink(e.target.value)}
                 placeholder="Add a link..."
                 disabled={isLoading}
+                onKeyPress={(e) => {
+                  if (e.key === "Enter") {
+                    e.preventDefault()
+                    addLink()
+                  }
+                }}
               />
-              <Button type="button" onClick={addLink} variant="outline" disabled={isLoading}>
+              <Button type="button" onClick={addLink} variant="outline" disabled={isLoading || !newLink.trim()}>
                 <Link className="w-4 h-4 mr-2" />
                 Add
               </Button>
@@ -293,9 +452,9 @@ export default function EntryForm({ entry = null, onSave, onCancel }) {
               <div className="flex flex-wrap gap-2 mt-2">
                 {links.map((link, index) => (
                   <div key={index} className="relative">
-                    <Badge variant="outline" className="pr-6">
-                      <Link className="w-3 h-3 mr-1" />
-                      {link.length > 30 ? `${link.substring(0, 30)}...` : link}
+                    <Badge variant="outline" className="pr-6 max-w-xs">
+                      <Link className="w-3 h-3 mr-1 flex-shrink-0" />
+                      <span className="truncate">{link.length > 30 ? `${link.substring(0, 30)}...` : link}</span>
                     </Badge>
                     <Button
                       type="button"
@@ -303,6 +462,7 @@ export default function EntryForm({ entry = null, onSave, onCancel }) {
                       size="sm"
                       className="absolute -top-1 -right-1 h-4 w-4 p-0"
                       onClick={() => removeLink(index)}
+                      disabled={isLoading}
                     >
                       <X className="w-3 h-3" />
                     </Button>

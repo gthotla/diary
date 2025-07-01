@@ -28,8 +28,7 @@ import EntryList from "@/components/entry-list"
 import EntryForm from "@/components/entry-form"
 import TodoKanban from "./todo-kanban"
 import Profile from "./profile"
-import diaryApi from "../services/diaryApi"
-import todoApi from "../services/todoApi"
+import dashboardCache from "../services/dashboardCache"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -55,45 +54,49 @@ export default function Dashboard() {
       currentStreak: 0,
     },
   })
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(false)
 
+  // Only load cached data for dashboard overview - no API calls
   useEffect(() => {
-    fetchDashboardData()
-  }, [])
-
-  const fetchDashboardData = async () => {
-    setIsLoading(true)
-    try {
-      const [entriesResult, todosResult] = await Promise.all([diaryApi.getAllEntries(), todoApi.getAllTodos()])
-
-      const entries = entriesResult.success ? entriesResult.data : []
-      const todos = todosResult.success ? todosResult.data : []
-
-      setDashboardData({
-        entries: entries.slice(0, 5),
-        todos,
-        stats: {
-          totalEntries: entries.length,
-          totalTodos: todos.length,
-          completedTodos: todos.filter((t) => t.completed).length,
-          currentStreak: calculateStreak(entries),
-        },
-      })
-    } catch (error) {
-      console.error("Failed to fetch dashboard data:", error)
-    } finally {
-      setIsLoading(false)
+    if (activeTab === "overview") {
+      loadCachedDashboardData()
     }
+  }, [activeTab])
+
+  const loadCachedDashboardData = () => {
+    console.log("📊 Loading cached dashboard data...")
+
+    // Load from cache only - no API calls on dashboard
+    const cachedEntries = dashboardCache.getRecentEntries() || []
+
+    // Calculate basic stats from cached data
+    const stats = {
+      totalEntries: cachedEntries.length,
+      totalTodos: 0, // Will be updated when todos tab is visited
+      completedTodos: 0,
+      currentStreak: calculateStreak(cachedEntries),
+    }
+
+    setDashboardData({
+      entries: cachedEntries,
+      todos: [],
+      stats,
+    })
+
+    console.log("✅ Dashboard data loaded from cache:", {
+      entries: cachedEntries.length,
+      streak: stats.currentStreak,
+    })
   }
 
   const calculateStreak = (entries) => {
     if (!entries.length) return 0
-    const sortedEntries = entries.sort((a, b) => new Date(b.date) - new Date(a.date))
+    const sortedEntries = entries.sort((a, b) => new Date(b.date || b.createdAt) - new Date(a.date || a.createdAt))
     let streak = 0
     let currentDate = new Date()
 
     for (const entry of sortedEntries) {
-      const entryDate = new Date(entry.date)
+      const entryDate = new Date(entry.date || entry.createdAt)
       const diffDays = Math.floor((currentDate - entryDate) / (1000 * 60 * 60 * 24))
 
       if (diffDays === streak) {
@@ -112,26 +115,73 @@ export default function Dashboard() {
   }
 
   const handleNewEntry = () => {
+    console.log("➕ Creating new entry")
     setEditingEntry(null)
     setShowEntryForm(true)
     setActiveTab("entries")
   }
 
   const handleEditEntry = (entry) => {
-    setEditingEntry(entry)
+    console.log("✏️ Editing entry:", entry._id)
+    console.log("✏️ Entry data:", entry)
+
+    // Set the editing entry first
+    setEditingEntry({
+      ...entry,
+      _id: entry._id,
+      title: entry.title,
+      entry: entry.entry || entry.content,
+      mood: entry.mood || "neutral",
+      date: entry.date,
+      images: entry.images || [],
+      links: entry.links || [],
+    })
+
+    // Then show the form and switch to entries tab
     setShowEntryForm(true)
     setActiveTab("entries")
+
+    // Update URL to reflect edit state
+    const url = new URL(window.location)
+    url.searchParams.set("tab", "entries")
+    url.searchParams.set("edit", "true")
+    window.history.pushState({}, "", url)
   }
 
-  const handleSaveEntry = () => {
+  const handleSaveEntry = (savedEntry) => {
+    console.log("💾 Entry saved:", savedEntry)
     setShowEntryForm(false)
     setEditingEntry(null)
-    fetchDashboardData()
+
+    // Clear URL parameters
+    const url = new URL(window.location)
+    url.searchParams.delete("edit")
+    window.history.pushState({}, "", url)
+
+    // Update cache with new/updated entry
+    if (savedEntry) {
+      if (editingEntry) {
+        dashboardCache.updateEntry(savedEntry)
+      } else {
+        dashboardCache.addEntry(savedEntry)
+      }
+
+      // Refresh dashboard data if we're on overview
+      if (activeTab === "overview") {
+        loadCachedDashboardData()
+      }
+    }
   }
 
   const handleCancelEntry = () => {
+    console.log("❌ Entry editing cancelled")
     setShowEntryForm(false)
     setEditingEntry(null)
+
+    // Clear URL parameters
+    const url = new URL(window.location)
+    url.searchParams.delete("edit")
+    window.history.pushState({}, "", url)
   }
 
   const ThemeToggle = () => (
@@ -183,7 +233,7 @@ export default function Dashboard() {
     const date = new Date()
     date.setDate(date.getDate() - i)
     const dayEntries = dashboardData.entries.filter(
-      (entry) => new Date(entry.date).toDateString() === date.toDateString(),
+      (entry) => new Date(entry.date || entry.createdAt).toDateString() === date.toDateString(),
     ).length
 
     return {
@@ -197,6 +247,21 @@ export default function Dashboard() {
     { id: "entries", label: "Entries", icon: BookOpen },
     { id: "todos", label: "Todos", icon: CheckSquare },
   ]
+
+  // Add this useEffect after the existing ones
+  useEffect(() => {
+    // Handle URL parameters for navigation
+    const urlParams = new URLSearchParams(window.location.search)
+    const tab = urlParams.get("tab")
+    const shouldEdit = urlParams.get("edit")
+
+    if (tab && tab !== activeTab) {
+      setActiveTab(tab)
+    }
+
+    // Don't automatically show edit form based on URL params
+    // Let the edit handler manage this
+  }, [])
 
   return (
     <div className="min-h-screen bg-background">
@@ -300,7 +365,7 @@ export default function Dashboard() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.3 }}
         >
-          {/* Overview Tab */}
+          {/* Overview Tab - Uses cached data only */}
           {activeTab === "overview" && (
             <div className="space-y-8">
               {/* Quick Actions */}
@@ -319,17 +384,17 @@ export default function Dashboard() {
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
                   {
-                    title: "Total Entries",
+                    title: "Recent Entries",
                     value: dashboardData.stats.totalEntries,
                     icon: BookOpen,
-                    description: "Journal entries",
+                    description: "Cached entries",
                     color: "text-blue-600",
                   },
                   {
                     title: "Todo Tasks",
                     value: `${dashboardData.stats.completedTodos}/${dashboardData.stats.totalTodos}`,
                     icon: CheckSquare,
-                    description: "Completed tasks",
+                    description: "Visit todos tab",
                     color: "text-green-600",
                   },
                   {
@@ -343,7 +408,7 @@ export default function Dashboard() {
                     title: "This Week",
                     value: weeklyData.reduce((sum, day) => sum + day.entries, 0),
                     icon: Calendar,
-                    description: "Entries this week",
+                    description: "Recent entries",
                     color: "text-purple-600",
                   },
                 ].map((stat, index) => (
@@ -372,7 +437,7 @@ export default function Dashboard() {
                 <CardHeader className="flex flex-row items-center justify-between">
                   <div>
                     <CardTitle>Recent Entries</CardTitle>
-                    <CardDescription>Your latest journal entries</CardDescription>
+                    <CardDescription>Your latest journal entries (cached)</CardDescription>
                   </div>
                   <Button variant="outline" onClick={() => setActiveTab("entries")}>
                     View All
@@ -382,16 +447,16 @@ export default function Dashboard() {
                   {dashboardData.entries.length === 0 ? (
                     <div className="text-center py-12">
                       <BookOpen className="w-12 h-12 mx-auto mb-4 text-muted-foreground" />
-                      <h3 className="text-lg font-medium mb-2">No entries yet</h3>
-                      <p className="text-muted-foreground mb-4">Start your journaling journey today</p>
-                      <Button onClick={handleNewEntry}>
-                        <Plus className="h-4 w-4 mr-2" />
-                        Create Your First Entry
+                      <h3 className="text-lg font-medium mb-2">No cached entries</h3>
+                      <p className="text-muted-foreground mb-4">Visit the entries tab to load your journal entries</p>
+                      <Button onClick={() => setActiveTab("entries")}>
+                        <BookOpen className="h-4 w-4 mr-2" />
+                        Go to Entries
                       </Button>
                     </div>
                   ) : (
                     <div className="space-y-4">
-                      {dashboardData.entries.map((entry, index) => (
+                      {dashboardData.entries.slice(0, 5).map((entry, index) => (
                         <motion.div
                           key={entry._id}
                           initial={{ opacity: 0, x: -20 }}
@@ -402,7 +467,9 @@ export default function Dashboard() {
                         >
                           <div className="flex-1">
                             <h4 className="font-medium">{entry.title}</h4>
-                            <p className="text-sm text-muted-foreground">{new Date(entry.date).toLocaleDateString()}</p>
+                            <p className="text-sm text-muted-foreground">
+                              {new Date(entry.date || entry.createdAt).toLocaleDateString()}
+                            </p>
                           </div>
                           <div className="flex items-center gap-2">
                             <Badge variant="outline" className="flex items-center gap-1">
@@ -418,74 +485,76 @@ export default function Dashboard() {
               </Card>
 
               {/* Charts */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Weekly Activity</CardTitle>
-                    <CardDescription>Your journaling activity this week</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ChartContainer
-                      config={{
-                        entries: {
-                          label: "Entries",
-                          color: "hsl(var(--chart-1))",
-                        },
-                      }}
-                      className="h-[200px]"
-                    >
-                      <ResponsiveContainer width="100%" height="100%">
-                        <BarChart data={weeklyData}>
-                          <CartesianGrid strokeDasharray="3 3" />
-                          <XAxis dataKey="day" />
-                          <YAxis />
-                          <ChartTooltip content={<ChartTooltipContent />} />
-                          <Bar dataKey="entries" fill="var(--color-entries)" />
-                        </BarChart>
-                      </ResponsiveContainer>
-                    </ChartContainer>
-                  </CardContent>
-                </Card>
+              {dashboardData.entries.length > 0 && (
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Weekly Activity</CardTitle>
+                      <CardDescription>Your journaling activity this week (cached data)</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ChartContainer
+                        config={{
+                          entries: {
+                            label: "Entries",
+                            color: "hsl(var(--chart-1))",
+                          },
+                        }}
+                        className="h-[200px]"
+                      >
+                        <ResponsiveContainer width="100%" height="100%">
+                          <BarChart data={weeklyData}>
+                            <CartesianGrid strokeDasharray="3 3" />
+                            <XAxis dataKey="day" />
+                            <YAxis />
+                            <ChartTooltip content={<ChartTooltipContent />} />
+                            <Bar dataKey="entries" fill="var(--color-entries)" />
+                          </BarChart>
+                        </ResponsiveContainer>
+                      </ChartContainer>
+                    </CardContent>
+                  </Card>
 
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Mood Distribution</CardTitle>
-                    <CardDescription>Your emotional patterns</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <ChartContainer
-                      config={{
-                        count: {
-                          label: "Count",
-                        },
-                      }}
-                      className="h-[200px]"
-                    >
-                      <ResponsiveContainer width="100%" height="100%">
-                        <PieChart>
-                          <Pie
-                            data={moodChartData}
-                            cx="50%"
-                            cy="50%"
-                            outerRadius={80}
-                            dataKey="count"
-                            label={({ mood, count }) => `${mood}: ${count}`}
-                          >
-                            {moodChartData.map((entry, index) => (
-                              <Cell key={`cell-${index}`} fill={entry.fill} />
-                            ))}
-                          </Pie>
-                          <ChartTooltip content={<ChartTooltipContent />} />
-                        </PieChart>
-                      </ResponsiveContainer>
-                    </ChartContainer>
-                  </CardContent>
-                </Card>
-              </div>
+                  <Card>
+                    <CardHeader>
+                      <CardTitle>Mood Distribution</CardTitle>
+                      <CardDescription>Your emotional patterns (cached data)</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ChartContainer
+                        config={{
+                          count: {
+                            label: "Count",
+                          },
+                        }}
+                        className="h-[200px]"
+                      >
+                        <ResponsiveContainer width="100%" height="100%">
+                          <PieChart>
+                            <Pie
+                              data={moodChartData}
+                              cx="50%"
+                              cy="50%"
+                              outerRadius={80}
+                              dataKey="count"
+                              label={({ mood, count }) => `${mood}: ${count}`}
+                            >
+                              {moodChartData.map((entry, index) => (
+                                <Cell key={`cell-${index}`} fill={entry.fill} />
+                              ))}
+                            </Pie>
+                            <ChartTooltip content={<ChartTooltipContent />} />
+                          </PieChart>
+                        </ResponsiveContainer>
+                      </ChartContainer>
+                    </CardContent>
+                  </Card>
+                </div>
+              )}
             </div>
           )}
 
-          {/* Entries Tab */}
+          {/* Entries Tab - Fetches data when accessed */}
           {activeTab === "entries" && (
             <>
               {showEntryForm ? (
@@ -496,7 +565,7 @@ export default function Dashboard() {
             </>
           )}
 
-          {/* Todos Tab */}
+          {/* Todos Tab - Fetches data when accessed */}
           {activeTab === "todos" && <TodoKanban />}
 
           {/* Profile Tab */}

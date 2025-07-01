@@ -9,8 +9,9 @@ import { Input } from "@/components/ui/input"
 import { Alert, AlertDescription } from "@/components/ui/alert"
 import { Skeleton } from "@/components/ui/skeleton"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { format } from "date-fns"
-import { BookOpen, Calendar, Edit, Trash2, Eye, ImageIcon, Link, Plus, Search } from "lucide-react"
+import { BookOpen, Calendar, Edit, Trash2, Eye, ImageIcon, Link, Plus, Search, MoreVertical } from "lucide-react"
 import { motion } from "framer-motion"
 import diaryApi from "../services/diaryApi"
 
@@ -32,6 +33,7 @@ export default function EntryList({ onNewEntry, onEditEntry }) {
   const [moodFilter, setMoodFilter] = useState("all")
   const [sortBy, setSortBy] = useState("newest")
 
+  // Only fetch entries when this component mounts (not on dashboard)
   useEffect(() => {
     fetchEntries()
   }, [])
@@ -45,14 +47,18 @@ export default function EntryList({ onNewEntry, onEditEntry }) {
     setError("")
 
     try {
+      console.log("🔄 Fetching all entries...")
       const result = await diaryApi.getAllEntries()
 
       if (result.success) {
         setEntries(result.data)
+        console.log("✅ Entries fetched successfully:", result.data.length)
       } else {
         setError(result.message)
+        console.error("❌ Failed to fetch entries:", result.message)
       }
     } catch (err) {
+      console.error("❌ Entry fetch error:", err)
       setError("Failed to fetch entries")
     } finally {
       setIsLoading(false)
@@ -80,9 +86,9 @@ export default function EntryList({ onNewEntry, onEditEntry }) {
     filtered.sort((a, b) => {
       switch (sortBy) {
         case "newest":
-          return new Date(b.date) - new Date(a.date)
+          return new Date(b.date || b.createdAt) - new Date(a.date || a.createdAt)
         case "oldest":
-          return new Date(a.date) - new Date(b.date)
+          return new Date(a.date || a.createdAt) - new Date(b.date || b.createdAt)
         case "title":
           return a.title.localeCompare(b.title)
         default:
@@ -100,14 +106,18 @@ export default function EntryList({ onNewEntry, onEditEntry }) {
     }
 
     try {
+      console.log("🗑️ Deleting entry:", entryId)
       const result = await diaryApi.deleteEntry(entryId)
 
       if (result.success) {
         setEntries((prev) => prev.filter((entry) => entry._id !== entryId))
+        console.log("✅ Entry deleted successfully")
       } else {
         setError(result.message)
+        console.error("❌ Failed to delete entry:", result.message)
       }
     } catch (err) {
+      console.error("❌ Delete error:", err)
       setError("Failed to delete entry")
     }
   }
@@ -119,7 +129,24 @@ export default function EntryList({ onNewEntry, onEditEntry }) {
 
   const handleEditEntry = (entry, e) => {
     e.stopPropagation()
-    onEditEntry(entry)
+    console.log("✏️ Editing entry from list:", entry)
+
+    // Create a properly formatted entry object with all required fields
+    const editEntry = {
+      ...entry,
+      _id: entry._id,
+      title: entry.title || "",
+      entry: entry.entry || entry.content || "",
+      mood: entry.mood || "neutral",
+      date: entry.date || new Date().toISOString().split("T")[0],
+      images: entry.images || [],
+      links: entry.links || [],
+    }
+
+    console.log("✏️ Formatted entry for editing:", editEntry)
+
+    // Call the parent's edit handler with the complete entry object
+    onEditEntry(editEntry)
   }
 
   const handleCardClick = (entry) => {
@@ -131,6 +158,27 @@ export default function EntryList({ onNewEntry, onEditEntry }) {
     if (content.length <= maxLength) return content
     return content.substring(0, maxLength) + "..."
   }
+
+  // Add this function to refresh entries after edit
+  const refreshEntries = async () => {
+    try {
+      console.log("🔄 Refreshing entries after edit...")
+      const result = await diaryApi.getAllEntries()
+      if (result.success) {
+        setEntries(result.data)
+        console.log("✅ Entries refreshed successfully")
+      }
+    } catch (err) {
+      console.error("❌ Failed to refresh entries:", err)
+    }
+  }
+
+  // Expose refresh function to parent component
+  useEffect(() => {
+    if (window.refreshEntryList) {
+      window.refreshEntryList = refreshEntries
+    }
+  }, [])
 
   const EntryCard = ({ entry, index }) => {
     const mood = MOODS[entry.mood] || MOODS.neutral
@@ -152,10 +200,42 @@ export default function EntryList({ onNewEntry, onEditEntry }) {
               <Badge className={mood.color}>
                 {mood.emoji} {entry.mood}
               </Badge>
-              <span className="text-xs text-muted-foreground flex items-center gap-1">
-                <Calendar className="w-3 h-3" />
-                {format(new Date(entry.date), "MMM d, yyyy")}
-              </span>
+              <div className="flex items-center gap-2">
+                <span className="text-xs text-muted-foreground flex items-center gap-1">
+                  <Calendar className="w-3 h-3" />
+                  {format(new Date(entry.date || entry.createdAt), "MMM d, yyyy")}
+                </span>
+                {/* Action Menu */}
+                <DropdownMenu>
+                  <DropdownMenuTrigger asChild>
+                    <Button
+                      variant="ghost"
+                      size="sm"
+                      className="h-6 w-6 p-0 opacity-0 group-hover:opacity-100 transition-opacity"
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <MoreVertical className="w-3 h-3" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent align="end">
+                    <DropdownMenuItem onClick={(e) => handleViewEntry(entry, e)}>
+                      <Eye className="w-4 h-4 mr-2" />
+                      View
+                    </DropdownMenuItem>
+                    <DropdownMenuItem onClick={(e) => handleEditEntry(entry, e)}>
+                      <Edit className="w-4 h-4 mr-2" />
+                      Edit
+                    </DropdownMenuItem>
+                    <DropdownMenuItem
+                      onClick={(e) => handleDelete(entry._id, e)}
+                      className="text-destructive focus:text-destructive"
+                    >
+                      <Trash2 className="w-4 h-4 mr-2" />
+                      Delete
+                    </DropdownMenuItem>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              </div>
             </div>
             <CardTitle className="text-lg leading-tight group-hover:text-primary transition-colors">
               {entry.title}
@@ -185,21 +265,13 @@ export default function EntryList({ onNewEntry, onEditEntry }) {
                 )}
               </div>
 
-              {/* Action buttons */}
+              {/* Quick action buttons - visible on hover */}
               <div className="flex gap-1 opacity-0 group-hover:opacity-100 transition-opacity">
                 <Button variant="ghost" size="sm" onClick={(e) => handleViewEntry(entry, e)} className="h-6 w-6 p-0">
                   <Eye className="w-3 h-3" />
                 </Button>
                 <Button variant="ghost" size="sm" onClick={(e) => handleEditEntry(entry, e)} className="h-6 w-6 p-0">
                   <Edit className="w-3 h-3" />
-                </Button>
-                <Button
-                  variant="ghost"
-                  size="sm"
-                  onClick={(e) => handleDelete(entry._id, e)}
-                  className="h-6 w-6 p-0 text-destructive hover:text-destructive"
-                >
-                  <Trash2 className="w-3 h-3" />
                 </Button>
               </div>
             </div>
