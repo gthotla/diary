@@ -80,22 +80,22 @@ export const UpdateProfile = asyncHandler(async (req, res) => {
     
     // Only include fields that are provided and not empty
     if (profileData.name && profileData.name.trim()) {
-      updateData.name = profileData.name.trim()
+      updateData['profile.name'] = profileData.name.trim()
     }
     if (profileData.bio && profileData.bio.trim()) {
-      updateData.bio = profileData.bio.trim()
+      updateData['profile.bio'] = profileData.bio.trim()
     }
     if (profileData.dob) {
       updateData.dob = profileData.dob
     }
     if (profileData.theme) {
-      updateData.theme = profileData.theme
+      updateData['profile.settings.theme'] = profileData.theme
     }
     if (typeof profileData.notifications === 'boolean') {
-      updateData.notifications = profileData.notifications
+      updateData['profile.settings.notifications'] = profileData.notifications
     }
     if (profileData.timezone) {
-      updateData.timezone = profileData.timezone
+      updateData['profile.settings.timezone'] = profileData.timezone
     }
 
     // Add profile completion flag
@@ -126,13 +126,17 @@ export const UpdateProfile = asyncHandler(async (req, res) => {
         id: updatedUser._id,
         username: updatedUser.username,
         email: updatedUser.email,
-        name: updatedUser.name,
-        bio: updatedUser.bio,
         dob: updatedUser.dob,
-        theme: updatedUser.theme,
-        notifications: updatedUser.notifications,
-        timezone: updatedUser.timezone,
-        profileCompleted: updatedUser.profileCompleted
+        profileCompleted: updatedUser.profileCompleted,
+        profile: {
+          name: updatedUser.profile?.name,
+          bio: updatedUser.profile?.bio,
+          theme: updatedUser.profile?.theme,
+          settings: {
+            notifications: updatedUser.profile?.settings?.notifications,
+            timezone: updatedUser.profile?.settings?.timezone
+          }
+        }
       }
     })
      } catch (error) {
@@ -168,7 +172,29 @@ export const login = asyncHandler(async (req, res) => {
         //console.log('RefreshToken Payload:', jwt.decode(refreshToken));
 
 
-        res.status(200).json({ message: 'User logged in succesfully', user, access_token: accessToken, refresh_token: refreshToken });
+        res.status(200).json({ 
+          success: true,
+          message: 'User logged in successfully', 
+          user: {
+            id: user._id,
+            username: user.username,
+            email: user.email,
+            dob: user.dob,
+            profileCompleted: user.profileCompleted,
+            createdAt: user.createdAt,
+            profile: {
+              name: user.profile?.name,
+              bio: user.profile?.bio,
+              theme: user.profile?.theme,
+              settings: {
+                notifications: user.profile?.settings?.notifications,
+                timezone: user.profile?.settings?.timezone
+              }
+            }
+          },
+          access_token: accessToken, 
+          refresh_token: refreshToken 
+        });
     } catch (err) {
         res.status(500).json({ error: err.message });
     }
@@ -179,7 +205,24 @@ export const getUser = asyncHandler(async (req, res) => {
         const user = await User.findOne({ _id: req.user.userId }).select('-password');
         res.status(200).json({
             success: true,
-            user});
+            user: {
+              id: user._id,
+              username: user.username,
+              email: user.email,
+              dob: user.dob,
+              profileCompleted: user.profileCompleted,
+              createdAt: user.createdAt,
+              profile: {
+                name: user.profile?.name,
+                bio: user.profile?.bio,
+                theme: user.profile?.theme,
+                settings: {
+                  notifications: user.profile?.settings?.notifications,
+                  timezone: user.profile?.settings?.timezone
+                }
+              }
+            }
+        });
     } catch (err) {
         res.status(500).json({ error: err.message });
     }

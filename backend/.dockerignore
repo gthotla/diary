@@ -1,0 +1,17 @@
+node_modules
+npm-debug.log
+.git
+.gitignore
+README.md
+.env
+.env.*
+.nyc_output
+coverage
+.DS_Store
+logs
+*.log
+.vscode
+.idea
+private_key.pem
+public_key.pem
+master-key.txt

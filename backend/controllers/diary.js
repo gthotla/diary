@@ -9,6 +9,7 @@ import {
   getDiaryInRange,
   getEntriesByTime
 } from '../services/diaryService.js';
+import { getRecentEntries } from '../services/recentEntriesService.js';
 
 import {
   uploadFile,
@@ -186,4 +187,32 @@ export const getEntriesByTimeController = asyncHandler(async (req, res) => {
     updatedAt: entry.updatedAt
   }));
   res.status(200).json(updateEntries);
+});
+
+// @desc Get recent diary entries with caching
+// @route GET /api/diary/recent/:limit?
+// @access Private
+export const getRecentEntriesController = asyncHandler(async (req, res) => {
+  const limit = parseInt(req.params.limit) || 5;
+  
+  // Validate limit
+  if (limit < 1 || limit > 50) {
+    res.status(400);
+    throw new Error('Limit must be between 1 and 50');
+  }
+
+  const result = await getRecentEntries(req.user.userId, limit);
+  
+  if (!result.success) {
+    res.status(500);
+    throw new Error(result.error || 'Failed to fetch recent entries');
+  }
+
+  res.status(200).json({
+    success: true,
+    entries: result.entries,
+    count: result.entries.length,
+    fromCache: result.fromCache,
+    message: result.fromCache ? 'Retrieved from cache' : 'Retrieved from database'
+  });
 });

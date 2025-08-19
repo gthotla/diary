@@ -28,7 +28,6 @@ import EntryList from "@/components/entry-list"
 import EntryForm from "@/components/entry-form"
 import TodoKanban from "./todo-kanban"
 import Profile from "./profile"
-import dashboardCache from "../services/dashboardCache"
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -59,34 +58,45 @@ export default function Dashboard() {
   // Only load cached data for dashboard overview - no API calls
   useEffect(() => {
     if (activeTab === "overview") {
-      loadCachedDashboardData()
+      loadRecentEntries()
     }
   }, [activeTab])
 
-  const loadCachedDashboardData = () => {
-    console.log("📊 Loading cached dashboard data...")
+  const loadRecentEntries = async () => {
+    console.log("📊 Loading recent entries from server...")
+    setIsLoading(true)
 
-    // Load from cache only - no API calls on dashboard
-    const cachedEntries = dashboardCache.getRecentEntries() || []
+    try {
+      // Import diaryApi dynamically to avoid circular imports
+      const { getRecentEntries } = await import('../services/diaryApi')
+      const result = await getRecentEntries()
 
-    // Calculate basic stats from cached data
-    const stats = {
-      totalEntries: cachedEntries.length,
-      totalTodos: 0, // Will be updated when todos tab is visited
-      completedTodos: 0,
-      currentStreak: calculateStreak(cachedEntries),
+      if (result.success) {
+        const stats = {
+          totalEntries: result.entries.length, // This will be updated with real count from user profile
+          totalTodos: user?.todosCount || 0,
+          completedTodos: user?.completedTodosCount || 0,
+          currentStreak: calculateStreak(result.entries),
+        }
+
+        setDashboardData({
+          entries: result.entries,
+          todos: [],
+          stats,
+        })
+
+        console.log("✅ Recent entries loaded:", {
+          entries: result.entries.length,
+          streak: stats.currentStreak,
+        })
+      } else {
+        console.error("❌ Failed to load recent entries:", result.message)
+      }
+    } catch (error) {
+      console.error("❌ Error loading recent entries:", error)
+    } finally {
+      setIsLoading(false)
     }
-
-    setDashboardData({
-      entries: cachedEntries,
-      todos: [],
-      stats,
-    })
-
-    console.log("✅ Dashboard data loaded from cache:", {
-      entries: cachedEntries.length,
-      streak: stats.currentStreak,
-    })
   }
 
   const calculateStreak = (entries) => {
@@ -160,15 +170,9 @@ export default function Dashboard() {
 
     // Update cache with new/updated entry
     if (savedEntry) {
-      if (editingEntry) {
-        dashboardCache.updateEntry(savedEntry)
-      } else {
-        dashboardCache.addEntry(savedEntry)
-      }
-
       // Refresh dashboard data if we're on overview
       if (activeTab === "overview") {
-        loadCachedDashboardData()
+        loadRecentEntries()
       }
     }
   }
