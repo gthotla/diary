@@ -6,7 +6,8 @@ import {
   updateEntryController,
   deleteEntryController,
   getEntriesInRangeController,
-  getEntriesByTimeController
+  getEntriesByTimeController,
+  getRecentEntriesController
 } from '../controllers/diary.js';
 
 import { authMiddleware } from '../middleware/auth.js';
@@ -178,5 +179,45 @@ router.get('/range/date', authMiddleware, getEntriesInRangeController);
  *         description: Invalid time filter type
  */
 router.get('/time/:type/:value', authMiddleware, getEntriesByTimeController);
+
+/**
+ * @swagger
+ * /diary/recent/{limit}:
+ *   get:
+ *     summary: Get recent diary entries with caching
+ *     tags: [Diary]
+ *     parameters:
+ *       - in: path
+ *         name: limit
+ *         required: false
+ *         schema:
+ *           type: integer
+ *           minimum: 1
+ *           maximum: 50
+ *           default: 5
+ *         description: Number of recent entries to retrieve (default 5)
+ *     responses:
+ *       200:
+ *         description: Recent entries retrieved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 success:
+ *                   type: boolean
+ *                 entries:
+ *                   type: array
+ *                 count:
+ *                   type: integer
+ *                 fromCache:
+ *                   type: boolean
+ *                 message:
+ *                   type: string
+ *       400:
+ *         description: Invalid limit parameter
+ */
+router.get('/recent', authMiddleware, getRecentEntriesController);
+router.get('/recent/:limit', authMiddleware, getRecentEntriesController);
 
 export default router;

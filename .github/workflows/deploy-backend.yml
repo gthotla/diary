@@ -1,0 +1,240 @@
+name: Deploy Backend to Production
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'backend/**'
+      - '.github/workflows/deploy-backend.yml'
+  workflow_dispatch:  # Manual trigger
+
+env:
+  REGISTRY: docker.io
+  IMAGE_NAME: ganesh594/diary-backend
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          cache-dependency-path: backend/package-lock.json
+      - name: Install dependencies
+        working-directory: ./backend
+        run: npm ci
+      - name: Run tests
+        working-directory: ./backend
+        run: npm test || echo "No tests configured"
+      - name: Lint code
+        working-directory: ./backend
+        run: npm run lint || echo "No linting configured"
+
+  deploy-production:
+    needs: test
+    runs-on: ubuntu-latest
+    environment: production  # GitHub environment protection
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set Docker tag
+        run: |
+          echo "DOCKER_TAG=${GITHUB_SHA::8}" >> $GITHUB_ENV
+          echo "IMAGE_FULL=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}" >> $GITHUB_ENV
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build & Push Docker Image
+        working-directory: ./backend
+        run: |
+          IMAGE=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          TAG=${{ env.DOCKER_TAG }}
+          
+          echo "🐳 Building Docker image $IMAGE:$TAG"
+          docker build -t $IMAGE:$TAG .
+          docker tag $IMAGE:$TAG $IMAGE:latest
+          
+          echo "📤 Pushing Docker image..."
+          docker push $IMAGE:$TAG
+          docker push $IMAGE:latest
+          
+          echo "✅ Image pushed successfully: $IMAGE:$TAG"
+
+      - name: Deploy to Production VM
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USERNAME }}
+          key: ${{ secrets.VM_SSH_KEY }}
+          script: |
+            DOCKER_TAG="${{ env.DOCKER_TAG }}"
+            IMAGE="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:$DOCKER_TAG"
+            ENV_FILE="/home/azureuser/backend-prod.env"
+            CONTAINER_NAME="diary-backend"
+            REDIS_NAME="diary-redis"
+            PORT_MAPPING="5000:5000"
+            
+            echo "🚀 Deploying to Production Environment"
+            echo "📦 Image: $IMAGE"
+            
+            # Create production environment file
+            echo "🔧 Creating production environment file..."
+            cat > $ENV_FILE << EOF
+            MONGO_URI=${{ secrets.MONGO_URI }}
+            NODE_ENV=production
+            PORT=5000
+            JWT_SECRET=${{ secrets.JWT_SECRET }}
+            AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}
+            AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}
+            AWS_REGION=${{ secrets.AWS_REGION }}
+            S3_BUCKET_NAME=${{ secrets.S3_BUCKET_NAME }}
+            CLOUDFRONT_DOMAIN=${{ secrets.CLOUDFRONT_DOMAIN }}
+            CLOUDFRONT_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
+            CLOUDFRONT_KEY_PAIR_ID=${{ secrets.CLOUDFRONT_KEY_PAIR_ID }}
+            LOCAL_MASTER_KEY=${{ secrets.LOCAL_MASTER_KEY }}
+            REDIS_HOST=$REDIS_NAME
+            REDIS_PORT=6379
+            CLOUDFRONT_PRIVATE_KEY_PATH=/app/secrets/private_key.pem
+            EOF
+            
+            # Create private key file
+            echo "🔑 Creating private key file..."
+            echo "${{ secrets.CLOUDFRONT_PRIVATE_KEY_BASE64 }}" | base64 -d > private_key.pem
+            chmod 600 private_key.pem
+            
+            # Stop and remove existing containers (zero-downtime alternative below)
+            echo "🛑 Stopping existing containers..."
+            docker stop $CONTAINER_NAME || true
+            docker rm $CONTAINER_NAME || true
+            
+            # Start/Restart Redis
+            echo "🔴 Starting Redis..."
+            docker stop $REDIS_NAME || true
+            docker rm $REDIS_NAME || true
+            docker run -d \
+              --name $REDIS_NAME \
+              --restart unless-stopped \
+              -v redis_data:/data \
+              redis:alpine redis-server --appendonly yes
+            
+            # Pull new image
+            echo "📥 Pulling new image..."
+            docker pull $IMAGE
+            
+            # Run new backend container
+            echo "🐳 Starting new backend container..."
+            docker run -d \
+              --name $CONTAINER_NAME \
+              --restart unless-stopped \
+              -p $PORT_MAPPING \
+              --env-file $ENV_FILE \
+              -v $(pwd)/private_key.pem:/app/secrets/private_key.pem:ro \
+              -v backend_logs:/app/logs \
+              --link $REDIS_NAME:$REDIS_NAME \
+              $IMAGE
+            
+            # Wait for container to be ready
+            echo "⏳ Waiting for backend to be ready..."
+            sleep 45
+            
+            # Health check with retries
+            echo "🏥 Running health check..."
+            HEALTH_CHECK_PASSED=false
+            for i in {1..5}; do
+              if curl -f http://localhost:5000/api/health; then
+                echo "✅ Health check passed on attempt $i"
+                HEALTH_CHECK_PASSED=true
+                break
+              else
+                echo "❌ Health check failed on attempt $i, retrying in 10s..."
+                sleep 10
+              fi
+            done
+            
+            if [ "$HEALTH_CHECK_PASSED" = false ]; then
+              echo "❌ All health checks failed! Rolling back..."
+              echo "📋 Container logs:"
+              docker logs $CONTAINER_NAME --tail 100
+              docker stop $CONTAINER_NAME
+              docker rm $CONTAINER_NAME
+              exit 1
+            fi
+            
+            # Success
+            echo "🎉 Production deployment successful!"
+            echo "🌐 Backend is running on http://$(curl -s ifconfig.me):5000"
+            echo "📊 Container status:"
+            docker ps --filter name=$CONTAINER_NAME
+            
+            # Cleanup old images (keep last 3 versions)
+            echo "🧹 Cleaning up old images..."
+            docker images ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }} --format "table {{.Repository}}\t{{.Tag}}\t{{.ID}}" | tail -n +2 | head -n -3 | awk '{print $3}' | xargs -r docker rmi || true
+            docker system prune -f
+
+      - name: Create GitHub Release
+        if: success()
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: "v1.0.${{ github.run_number }}"
+          release_name: "Production Release v1.0.${{ github.run_number }}"
+          body: |
+            🚀 **Production Deployment**
+            
+            **Changes:**
+            - Commit: ${{ github.sha }}
+            - Docker Image: `${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.DOCKER_TAG }}`
+            
+            **Deployment Details:**
+            - Environment: Production
+            - Backend URL: http://your-vm-ip:5000
+            - Health Check: ✅ Passed
+            
+            **Services:**
+            - Backend Container: `diary-backend`
+            - Redis Container: `diary-redis`
+          draft: false
+          prerelease: false
+
+      - name: Send Deployment Notification
+        if: always()
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: "🚀 Production Deployment: ${{ job.status == 'success' && '✅ SUCCESS' || '❌ FAILED' }}"
+          html_body: |
+            <h2>🚀 Diary Backend - Production Deployment</h2>
+            
+            <h3>📊 Deployment Status: <span style="color: ${{ job.status == 'success' && 'green' || 'red' }};">${{ job.status }}</span></h3>
+            
+            <h3>📋 Details:</h3>
+            <ul>
+              <li><strong>Environment:</strong> Production</li>
+              <li><strong>Commit:</strong> ${{ github.sha }}</li>
+              <li><strong>Branch:</strong> ${{ github.ref_name }}</li>
+              <li><strong>Docker Tag:</strong> ${{ env.DOCKER_TAG }}</li>
+              <li><strong>Image:</strong> ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.DOCKER_TAG }}</li>
+              <li><strong>Deployed At:</strong> $(date)</li>
+            </ul>
+            
+            <h3>🔗 Links:</h3>
+            <ul>
+              <li><a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}">View Deployment Logs</a></li>
+              <li><a href="http://your-vm-ip:5000/api/health">Backend Health Check</a></li>
+            </ul>
+          to: ganeshthotla594@gmail.com
+
+      

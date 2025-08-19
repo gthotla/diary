@@ -8,15 +8,13 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Textarea } from "@/components/ui/textarea"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Progress } from "@/components/ui/progress"
-import { Loader2, Eye, EyeOff, AlertCircle, CheckCircle, ArrowLeft, ArrowRight, Camera } from "lucide-react"
+import { Loader2, Eye, EyeOff, AlertCircle, CheckCircle, ArrowLeft, ArrowRight } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
 
 const STEPS = [
   { id: 1, title: "Account Details", description: "Create your account" },
   { id: 2, title: "Profile Setup", description: "Complete your profile" },
-  { id: 3, title: "Welcome", description: "You're all set!" },
 ]
 
 export default function Signup({ onLoginClick }) {
@@ -27,8 +25,6 @@ export default function Signup({ onLoginClick }) {
   const [success, setSuccess] = useState("")
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-  const [profileImage, setProfileImage] = useState(null)
-  const [profileImagePreview, setProfileImagePreview] = useState("")
 
   const [formData, setFormData] = useState({
     // Step 1 - Account Details
@@ -39,7 +35,6 @@ export default function Signup({ onLoginClick }) {
     // Step 2 - Profile Setup
     name: "",
     bio: "",
-    avatar: null,
   })
 
   const handleInputChange = (field, value) => {
@@ -50,39 +45,6 @@ export default function Signup({ onLoginClick }) {
 
     if (error) setError("")
     if (success) setSuccess("")
-  }
-
-  const handleImageSelect = (e) => {
-    const file = e.target.files[0]
-    if (file) {
-      // Validate file size (max 5MB)
-      if (file.size > 5 * 1024 * 1024) {
-        setError("Image size should be less than 5MB")
-        return
-      }
-
-      // Validate file type
-      if (!file.type.startsWith("image/")) {
-        setError("Please select a valid image file")
-        return
-      }
-
-      setProfileImage(file)
-      handleInputChange("avatar", file)
-
-      // Create preview
-      const reader = new FileReader()
-      reader.onload = (e) => {
-        setProfileImagePreview(e.target.result)
-      }
-      reader.readAsDataURL(file)
-    }
-  }
-
-  const removeImage = () => {
-    setProfileImage(null)
-    setProfileImagePreview("")
-    handleInputChange("avatar", null)
   }
 
   const validateStep1 = () => {
@@ -139,16 +101,16 @@ export default function Signup({ onLoginClick }) {
     return true
   }
 
-  const handleNext = () => {
+  const handleNext = async () => {
     setError("")
 
     if (currentStep === 1) {
       if (validateStep1()) {
-        setCurrentStep(2)
+        await handleAccountRegistration()
       }
     } else if (currentStep === 2) {
       if (validateStep2()) {
-        handleSubmit()
+        await handleProfileUpdate()
       }
     }
   }
@@ -158,35 +120,26 @@ export default function Signup({ onLoginClick }) {
     setCurrentStep(currentStep - 1)
   }
 
-  const handleSubmit = async () => {
+  const handleAccountRegistration = async () => {
     setIsSubmitting(true)
     setError("")
     setSuccess("")
 
     try {
-      // Create FormData for file upload
-      const submitData = new FormData()
-      submitData.append("username", formData.username.trim())
-      submitData.append("email", formData.email.trim())
-      submitData.append("password", formData.password)
-      submitData.append("name", formData.name.trim())
-
-      if (formData.bio.trim()) {
-        submitData.append("bio", formData.bio.trim())
+      // Step 1: Register account with basic details only
+      const accountData = {
+        username: formData.username.trim(),
+        email: formData.email.trim(),
+        password: formData.password,
+        // Send minimal profile data for backend compatibility
+        profile: {}
       }
 
-      if (profileImage) {
-        submitData.append("avatar", profileImage)
-      }
-
-      const result = await authService.register(submitData)
+      const result = await authService.register(accountData)
 
       if (result.success) {
-        setCurrentStep(3)
-        setSuccess("Account created successfully!")
-        setTimeout(() => {
-          onLoginClick()
-        }, 2000)
+        setCurrentStep(2)
+        setSuccess("Account created successfully! Please complete your profile.")
       } else {
         setError(result.message || "Registration failed")
       }
@@ -198,13 +151,42 @@ export default function Signup({ onLoginClick }) {
     }
   }
 
-  const getInitials = (name) => {
-    if (!name) return "U"
-    return name
-      .split(" ")
-      .map((n) => n[0])
-      .join("")
-      .toUpperCase()
+  const handleProfileUpdate = async () => {
+    setIsSubmitting(true)
+    setError("")
+    setSuccess("")
+
+    try {
+      // Step 2: Update profile with detailed information
+      const profileData = {
+        name: formData.name.trim(),
+        bio: formData.bio.trim() || "",
+        theme: "system", // default theme
+        notifications: true, // default notifications
+        timezone: "UTC" // default timezone
+      }
+
+      const result = await authService.updateProfile(profileData)
+
+      if (result.success) {
+        setSuccess("Profile updated successfully! Welcome to MyDiary!")
+        setTimeout(() => {
+          navigate('/dashboard') // Navigate to dashboard instead of login
+        }, 2000)
+      } else {
+        setError(result.message || "Profile update failed")
+      }
+    } catch (error) {
+      console.error("Profile update error:", error)
+      setError("Profile update failed. Please try again.")
+    } finally {
+      setIsSubmitting(false)
+    }
+  }
+
+  const handleSubmit = async () => {
+    // This function is now deprecated - using handleNext instead
+    console.warn("handleSubmit is deprecated, using step-by-step approach")
   }
 
   const progressPercentage = (currentStep / STEPS.length) * 100
@@ -427,47 +409,10 @@ export default function Signup({ onLoginClick }) {
               {/* Step 2: Profile Setup */}
               {currentStep === 2 && (
                 <div className="space-y-6">
-                  {/* Profile Image Upload */}
-                  <div className="text-center">
-                    <Label className="text-sm font-medium">Profile Picture</Label>
-                    <div className="mt-2 flex flex-col items-center space-y-4">
-                      <div className="relative">
-                        <Avatar className="w-24 h-24 border-4 border-muted">
-                          <AvatarImage src={profileImagePreview || "/placeholder.svg"} alt="Profile preview" />
-                          <AvatarFallback className="text-2xl">{getInitials(formData.name)}</AvatarFallback>
-                        </Avatar>
-                        {profileImagePreview && (
-                          <Button
-                            type="button"
-                            variant="destructive"
-                            size="sm"
-                            className="absolute -top-2 -right-2 rounded-full w-6 h-6 p-0"
-                            onClick={removeImage}
-                          >
-                            ×
-                          </Button>
-                        )}
-                      </div>
-
-                      <div className="flex gap-2">
-                        <Input
-                          type="file"
-                          accept="image/*"
-                          onChange={handleImageSelect}
-                          disabled={isSubmitting}
-                          className="hidden"
-                          id="avatar-upload"
-                        />
-                        <Label htmlFor="avatar-upload" className="cursor-pointer">
-                          <Button type="button" variant="outline" asChild>
-                            <span>
-                              <Camera className="w-4 h-4 mr-2" />
-                              {profileImagePreview ? "Change Photo" : "Add Photo"}
-                            </span>
-                          </Button>
-                        </Label>
-                      </div>
-                    </div>
+                  <div className="text-center mb-4">
+                    <p className="text-sm text-muted-foreground">
+                      Great! Now let's set up your profile to personalize your diary experience.
+                    </p>
                   </div>
 
                   <div>
@@ -504,26 +449,17 @@ export default function Signup({ onLoginClick }) {
                     />
                     <p className="text-xs text-muted-foreground mt-1">{formData.bio.length}/500 characters</p>
                   </div>
-                </div>
-              )}
 
-              {/* Step 3: Welcome */}
-              {currentStep === 3 && (
-                <div className="text-center space-y-6">
-                  <div className="w-20 h-20 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center mx-auto">
-                    <CheckCircle className="w-10 h-10 text-green-600 dark:text-green-400" />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-bold mb-2">Welcome to MyDiary!</h3>
-                    <p className="text-muted-foreground">
-                      Your account has been created successfully. You'll be redirected to login shortly.
+                  <div className="bg-muted/30 p-4 rounded-lg">
+                    <p className="text-sm text-muted-foreground mb-2">
+                      <strong>Note:</strong> You can always update your profile later, including adding a profile picture and customizing your settings from your dashboard.
                     </p>
                   </div>
                 </div>
               )}
 
               {/* Navigation Buttons */}
-              {currentStep < 3 && (
+              {currentStep <= 2 && (
                 <div className="flex justify-between pt-4">
                   <Button
                     type="button"
@@ -545,11 +481,11 @@ export default function Signup({ onLoginClick }) {
                     {isSubmitting ? (
                       <>
                         <Loader2 className="w-4 h-4 animate-spin" />
-                        Creating...
+                        {currentStep === 1 ? "Creating Account..." : "Completing Profile..."}
                       </>
                     ) : (
                       <>
-                        {currentStep === 2 ? "Create Account" : "Next"}
+                        {currentStep === 1 ? "Create Account" : "Complete Profile"}
                         <ArrowRight className="w-4 h-4" />
                       </>
                     )}

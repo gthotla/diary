@@ -68,7 +68,7 @@ const userSchema = new mongoose.Schema({
 });
 
 
-// 🔐 Pre-save: Hash password before saving
+//  Pre-save: Hash password before saving
 userSchema.pre('save', async function (next) {
   if (!this.isModified('password')) return next();
 

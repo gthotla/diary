@@ -2,6 +2,7 @@ import express from 'express';
 import { config } from 'dotenv';
 import cookieParser from 'cookie-parser';
 import connectDB from './config/db.js';
+import { initializeRedis, closeRedisConnection } from './config/redis.js';
 import logger from './utils/logger.js';
 import requestLogger from './middleware/requestLogger.js';
 import swaggerUi from 'swagger-ui-express';
@@ -25,6 +26,10 @@ const app = express();
 
 // Connect to MongoDB
 connectDB();
+
+// Initialize Redis
+initializeRedis();
+
 // cron.schedule('*/2 * * * *', async () => {
 //   console.log('Running EOD processor...');
 //   await processTodosForAllUsers();
@@ -57,7 +62,33 @@ app.use((err, req, res, next) => {
 
 // Start server
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () =>{ 
+const server = app.listen(PORT, () =>{ 
     logger.info(`🚀 Server running on port ${PORT}`);
     console.log(`🚀 Server running on port ${PORT}`);
 });
+
+// Graceful shutdown
+const gracefulShutdown = async (signal) => {
+    logger.info(`${signal} received. Starting graceful shutdown...`);
+    
+    // Close server
+    server.close(async () => {
+        logger.info('HTTP server closed.');
+        
+        // Close Redis connection
+        await closeRedisConnection();
+        
+        // Exit process
+        process.exit(0);
+    });
+    
+    // Force close after 10 seconds
+    setTimeout(() => {
+        logger.error('Could not close connections in time, forcefully shutting down');
+        process.exit(1);
+    }, 10000);
+};
+
+// Handle shutdown signals
+process.on('SIGTERM', () => gracefulShutdown('SIGTERM'));
+process.on('SIGINT', () => gracefulShutdown('SIGINT'));

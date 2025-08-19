@@ -1806,3 +1806,1385 @@
 [2025-06-28T07:31:57.632Z] info: GET /api/todos 304 - 13.25ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
 [2025-06-28T07:31:57.645Z] info: GET /api/todos 200 - 21.59ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
 [2025-06-28T07:32:18.070Z] info: GET /api/users/logout 200 - 2.35ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0
+[2025-07-23T18:14:30.983Z] info: 🚀 Server running on port 5000
+[2025-07-23T18:14:31.019Z] info: Connected to MongoDb
+[2025-07-23T18:14:46.994Z] info: GET /api/users/me 401 - 6.91ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:14:46.999Z] info: GET /api/users/me 401 - 1.21ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:15:24.709Z] info: POST /api/users/login 200 - 189.53ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:15:26.657Z] info: GET /api/diary 200 - 58.51ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:15:26.664Z] info: GET /api/diary 200 - 50.33ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:15:28.119Z] info: GET /api/diary/68542a4292a02e26ccdedab1 200 - 46.11ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:15:28.147Z] info: GET /api/diary/68542a4292a02e26ccdedab1 200 - 62.11ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:15:38.835Z] info: GET /api/users/me 200 - 10.82ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:15:38.838Z] info: GET /api/users/me 200 - 7.73ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:15:38.873Z] info: GET /api/diary/68542a4292a02e26ccdedab1 304 - 13.25ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:15:38.880Z] info: GET /api/diary/68542a4292a02e26ccdedab1 200 - 14.81ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:41:27.483Z] info: 🚀 Server running on port 5000
+[2025-07-23T18:41:27.536Z] info: Connected to MongoDb
+[2025-07-23T18:44:30.775Z] info: GET /api-docs 301 - 5.01ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:44:30.783Z] info: GET /api-docs/ 200 - 3.34ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:44:30.845Z] info: GET /api-docs/swagger-ui-init.js 200 - 0.98ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:44:30.850Z] info: GET /api-docs/swagger-ui.css 200 - 15.50ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:44:30.852Z] info: GET /api-docs/swagger-ui-standalone-preset.js 200 - 8.69ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:44:30.862Z] info: GET /api-docs/swagger-ui-bundle.js 200 - 24.91ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-07-23T18:44:31.013Z] info: GET /api-docs/favicon-32x32.png 200 - 3.50ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:30:48.297Z] info: 🚀 Server running on port 5000
+[2025-08-01T07:30:48.352Z] info: Connected to MongoDb
+[2025-08-01T07:30:58.080Z] info: GET /api/users/me 401 - 4.46ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:30:58.084Z] info: GET /api/users/me 401 - 1.21ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:31:17.817Z] info: POST /api/users/login 200 - 159.57ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:31:29.541Z] info: GET /api/diary 200 - 85.12ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:31:29.544Z] info: GET /api/diary 200 - 60.91ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:31:34.042Z] info: GET /api/todos 200 - 25.24ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:31:34.054Z] info: GET /api/todos 200 - 32.18ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:31:42.720Z] info: PATCH /api/todos/6853e8923fadf458580c9edd/status/in-progress 200 - 46.57ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:31:42.756Z] info: GET /api/todos 200 - 20.38ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:31:57.516Z] info: PUT /api/todos/6853e8923fadf458580c9edd 200 - 8.48ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:31:57.544Z] info: GET /api/todos 200 - 9.11ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:32:13.619Z] info: PUT /api/todos/6853e8923fadf458580c9edd 200 - 6.87ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:32:13.669Z] info: GET /api/todos 200 - 6.64ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:32:23.498Z] info: GET /api/diary 304 - 13.16ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:32:23.500Z] info: GET /api/diary 200 - 9.80ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:32:53.765Z] info: PUT /api/diary/68542a4292a02e26ccdedab1 200 - 23.52ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:32:54.906Z] info: GET /api/diary 200 - 14.09ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:32:54.910Z] info: GET /api/diary 200 - 11.95ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:32:58.932Z] info: GET /api/diary/6854272bcfc8e61c48631683 200 - 16.58ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:32:58.941Z] info: GET /api/diary/6854272bcfc8e61c48631683 200 - 22.79ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:33:05.915Z] info: GET /api/diary 304 - 9.42ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:33:05.917Z] info: GET /api/diary 200 - 8.24ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:33:07.172Z] info: GET /api/diary/68542a4292a02e26ccdedab1 200 - 7.61ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:33:07.177Z] info: GET /api/diary/68542a4292a02e26ccdedab1 200 - 10.87ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:33:12.237Z] info: GET /api/diary 304 - 13.09ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:33:12.238Z] info: GET /api/diary 200 - 10.18ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:33:19.067Z] error: Error: No value provided for input HTTP label: Key.
+    at resolvedPath (C:\Users\gytho\Desktop\master\personal\diary\backend\node_modules\@smithy\core\dist-cjs\submodules\protocols\index.js:483:11)
+    at C:\Users\gytho\Desktop\master\personal\diary\backend\node_modules\@smithy\core\dist-cjs\submodules\protocols\index.js:542:19
+    at RequestBuilder.build (C:\Users\gytho\Desktop\master\personal\diary\backend\node_modules\@smithy\core\dist-cjs\submodules\protocols\index.js:508:7)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[2025-08-01T07:33:19.068Z] info: DELETE /api/diary/68542a4292a02e26ccdedab1 500 - 36.11ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:33:26.379Z] info: GET /api/users/me 200 - 14.61ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:33:26.381Z] info: GET /api/users/me 200 - 13.34ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:33:26.440Z] info: GET /api/diary 200 - 6.53ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:33:26.442Z] info: GET /api/diary 200 - 5.35ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:33:40.874Z] info: GET /api/diary 304 - 5.85ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:33:40.876Z] info: GET /api/diary 200 - 4.27ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:46:23.512Z] info: GET /api/users/logout 200 - 7.12ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:47:46.404Z] info: POST /api/users/login 200 - 117.01ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:50:07.694Z] info: GET /api/diary 200 - 5.93ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:50:07.697Z] info: GET /api/diary 200 - 6.29ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:50:09.182Z] info: GET /api/diary/6854272bcfc8e61c48631683 304 - 7.82ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:50:09.193Z] info: GET /api/diary/6854272bcfc8e61c48631683 304 - 7.17ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T07:59:30.348Z] info: 🚀 Server running on port 5000
+[2025-08-01T07:59:30.410Z] info: Connected to MongoDb
+[2025-08-01T08:10:05.530Z] info: GET /api/diary 304 - 33.00ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:10:05.534Z] info: GET /api/diary 200 - 20.17ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:10:18.511Z] info: GET /api/todos 200 - 9.64ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:10:18.518Z] info: GET /api/todos 304 - 13.24ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:10:25.175Z] info: PATCH /api/todos/6853e8923fadf458580c9edd/status/todo 200 - 31.86ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:10:25.212Z] info: GET /api/todos 200 - 17.03ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:10:33.594Z] info: PATCH /api/todos/6853e926bc217c69bb74ce3c/status/in-progress 200 - 11.25ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:10:33.609Z] info: GET /api/todos 200 - 8.97ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:10:55.254Z] info: GET /api/diary 304 - 16.90ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:10:55.260Z] info: GET /api/diary 200 - 16.03ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:10:56.834Z] info: GET /api/diary/6854272bcfc8e61c48631683 200 - 13.12ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:10:56.840Z] info: GET /api/diary/6854272bcfc8e61c48631683 304 - 15.23ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:11:12.668Z] info: GET /api/diary 304 - 7.62ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:11:12.670Z] info: GET /api/diary 200 - 6.72ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:11:23.867Z] info: GET /api/diary/6854272bcfc8e61c48631683 304 - 22.53ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:11:23.880Z] info: GET /api/diary/6854272bcfc8e61c48631683 200 - 28.39ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:11:34.572Z] info: GET /api/diary 304 - 13.57ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:11:34.578Z] info: GET /api/diary 200 - 14.46ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:11:52.702Z] info: PUT /api/diary/6854272bcfc8e61c48631683 200 - 21.99ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:11:53.794Z] info: GET /api/diary 200 - 14.55ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:11:53.799Z] info: GET /api/diary 200 - 14.11ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:11:55.047Z] info: GET /api/diary/6854272bcfc8e61c48631683 200 - 13.65ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:11:55.063Z] info: GET /api/diary/6854272bcfc8e61c48631683 200 - 26.21ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:11:58.399Z] info: GET /api/diary 304 - 12.24ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:11:58.403Z] info: GET /api/diary 200 - 11.02ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:12:00.008Z] info: GET /api/diary/6853f04ffbeac06b377d382d 200 - 15.67ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:12:00.022Z] info: GET /api/diary/6853f04ffbeac06b377d382d 200 - 24.79ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:12:01.410Z] info: GET /api/diary 304 - 8.28ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:12:01.414Z] info: GET /api/diary 200 - 9.68ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:12:02.989Z] info: GET /api/diary/6853f04ffbeac06b377d382d 304 - 11.08ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:12:03.000Z] info: GET /api/diary/6853f04ffbeac06b377d382d 200 - 19.46ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:12:09.210Z] info: GET /api/diary 304 - 18.74ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:12:09.217Z] info: GET /api/diary 200 - 18.40ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:12:10.266Z] info: GET /api/diary/6854272bcfc8e61c48631683 304 - 14.60ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:12:10.283Z] info: GET /api/diary/6854272bcfc8e61c48631683 200 - 28.99ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:12:29.876Z] info: GET /api/diary 304 - 9.50ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-01T08:12:29.879Z] info: GET /api/diary 200 - 9.65ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:06:36.258Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:06:36.298Z] info: Connected to MongoDb
+[2025-08-19T14:06:51.602Z] info: GET /api/users/me 403 - 20.74ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:06:51.619Z] info: GET /api/users/me 403 - 8.62ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:07:23.449Z] info: POST /api/users/register 500 - 1.87ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:14:40.379Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:14:40.395Z] info: Connected to MongoDb
+[2025-08-19T14:14:58.780Z] info: POST /api/users/register 201 - 186.37ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:15:10.975Z] info: PATCH /api/users/update-profile 200 - 53.89ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:15:23.157Z] info: POST /api/users/login 200 - 133.17ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:15:49.629Z] info: PATCH /api/users/update-profile 200 - 32.64ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:15:49.665Z] info: GET /api/users/me 200 - 19.60ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:19:45.639Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:19:45.658Z] info: Connected to MongoDb
+[2025-08-19T14:20:19.969Z] info: PATCH /api/users/update-profile 200 - 94.58ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:20:20.014Z] info: GET /api/users/me 200 - 28.35ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:25:18.324Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:25:18.340Z] info: Connected to MongoDb
+[2025-08-19T14:25:21.758Z] info: POST /api/users/login 200 - 96.52ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:34:40.699Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:34:40.751Z] info: Connected to MongoDb
+[2025-08-19T14:34:50.427Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:34:50.441Z] info: Connected to MongoDb
+[2025-08-19T14:35:01.507Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:35:01.542Z] info: Connected to MongoDb
+[2025-08-19T14:35:09.118Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:35:09.134Z] info: Connected to MongoDb
+[2025-08-19T14:35:57.255Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:35:57.271Z] info: Connected to MongoDb
+[2025-08-19T14:36:56.169Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:36:56.190Z] info: Connected to MongoDb
+[2025-08-19T14:36:59.560Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:36:59.578Z] info: Connected to MongoDb
+[2025-08-19T14:38:31.002Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:38:31.038Z] info: Connected to MongoDb
+[2025-08-19T14:38:34.551Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:38:34.567Z] info: Connected to MongoDb
+[2025-08-19T14:38:38.205Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:38:38.235Z] info: Connected to MongoDb
+[2025-08-19T14:39:55.381Z] info: GET /api/users/me 304 - 68.46ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:39:55.392Z] info: GET /api/users/me 200 - 41.33ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:40:09.120Z] info: PATCH /api/users/update-profile 200 - 52.99ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:40:09.148Z] info: GET /api/users/me 200 - 11.53ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:41:33.591Z] info: GET /api/users/me 304 - 27.54ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:41:33.593Z] info: GET /api/users/me 200 - 16.86ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:48:18.292Z] info: GET /api/diary 200 - 55.15ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:48:18.304Z] info: GET /api/diary 200 - 51.92ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:48:19.689Z] info: GET /api/diary/6854272bcfc8e61c48631683 200 - 26.59ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:48:19.701Z] info: GET /api/diary/6854272bcfc8e61c48631683 200 - 33.54ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:49:48.067Z] info: GET /api/users/me 304 - 14.38ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:49:48.072Z] info: GET /api/users/me 200 - 13.64ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:49:48.097Z] info: GET /api/diary/6854272bcfc8e61c48631683 304 - 12.61ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:49:48.124Z] info: GET /api/diary/6854272bcfc8e61c48631683 304 - 24.00ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:50:28.547Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:50:28.565Z] info: Connected to MongoDb
+[2025-08-19T14:51:05.887Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:51:05.922Z] info: Connected to MongoDb
+[2025-08-19T14:51:30.909Z] info: GET /api/diary 200 - 33.95ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:51:30.915Z] info: GET /api/diary 200 - 22.86ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:52:01.837Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:52:01.874Z] info: Connected to MongoDb
+[2025-08-19T14:52:04.768Z] info: GET /api/diary 304 - 25.86ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:52:04.773Z] info: GET /api/diary 200 - 18.83ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:52:06.039Z] info: GET /api/todos 200 - 15.83ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:52:06.049Z] info: GET /api/todos 200 - 20.10ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:52:11.510Z] info: PATCH /api/todos/6853e926bc217c69bb74ce3c/status/done 200 - 69.55ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:52:11.526Z] info: GET /api/todos 200 - 8.50ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T14:52:18.284Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:52:18.302Z] info: Connected to MongoDb
+[2025-08-19T14:52:37.116Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:52:37.144Z] info: Connected to MongoDb
+[2025-08-19T14:52:57.134Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:52:57.165Z] info: Connected to MongoDb
+[2025-08-19T14:53:22.496Z] info: 🚀 Server running on port 5000
+[2025-08-19T14:53:22.511Z] info: Connected to MongoDb
+[2025-08-19T15:01:32.062Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:01:32.070Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:32.071Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:32.074Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:01:32.082Z] info: Connected to MongoDb
+[2025-08-19T15:01:32.083Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:32.083Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:32.097Z] info: Connected to MongoDb
+[2025-08-19T15:01:32.123Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:32.123Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:32.140Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:32.141Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:32.233Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:32.233Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:32.250Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:32.252Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:32.399Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:32.400Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:32.401Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:01:32.415Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:32.416Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:32.416Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:01:32.605Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:32.606Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:32.621Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:32.622Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:32.871Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:32.872Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:32.887Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:32.889Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:33.179Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:33.180Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:33.194Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:33.196Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:33.539Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:33.540Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:33.556Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:33.557Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:33.956Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:33.957Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:33.972Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:33.973Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:34.423Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:34.424Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:34.439Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:34.440Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:34.940Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:34.942Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:34.955Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:34.956Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:35.499Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:35.501Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:35.517Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:35.518Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:36.104Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:36.105Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:36.120Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:36.121Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:36.769Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:36.769Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:36.785Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:36.785Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:37.486Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:37.487Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:37.502Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:37.503Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:38.250Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:38.251Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:38.266Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:38.267Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:39.058Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:39.059Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:39.074Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:39.075Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:39.911Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:39.912Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:39.927Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:39.927Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:40.829Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:40.831Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:40.831Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:40.832Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:41.791Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:41.791Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:41.792Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:41.792Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:42.801Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:42.801Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:42.802Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:42.802Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:43.857Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:43.857Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:43.858Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:43.858Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:44.966Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:44.967Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:44.968Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:44.968Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:46.136Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:46.136Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:46.137Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:46.137Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:47.348Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:47.348Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:47.348Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:47.349Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:48.613Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:48.613Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:48.615Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:48.615Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:49.922Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:49.922Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:01:49.922Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:01:49.922Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:01.932Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:02:01.939Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:01.940Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:01.954Z] info: Connected to MongoDb
+[2025-08-19T15:02:01.999Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:02.000Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:02.029Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:02:02.049Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:02.051Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:02.070Z] info: Connected to MongoDb
+[2025-08-19T15:02:02.102Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:02.102Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:02.103Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:02.104Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:02.211Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:02.211Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:02.257Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:02.258Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:02.259Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:02:02.365Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:02.366Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:02.366Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:02:02.460Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:02.460Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:02.572Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:02.573Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:02.725Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:02.725Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:02.832Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:02.832Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:03.037Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:03.038Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:03.147Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:03.148Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:03.397Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:03.399Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:03.503Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:03.503Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:03.818Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:03.819Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:03.911Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:03.913Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:04.287Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:04.288Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:04.376Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:04.377Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:04.796Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:04.797Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:04.890Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:04.891Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:05.356Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:05.357Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:05.450Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:05.450Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:05.963Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:05.964Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:06.057Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:06.058Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:06.620Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:06.621Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:06.716Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:06.717Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:07.323Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:07.324Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:07.430Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:07.430Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:08.087Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:08.088Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:08.194Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:08.195Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:08.890Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:08.891Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:09.000Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:09.001Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:09.757Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:09.758Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:09.868Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:09.869Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:10.674Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:10.675Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:10.786Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:10.787Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:13.058Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:02:13.066Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:13.066Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:13.076Z] info: Connected to MongoDb
+[2025-08-19T15:02:13.079Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:02:13.088Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:13.089Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:13.100Z] info: Connected to MongoDb
+[2025-08-19T15:02:13.131Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:13.132Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:13.147Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:13.148Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:13.241Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:13.242Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:13.256Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:13.257Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:13.396Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:13.398Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:13.399Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:02:13.415Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:13.418Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:13.420Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:02:13.618Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:13.619Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:13.628Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:13.629Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:13.876Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:13.879Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:13.891Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:13.892Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:14.184Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:14.185Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:14.200Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:14.201Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:14.544Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:14.546Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:14.559Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:14.563Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:14.960Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:14.961Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:14.976Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:14.977Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:15.414Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:15.415Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:15.431Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:15.432Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:15.924Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:15.924Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:15.938Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:15.938Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:16.484Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:16.485Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:16.500Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:16.501Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:17.089Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:17.090Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:17.107Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:17.109Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:17.742Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:17.742Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:17.774Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:17.774Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:18.457Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:18.458Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:18.489Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:18.490Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:19.220Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:19.221Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:19.249Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:19.250Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:20.031Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:20.033Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:20.072Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:20.073Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:20.892Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:20.893Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:20.938Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:20.939Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:21.806Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:21.807Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:21.853Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:21.853Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:22.759Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:22.759Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:22.807Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:22.808Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:24.388Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:02:24.395Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:24.396Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:24.392Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:02:24.402Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:24.403Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:24.406Z] info: Connected to MongoDb
+[2025-08-19T15:02:24.413Z] info: Connected to MongoDb
+[2025-08-19T15:02:24.455Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:24.455Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:24.456Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:24.456Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:24.565Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:24.565Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:24.566Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:24.567Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:24.721Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:24.722Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:24.722Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:24.723Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:02:24.723Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:24.724Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:02:24.927Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:24.928Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:24.929Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:24.930Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:25.187Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:25.186Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:25.187Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:25.187Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:25.496Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:25.496Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:25.497Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:25.496Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:25.855Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:25.854Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:25.856Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:25.855Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:26.260Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:26.259Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:26.261Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:26.260Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:26.725Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:26.724Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:26.726Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:26.726Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:27.235Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:27.235Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:27.236Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:27.237Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:27.794Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:27.795Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:27.796Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:27.795Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:28.401Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:28.402Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:28.403Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:28.405Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:29.065Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:29.066Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:29.066Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:29.066Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:29.769Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:29.769Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:29.770Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:29.770Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:30.530Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:30.530Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:30.532Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:30.532Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:31.348Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:31.348Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:31.350Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:31.350Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:32.203Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:32.204Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:32.203Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:32.204Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:34.259Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:02:34.284Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:34.286Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:34.292Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:02:34.307Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:34.308Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:34.316Z] info: Connected to MongoDb
+[2025-08-19T15:02:34.326Z] info: Connected to MongoDb
+[2025-08-19T15:02:34.341Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:34.341Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:34.374Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:34.375Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:34.454Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:34.455Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:34.486Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:34.487Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:34.608Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:34.610Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:34.611Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:02:34.655Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:34.657Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:34.658Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:02:34.825Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:34.826Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:34.871Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:34.871Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:35.090Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:35.091Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:35.138Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:35.139Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:35.401Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:35.402Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:35.448Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:35.449Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:35.761Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:35.764Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:35.807Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:35.808Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:36.181Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:36.182Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:36.214Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:36.216Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:36.648Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:36.649Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:36.682Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:36.683Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:37.163Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:37.164Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:37.194Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:37.195Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:37.718Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:37.719Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:37.749Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:37.751Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:38.325Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:38.326Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:38.358Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:38.358Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:38.981Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:38.982Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:39.025Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:39.025Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:39.694Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:39.695Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:39.741Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:39.741Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:40.459Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:40.461Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:40.506Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:40.507Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:41.269Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:41.270Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:41.317Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:41.317Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:42.132Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:42.133Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:42.176Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:42.177Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:43.047Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:43.048Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:43.091Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:43.092Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:44.013Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:44.015Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:44.058Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:44.059Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:45.022Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:45.023Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:45.068Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:45.069Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:46.081Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:46.083Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:46.124Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:46.125Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:47.199Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:47.199Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:47.232Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:47.232Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:48.358Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:48.358Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:48.389Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:48.390Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:49.309Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:02:49.325Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:49.328Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:49.338Z] info: Connected to MongoDb
+[2025-08-19T15:02:49.380Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:49.381Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:49.497Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:49.498Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:49.572Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:49.573Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:49.604Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:49.605Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:49.651Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:49.654Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:49.655Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:02:49.855Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:49.856Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:50.119Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:50.119Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:50.429Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:50.430Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:50.788Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:50.789Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:50.836Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:50.836Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:50.867Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:50.868Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:51.191Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:51.191Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:51.657Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:51.657Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:52.151Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:52.151Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:52.168Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:52.169Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:52.182Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:52.182Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:52.725Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:52.726Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:53.330Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:53.331Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:53.516Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:53.517Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:53.547Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:53.548Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:53.985Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:53.986Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:54.701Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:54.702Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:54.933Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:54.933Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:54.965Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:54.966Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:55.464Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:55.464Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:56.273Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:56.274Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:56.397Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:56.398Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:56.427Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:56.429Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:57.128Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:57.129Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:57.903Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:57.903Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:57.934Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:57.935Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:58.047Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:58.048Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:59.014Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:59.015Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:59.467Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:59.468Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:02:59.495Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:02:59.497Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:00.023Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:00.024Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:01.077Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:01.076Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:01.078Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:01.078Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:01.107Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:01.108Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:02.195Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:02.196Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:02.738Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:02.739Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:02.771Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:02.771Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:03.364Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:03.365Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:04.449Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:04.450Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:04.480Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:04.481Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:04.575Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:04.576Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:05.838Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:05.839Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:06.210Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:06.211Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:06.240Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:06.241Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:07.144Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:07.147Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:08.014Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:08.014Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:08.051Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:08.052Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:08.512Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:08.514Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:09.866Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:09.867Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:09.914Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:09.916Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:09.931Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:09.932Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:11.404Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:11.404Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:11.770Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:11.771Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:11.817Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:11.817Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:11.846Z] info: SIGINT received. Starting graceful shutdown...
+[2025-08-19T15:03:13.734Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:13.734Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:13.782Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:13.782Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:15.737Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:15.738Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:15.787Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:15.788Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:17.746Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:17.746Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:17.795Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:17.796Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:19.756Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:19.757Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:19.804Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:19.804Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:21.764Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:21.765Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:21.811Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:21.812Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:23.780Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:23.781Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:23.826Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:23.828Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:25.796Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:25.797Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:25.841Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:25.844Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:28.591Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:03:28.599Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:28.600Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:28.595Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:03:28.604Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:28.605Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:28.615Z] info: Connected to MongoDb
+[2025-08-19T15:03:28.619Z] info: Connected to MongoDb
+[2025-08-19T15:03:28.662Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:28.662Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:28.663Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:28.664Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:28.771Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:28.771Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:28.772Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:28.772Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:28.928Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:28.928Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:28.929Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:28.929Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:03:28.929Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:28.930Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:03:29.131Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:29.132Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:29.132Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:29.132Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:29.394Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:29.394Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:29.394Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:29.394Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:29.705Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:29.705Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:29.706Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:29.705Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:30.065Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:30.064Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:30.065Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:30.065Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:30.470Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:30.471Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:30.472Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:30.471Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:30.938Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:30.939Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:30.939Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:30.940Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:31.449Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:31.449Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:31.450Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:31.450Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:32.008Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:32.007Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:32.008Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:32.008Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:32.612Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:32.613Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:32.612Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:32.613Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:33.267Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:33.267Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:33.267Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:33.268Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:35.127Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:03:35.134Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:35.135Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:35.145Z] info: Connected to MongoDb
+[2025-08-19T15:03:35.146Z] info: 🚀 Server running on port 5000
+[2025-08-19T15:03:35.153Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:35.154Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:35.166Z] info: Connected to MongoDb
+[2025-08-19T15:03:35.190Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:35.191Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:35.206Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:35.207Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:35.301Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:35.302Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:35.316Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:35.316Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:35.458Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:35.462Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:35.464Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:03:35.474Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:35.476Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:35.477Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-19T15:03:35.675Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:35.677Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:35.690Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:35.691Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:35.939Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:35.940Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:35.955Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:35.956Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:36.253Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:36.257Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:36.268Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:36.269Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:36.613Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:36.614Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:36.627Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:36.629Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:37.031Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:37.032Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:37.032Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:37.033Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:37.501Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:37.501Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:37.503Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:37.503Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:38.012Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:38.012Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:38.013Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:38.014Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:38.570Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:38.570Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:38.571Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:38.571Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:39.178Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:39.178Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:39.179Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:39.179Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:39.846Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:39.846Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:39.846Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:39.846Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:40.562Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:40.563Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:40.563Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:40.564Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:41.319Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:41.320Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:41.320Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:41.322Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:42.127Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:42.128Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:42.131Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:42.132Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:42.993Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:42.993Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:42.994Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:42.994Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:43.908Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:43.908Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:43.909Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:43.909Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:44.877Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:44.879Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:44.880Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:44.880Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:45.889Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:45.889Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:45.890Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:45.890Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:46.947Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:46.948Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:46.949Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:46.949Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:48.060Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:48.060Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:48.061Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:48.061Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:49.222Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:49.222Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:49.222Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:49.222Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:50.430Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:50.431Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:50.431Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:50.432Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:51.695Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:51.696Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:51.697Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:51.698Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:53.000Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:53.001Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:53.001Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:53.001Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:54.366Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:54.366Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:54.366Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:54.367Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:55.775Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:55.775Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:55.776Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:55.776Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:57.236Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:57.235Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:57.237Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:57.237Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:58.743Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:58.743Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:03:58.744Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:03:58.744Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:00.304Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:00.304Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:00.305Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:00.305Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:01.913Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:01.913Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:01.914Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:01.914Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:03.573Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:03.574Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:03.574Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:03.575Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:05.292Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:05.293Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:05.294Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:05.294Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:07.051Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:07.051Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:07.052Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:07.052Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:08.855Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:08.856Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:08.871Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:08.872Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:10.714Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:10.715Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:10.732Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:10.734Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:12.623Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:12.624Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:12.638Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:12.639Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:14.590Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:14.593Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:14.605Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:14.606Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:16.614Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:16.615Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:16.615Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:16.616Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:18.621Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:18.621Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:18.622Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:18.622Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:20.630Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:20.633Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:20.634Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:20.635Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:22.648Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:22.649Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:22.649Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:22.649Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:24.653Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:24.654Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:24.655Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:24.655Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:26.659Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:26.659Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:26.660Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:26.660Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:28.683Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:28.682Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:28.685Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:28.685Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:30.699Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:30.700Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:30.700Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:30.701Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:32.708Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:32.708Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:32.709Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:32.709Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:34.719Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:34.720Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:34.721Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:34.721Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:36.729Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:36.730Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:36.731Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:36.731Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:38.739Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:38.737Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:38.740Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:38.740Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:40.745Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:40.746Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:40.746Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:40.747Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:42.755Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:42.756Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:42.756Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:42.757Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:44.761Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:44.762Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:44.763Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:44.764Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:46.766Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:46.768Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:46.782Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:46.783Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:48.782Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:48.783Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:48.796Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:48.796Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:50.799Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:50.800Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:50.800Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:50.801Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:52.805Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:52.806Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:52.807Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:52.808Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:54.821Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:54.822Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:54.823Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:54.824Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:56.831Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:56.831Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:56.832Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:56.833Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:58.847Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:58.847Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:04:58.847Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:04:58.849Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:00.854Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:00.854Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:00.858Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:00.858Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:02.863Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:02.864Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:02.864Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:02.865Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:04.870Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:04.869Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:04.870Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:04.871Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:06.886Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:06.885Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:06.887Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:06.887Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:08.899Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:08.899Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:08.901Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:08.900Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:10.912Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:10.913Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:10.913Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:10.914Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:12.925Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:12.926Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:12.925Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:12.926Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:14.940Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:14.941Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:14.941Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:14.943Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:16.948Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:16.948Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:16.949Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:16.949Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:18.967Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:18.966Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:18.967Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:18.968Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:20.977Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:20.977Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:20.978Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:20.977Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:22.994Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:22.994Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:22.995Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:22.995Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:25.001Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:25.002Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:25.003Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:25.002Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:27.019Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:27.019Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:27.020Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:27.020Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:29.029Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:29.028Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:29.030Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:29.031Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:31.042Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:31.041Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:31.043Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:31.044Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:33.049Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:33.048Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:33.050Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:33.050Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:35.057Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:35.056Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:35.058Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:35.058Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:37.067Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:37.066Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:37.068Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:37.068Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:39.083Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:39.083Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:39.083Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:39.084Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:41.094Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:41.093Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:41.095Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:41.094Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:43.100Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:43.099Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:43.102Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:43.101Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:45.113Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:45.113Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:45.115Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:45.114Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:47.126Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:47.126Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:47.127Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:47.128Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:49.139Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:49.140Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:49.140Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:49.141Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:51.149Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:51.149Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:51.150Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:51.150Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:53.155Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:53.154Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:53.156Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:53.156Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:55.163Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:55.164Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:55.164Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:55.165Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:57.171Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:57.170Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:57.171Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:57.171Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:59.176Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:59.176Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:05:59.177Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:05:59.178Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:01.186Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:01.186Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:01.187Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:01.187Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:03.196Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:03.195Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:03.197Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:03.197Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:05.210Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:05.211Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:05.212Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:05.212Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:07.215Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:07.216Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:07.217Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:07.216Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:09.226Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:09.227Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:09.227Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:09.228Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:11.230Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:11.230Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:11.245Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:11.245Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:13.237Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:13.238Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:13.252Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:13.253Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:15.244Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:15.245Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:15.260Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:15.261Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:17.254Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:17.255Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:17.270Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:17.271Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:19.258Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:19.259Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:19.288Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:19.289Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:21.264Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:21.265Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:21.295Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:21.296Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:23.277Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:23.278Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:23.306Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:23.307Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:25.284Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:25.285Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:25.314Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:25.315Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:27.302Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:27.303Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:27.317Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:27.319Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:29.317Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:29.318Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:29.333Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:29.334Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:31.326Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:31.327Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:31.337Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:31.337Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:33.346Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:33.345Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:33.348Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:33.347Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:35.362Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:35.363Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:35.363Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:35.364Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:37.375Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:37.376Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:37.376Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:37.377Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:39.393Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:39.393Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:39.394Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:39.395Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:41.407Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:41.405Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:41.408Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:41.408Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:43.414Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:43.415Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:43.416Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:43.416Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:45.426Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:45.426Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:45.427Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:45.428Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:47.443Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:47.443Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:47.444Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:47.445Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:49.456Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:49.458Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-19T15:06:49.458Z] warn: ⚠️  Redis connection closed
+[2025-08-19T15:06:49.459Z] warn: ⚠️  Redis connection closed
+[2025-08-19T16:14:42.269Z] info: 🚀 Server running on port 5000
+[2025-08-19T16:14:42.282Z] info: ✅ Connected to Redis server
+[2025-08-19T16:14:42.291Z] info: 🚀 Redis client ready
+[2025-08-19T16:14:42.292Z] info: 🎯 Redis initialized successfully
+[2025-08-19T16:14:42.312Z] info: Connected to MongoDb
+[2025-08-19T16:15:36.350Z] info: GET /api/users/me 200 - 47.60ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:15:36.355Z] info: GET /api/users/me 200 - 26.37ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:15:41.492Z] info: GET /api/diary 304 - 54.81ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:15:41.511Z] info: GET /api/diary 200 - 13.85ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:15:46.632Z] info: GET /api/todos 200 - 33.32ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:15:46.647Z] info: GET /api/todos 200 - 35.32ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:15:51.972Z] info: DELETE /api/todos/6853e8923fadf458580c9edd 200 - 33.64ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:15:57.800Z] info: DELETE /api/todos/6853e926bc217c69bb74ce3c 200 - 22.58ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:16:13.476Z] info: GET /api/diary 304 - 18.78ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:16:13.483Z] info: GET /api/diary 200 - 19.44ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:16:15.349Z] info: GET /api/todos 200 - 16.87ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:16:15.354Z] info: GET /api/todos 200 - 12.64ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:16:32.251Z] info: GET /api/diary 304 - 25.34ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:16:32.258Z] info: GET /api/diary 200 - 21.75ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:21:24.367Z] info: GET /api/diary 304 - 21.99ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:21:24.376Z] info: GET /api/diary 200 - 22.39ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:22:49.998Z] info: GET /api/diary 304 - 22.61ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:22:50.003Z] info: GET /api/diary 200 - 20.74ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:22:56.391Z] info: GET /api/diary 304 - 13.69ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:22:56.410Z] info: GET /api/diary 200 - 15.51ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:24:28.673Z] info: GET /api/diary 304 - 13.44ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:24:28.678Z] info: GET /api/diary 200 - 13.11ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:24:40.834Z] info: GET /api/diary/6854272bcfc8e61c48631683 200 - 49.37ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:24:40.862Z] info: GET /api/diary/6854272bcfc8e61c48631683 200 - 22.97ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:24:47.325Z] info: GET /api/diary 304 - 10.51ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:24:47.329Z] info: GET /api/diary 200 - 9.66ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:24:48.965Z] info: GET /api/diary/6854272bcfc8e61c48631683 200 - 25.48ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:24:48.994Z] info: GET /api/diary/6854272bcfc8e61c48631683 200 - 49.71ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:26:20.756Z] info: GET /api/diary 304 - 6.26ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:26:20.758Z] info: GET /api/diary 200 - 5.58ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:27:26.299Z] info: SIGINT received. Starting graceful shutdown...
+[2025-08-19T16:27:26.301Z] info: HTTP server closed.
+[2025-08-19T16:27:26.309Z] info: 👋 Redis connection closed gracefully
+[2025-08-19T16:27:39.226Z] info: 🚀 Server running on port 5000
+[2025-08-19T16:27:39.257Z] info: ✅ Connected to Redis server
+[2025-08-19T16:27:39.277Z] info: 🚀 Redis client ready
+[2025-08-19T16:27:39.289Z] info: Connected to MongoDb
+[2025-08-19T16:27:39.295Z] info: 🎯 Redis initialized successfully
+[2025-08-19T16:28:34.011Z] info: GET /api/todos 304 - 45.22ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:28:34.024Z] info: GET /api/todos 200 - 31.28ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:28:38.207Z] info: PATCH /api/todos/6853e920bc217c69bb74ce39/status/in-progress 200 - 34.80ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:28:38.237Z] info: GET /api/todos 200 - 17.31ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:141.0) Gecko/20100101 Firefox/141.0
+[2025-08-19T16:28:44.283Z] info: SIGINT received. Starting graceful shutdown...
+[2025-08-19T16:28:44.295Z] info: HTTP server closed.
+[2025-08-19T16:28:44.304Z] info: 👋 Redis connection closed gracefully

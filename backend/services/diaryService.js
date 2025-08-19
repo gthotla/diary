@@ -1,4 +1,7 @@
 import Diary from '../models/diary.js';
+import { invalidateRecentEntriesCache } from './recentEntriesService.js';
+import { invalidateUserStatsCache } from './userStatsService.js';
+import logger from '../utils/logger.js';
 
 //FUcntion to create a  diary entry
 export const createDiaryEntry = async (data) => {
@@ -14,6 +17,14 @@ export const createDiaryEntry = async (data) => {
       userId
     });
     await newDiaryEntry.save();
+    
+    // Invalidate caches
+    await Promise.all([
+      invalidateRecentEntriesCache(userId),
+      invalidateUserStatsCache(userId)
+    ]);
+    logger.info(`✅ Created new diary entry and invalidated caches for user ${userId}`);
+    
     return newDiaryEntry;
 
   } catch (err) {
@@ -57,6 +68,14 @@ export const updateEntry = async (id, userId, updatedData) => {
       { new: true, runValidators: true }
     )
     console.log("Updated Entry(SErvice): ", updatedEntry);
+    
+    // Invalidate caches
+    await Promise.all([
+      invalidateRecentEntriesCache(userId),
+      invalidateUserStatsCache(userId)
+    ]);
+    logger.info(`✅ Updated diary entry and invalidated caches for user ${userId}`);
+    
     return updatedEntry;
   }
   catch (err) {
@@ -69,6 +88,14 @@ export const updateEntry = async (id, userId, updatedData) => {
 export const deleteEntry = async (id, userID) => {
   try {
     const deletedEntry = await Diary.findByIdAndDelete({ _id: id, userID })
+    
+    // Invalidate caches
+    await Promise.all([
+      invalidateRecentEntriesCache(userID),
+      invalidateUserStatsCache(userID)
+    ]);
+    logger.info(`✅ Deleted diary entry and invalidated caches for user ${userID}`);
+    
     return deletedEntry;
   }
   catch (err) {

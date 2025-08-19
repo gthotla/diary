@@ -61,12 +61,12 @@ export default function Profile() {
   useEffect(() => {
     if (user) {
       setProfileData({
-        name: user.name || "",
-        bio: user.bio || "",
+        name: user.profile.name || "",
+        bio: user.profile.bio || "",
         dob: user.dob || "",
-        timezone: user.timezone || "UTC",
-        notifications: user.notifications !== false,
-        theme: user.theme || theme || "system",
+        timezone: user.profile.settings.timezone || "UTC",
+        notifications: user.profile.settings.notifications !== false,
+        theme: user.profile.settings.theme || theme || "system",
       })
 
       if (user.dob) {
@@ -180,12 +180,12 @@ export default function Profile() {
   const handleCancel = () => {
     if (user) {
       setProfileData({
-        name: user.name || "",
-        bio: user.bio || "",
+        name: user.profile?.name || "",
+        bio: user.profile?.bio || "",
         dob: user.dob || "",
-        timezone: user.timezone || "UTC",
-        notifications: user.notifications !== false,
-        theme: user.theme || "system",
+        timezone: user.profile?.settings?.timezone || "UTC",
+        notifications: user.profile?.settings?.notifications !== false,
+        theme: user.profile?.settings?.theme || "system",
       })
 
       if (user.dob) {
@@ -221,9 +221,9 @@ export default function Profile() {
                 <Avatar className="w-24 h-24 border-4 border-background shadow-lg">
                   <AvatarImage
                     src={profileImagePreview || user?.avatar || "/placeholder.svg"}
-                    alt={user?.name || user?.username}
+                    alt={user?.profile?.name || user?.username}
                   />
-                  <AvatarFallback className="text-2xl font-bold">{getInitials(user?.name)}</AvatarFallback>
+                  <AvatarFallback className="text-2xl font-bold">{getInitials(user?.profile?.name)}</AvatarFallback>
                 </Avatar>
                 {isEditing && (
                   <>
@@ -263,7 +263,7 @@ export default function Profile() {
               <div className="flex-1 text-center md:text-left">
                 <div className="flex flex-col md:flex-row md:items-center gap-4 mb-4">
                   <div>
-                    <h1 className="text-2xl font-bold">{user?.name || user?.username || "User"}</h1>
+                    <h1 className="text-2xl font-bold">{user?.profile?.name || user?.username || "User"}</h1>
                     <p className="text-muted-foreground">@{user?.username || "username"}</p>
                     {user?.email && <p className="text-sm text-muted-foreground">{user.email}</p>}
                   </div>
@@ -279,8 +279,8 @@ export default function Profile() {
                   </div>
                 </div>
 
-                {(user?.bio || profileData.bio) && (
-                  <p className="text-muted-foreground mb-4">{user?.bio || profileData.bio}</p>
+                {(user?.profile?.bio || profileData.bio) && (
+                  <p className="text-muted-foreground mb-4">{user?.profile?.bio || profileData.bio}</p>
                 )}
 
                 <div className="flex flex-wrap gap-4 text-sm text-muted-foreground justify-center md:justify-start">
