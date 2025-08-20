@@ -15,7 +15,8 @@ import multer from 'multer';
 // Import Routes
 import todoRoutes from './routes/todo.js';
 import diaryRoutes from './routes/diary.js'; 
-import userRoutes from './routes/userRoute.js'; 
+import userRoutes from './routes/userRoute.js';
+import healthRoutes from './routes/health.js'; 
 
 // Load environment variables
 config();
@@ -49,6 +50,7 @@ const stroage = multer.memoryStorage();
 const upload = multer({ storage: stroage });
 // Routes
 app.get('/', (req, res) => res.send('API is running...'));
+app.use('/api', healthRoutes); // Health endpoints at /api/health/*
 app.use('/api/users', userRoutes); 
 app.use('/api/todos', todoRoutes);
 app.use('/api/diary', diaryRoutes); // optional
