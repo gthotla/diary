@@ -3188,3 +3188,29 @@
 [2025-08-19T16:28:44.283Z] info: SIGINT received. Starting graceful shutdown...
 [2025-08-19T16:28:44.295Z] info: HTTP server closed.
 [2025-08-19T16:28:44.304Z] info: 👋 Redis connection closed gracefully
+[2025-08-20T06:31:11.941Z] info: 🚀 Server running on port 5000
+[2025-08-20T06:31:11.949Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-20T06:31:11.950Z] warn: ⚠️  Redis connection closed
+[2025-08-20T06:31:11.967Z] info: Connected to MongoDb
+[2025-08-20T06:31:12.004Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-20T06:31:12.004Z] warn: ⚠️  Redis connection closed
+[2025-08-20T06:31:12.114Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-20T06:31:12.115Z] warn: ⚠️  Redis connection closed
+[2025-08-20T06:31:12.271Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-20T06:31:12.273Z] warn: ⚠️  Redis connection closed
+[2025-08-20T06:31:12.275Z] error: ❌ Redis initialization failed: Reached the max retries per request limit (which is 3). Refer to "maxRetriesPerRequest" option for details.
+[2025-08-20T06:31:12.478Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-20T06:31:12.479Z] warn: ⚠️  Redis connection closed
+[2025-08-20T06:31:12.734Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-20T06:31:12.735Z] warn: ⚠️  Redis connection closed
+[2025-08-20T06:31:13.046Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-20T06:31:13.047Z] warn: ⚠️  Redis connection closed
+[2025-08-20T06:31:13.402Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-20T06:31:13.402Z] warn: ⚠️  Redis connection closed
+[2025-08-20T06:31:13.810Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-20T06:31:13.811Z] warn: ⚠️  Redis connection closed
+[2025-08-20T06:31:14.278Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-20T06:31:14.278Z] warn: ⚠️  Redis connection closed
+[2025-08-20T06:31:14.793Z] error: ❌ Redis connection error: connect ECONNREFUSED 127.0.0.1:6379
+[2025-08-20T06:31:14.794Z] warn: ⚠️  Redis connection closed
+[2025-08-20T06:31:15.162Z] info: SIGINT received. Starting graceful shutdown...

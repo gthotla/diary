@@ -1,2 +1,5 @@
 /node_modules
 .env
+private_key.pem
+public_key.pem
+master-key.txt
