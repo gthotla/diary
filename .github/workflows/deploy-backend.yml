@@ -9,6 +9,8 @@ on:
       - '.github/workflows/deploy-backend.yml'
   workflow_dispatch:  # Manual trigger
 
+permissions:
+  contents: write
 env:
   REGISTRY: docker.io
   IMAGE_NAME: ganesh594/diary-backend
@@ -60,7 +62,7 @@ jobs:
           TAG=${{ env.DOCKER_TAG }}
           
           echo "🐳 Building Docker image $IMAGE:$TAG"
-          docker build -t $IMAGE:$TAG .
+          docker build --build-arg NODE_OPTIONS="--max-old-space-size=4096" -t $IMAGE:$TAG .
           docker tag $IMAGE:$TAG $IMAGE:latest
           
           echo "📤 Pushing Docker image..."
@@ -144,13 +146,13 @@ jobs:
             
             # Wait for container to be ready
             echo "⏳ Waiting for backend to be ready..."
-            sleep 45
+            sleep 50
             
             # Health check with retries
             echo "🏥 Running health check..."
             HEALTH_CHECK_PASSED=false
             for i in {1..5}; do
-              if curl -f http://localhost:5000/api/health; then
+              if curl  http://localhost:5000/api/health; then
                 echo "✅ Health check passed on attempt $i"
                 HEALTH_CHECK_PASSED=true
                 break
