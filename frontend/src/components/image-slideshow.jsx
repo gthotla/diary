@@ -1,10 +1,10 @@
 "use client"
 
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/assets/components/ui/button"
 import { ChevronLeft, ChevronRight, X } from "lucide-react"
 import { motion, AnimatePresence } from "framer-motion"
-import { Dialog, DialogContent } from "@/components/ui/dialog"
+import { Dialog, DialogContent } from "@/assets/components/ui/dialog"
 
 export default function ImageSlideshow({ images }) {
   const [currentIndex, setCurrentIndex] = useState(0)
