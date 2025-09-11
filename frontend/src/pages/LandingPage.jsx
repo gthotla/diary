@@ -2,9 +2,9 @@
 
 import { useNavigate } from "react-router-dom"
 import { useTheme } from "../lib/theme-provider"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
+import { Button } from "@/assets/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/assets/components/ui/card"
+import { Badge } from "@/assets/components/ui/badge"
 import { BookOpen, Calendar, Heart, Shield, Star, CheckCircle, Moon, Sun, Monitor } from "lucide-react"
 
 export default function LandingPage() {

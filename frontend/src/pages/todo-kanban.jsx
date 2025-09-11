@@ -1,13 +1,13 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/assets/components/ui/card"
+import { Button } from "@/assets/components/ui/button"
+import { Badge } from "@/assets/components/ui/badge"
+import { Input } from "@/assets/components/ui/input"
+import { Textarea } from "@/assets/components/ui/textarea"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/assets/components/ui/select"
+import { Alert, AlertDescription } from "@/assets/components/ui/alert"
 import {
   Dialog,
   DialogContent,
@@ -15,10 +15,10 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Label } from "@/components/ui/label"
-import { Calendar } from "@/components/ui/calendar"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+} from "@/assets/components/ui/dialog"
+import { Label } from "@/assets/components/ui/label"
+import { Calendar } from "@/assets/components/ui/calendar"
+import { Popover, PopoverContent, PopoverTrigger } from "@/assets/components/ui/popover"
 import { format } from "date-fns"
 import {
   CalendarIcon,
