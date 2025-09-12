@@ -183,32 +183,7 @@ jobs:
             docker images ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }} --format "table {{.Repository}}\t{{.Tag}}\t{{.ID}}" | tail -n +2 | head -n -3 | awk '{print $3}' | xargs -r docker rmi || true
             docker system prune -f
 
-      - name: Create GitHub Release
-        if: success()
-        uses: actions/create-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: "v1.0.${{ github.run_number }}"
-          release_name: "Production Release v1.0.${{ github.run_number }}"
-          body: |
-            🚀 **Production Deployment**
-            
-            **Changes:**
-            - Commit: ${{ github.sha }}
-            - Docker Image: `${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.DOCKER_TAG }}`
-            
-            **Deployment Details:**
-            - Environment: Production
-            - Backend URL: http://your-vm-ip:5000
-            - Health Check: ✅ Passed
-            
-            **Services:**
-            - Backend Container: `diary-backend`
-            - Redis Container: `diary-redis`
-          draft: false
-          prerelease: false
-
+      
       - name: Send Deployment Notification
         if: always()
         uses: dawidd6/action-send-mail@v3
