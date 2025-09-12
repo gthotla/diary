@@ -2,18 +2,18 @@
 
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
-import { Card, CardContent, CardHeader, CardTitle } from "@/assets/components/ui/card"
-import { Button } from "@/assets/components/ui/button"
-import { Badge } from "@/assets/components/ui/badge"
-import { Input } from "@/assets/components/ui/input"
-import { Alert, AlertDescription } from "@/assets/components/ui/alert"
-import { Skeleton } from "@/assets/components/ui/skeleton"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/assets/components/ui/select"
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/assets/components/ui/dropdown-menu"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { Input } from "@/components/ui/input"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Skeleton } from "@/components/ui/skeleton"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import { format } from "date-fns"
 import { BookOpen, Calendar, Edit, Trash2, Eye, ImageIcon, Link, Plus, Search, MoreVertical } from "lucide-react"
 import { motion } from "framer-motion"
-import diaryApi from "../../services/diaryApi"
+import diaryApi from "../services/diaryApi"
 
 const MOODS = {
   happy: { emoji: "😊", color: "bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400" },

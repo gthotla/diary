@@ -23,6 +23,7 @@ config();
 
 // Initialize Express app
 const app = express();
+console.log('CORS allowed for:', process.env.FRONTEND_URL );
 
 
 // Connect to MongoDB
@@ -39,8 +40,9 @@ initializeRedis();
 app.use(cookieParser()); // ✅ THIS MUST BE FIRST
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
 app.use(cors({
-  origin: process.env.CLIENT_URL || 'http://localhost:5173',
+  origin: process.env.FRONTEND_URL ,
   methods: ['GET', 'POST', 'PUT', 'DELETE','PATCH'],
   credentials: true,
 }));
@@ -63,7 +65,7 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT ;
 const server = app.listen(PORT, () =>{ 
     logger.info(`🚀 Server running on port ${PORT}`);
     console.log(`🚀 Server running on port ${PORT}`);
