@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from "react"
 import { useNavigate, useParams } from "react-router-dom"
-import { Button } from "@/assets/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/assets/components/ui/card"
-import { Badge } from "@/assets/components/ui/badge"
-import { Alert, AlertDescription } from "@/assets/components/ui/alert"
-import { Skeleton } from "@/assets/components/ui/skeleton"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Alert, AlertDescription } from "@/components/ui/alert"
+import { Skeleton } from "@/components/ui/skeleton"
 import { format } from "date-fns"
 import { ArrowLeft, Calendar, Edit, Trash2, Link } from "lucide-react"
 import { motion } from "framer-motion"
-import diaryApi from "../../services/diaryApi"
+import diaryApi from "../services/diaryApi"
 import ImageSlideshow from "./image-slideshow"
 
 const MOODS = {

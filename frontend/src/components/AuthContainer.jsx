@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
-import Login from "../../pages/Login"
-import Signup from "../../pages/Signup"
+import Login from "../pages/Login"
+import Signup from "../pages/Signup"
 
 export default function AuthContainer() {
   const location = useLocation()

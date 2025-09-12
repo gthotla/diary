@@ -1,1 +1,4 @@
-/diagrams
+diagrams
+docs
+node_modules
+scripts

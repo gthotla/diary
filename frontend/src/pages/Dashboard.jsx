@@ -4,11 +4,11 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom"
 import { useAuth } from "../context/AuthContext"
 import { useTheme } from "../lib/theme-provider"
-import { Button } from "@/assets/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/assets/components/ui/card"
-import { Badge } from "@/assets/components/ui/badge"
-import { Avatar, AvatarFallback, AvatarImage } from "@/assets/components/ui/avatar"
-import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/assets/components/ui/chart"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer, PieChart, Pie, Cell } from "recharts"
 import {
   BookOpen,
@@ -24,17 +24,17 @@ import {
   Monitor,
 } from "lucide-react"
 import { motion } from "framer-motion"
-import EntryList from "@/assets/components/entry-list"
-import EntryForm from "@/assets/components/entry-form"
+import EntryList from "@/components/entry-list"
+import EntryForm from "@/components/entry-form"
 import TodoKanban from "./todo-kanban"
-import Profile from "./profile"
+import Profile from "./Profile"
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/assets/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu"
 
 export default function Dashboard() {
   const { user, logout } = useAuth()

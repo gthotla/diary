@@ -5,8 +5,8 @@ import { ThemeProvider } from "./lib/theme-provider"
 import { AuthProvider, useAuth } from "./context/AuthContext"
 import LandingPage from "./pages/LandingPage"
 import Dashboard from "./pages/Dashboard"
-import AuthContainer from "./assets/components/AuthContainer"
-import EntryDetail from "./assets/components/entry-detail"
+import AuthContainer from "@/components/AuthContainer"
+import EntryDetail from "@/components/entry-detail"
 
 // Protected Route Component
 function ProtectedRoute({ children }) {
