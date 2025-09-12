@@ -33,15 +33,15 @@ export const register = asyncHandler(async (req, res) => {
         const refreshToken = generateRefreshToken({ userId: user._id, username: user.username, email: user.email });
         res.cookie('access_token', accessToken, {
             httpOnly: true, // can't be accessed by JavaScript
-            secure: false,
-            sameSite: 'Lax',  // ensure cookies are sent over HTTPS (set to true in production)
+            secure: true,
+            sameSite: 'none',  // ensure cookies are sent over HTTPS (set to true in production)
             maxAge: 15 * 60 * 1000, // 15 minutes
         });
 
         res.cookie('refresh_token', refreshToken, {
             httpOnly: true,
-            secure: false,
-            sameSite: 'Lax',
+            secure: true,
+            sameSite: 'none',
             maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
         });
         res.status(201).json({
@@ -156,15 +156,15 @@ export const login = asyncHandler(async (req, res) => {
         const refreshToken = generateRefreshToken({ userId: user._id, username: user.username, email: user.email });
         res.cookie('access_token', accessToken, {
             httpOnly: true, // can't be accessed by JavaScript
-            secure: false,   // ensure cookies are sent over HTTPS (set to true in production)
-            sameSite: 'Lax',
+            secure: true,   // ensure cookies are sent over HTTPS (set to true in production)
+            sameSite: 'none',
             maxAge: 15 * 60 * 1000, // 15 minutes
         });
 
         res.cookie('refresh_token', refreshToken, {
             httpOnly: true,
-            secure: false,
-            sameSite: 'Lax',
+            secure: true,
+            sameSite: 'none',
             maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
         });
         // console.log('Set-Cookie:', res.getHeaders()['set-cookie']);
