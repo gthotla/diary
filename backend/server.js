@@ -9,7 +9,8 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './utils/swagger.js'; // Import swagger spec
 import cors from 'cors';
 import cron from 'node-cron';
-import multer from 'multer';
+import multer from 'multer';  
+import client  from 'prom-client';
 //import {processTodosForAllUsers} from './cron/eodProcessor.js';
 
 // Import Routes
@@ -23,7 +24,20 @@ config();
 
 // Initialize Express app
 const app = express();
-console.log('CORS allowed for:', process.env.FRONTEND_URL );
+const register = new client.Registry();
+client.collectDefaultMetrics({register});
+
+
+const httpRequestDurationSeconds = new client.Histogram({
+  name: 'http_request_duration_seconds',
+  help: 'Duration of HTTP requests in seconds',
+  labelNames: ['method', 'route', 'status_code'],
+  buckets: [0.05,  0.1 , 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.5, 2, 5]
+});
+
+register.registerMetric(httpRequestDurationSeconds);
+
+
 
 
 // Connect to MongoDB
@@ -47,11 +61,23 @@ app.use(cors({
   credentials: true,
 }));
 app.use(requestLogger); // if this logs tokens, it must be after cookieParser
+app.use((req, res, next) => {
+  const end = httpRequestDurationSeconds.startTimer();
 
+  res.on('finish', () => {
+    end({ method: req.method, route: req.route?.path ?? req.path, status_code: res.statusCode });
+  });
+
+  next();
+});
 const stroage = multer.memoryStorage();
 const upload = multer({ storage: stroage });
 // Routes
 app.get('/', (req, res) => res.send('API is running...'));
+app.get('/metrics', async(req,res)=>{
+  res.set('Content-Type', register.contentType);
+  res.end(await register.metrics());
+})
 app.use('/api', healthRoutes); // Health endpoints at /api/health/*
 app.use('/api/users', userRoutes); 
 app.use('/api/todos', todoRoutes);

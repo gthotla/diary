@@ -70,22 +70,22 @@ const diaryApi = {
   getRecentEntries: async () => {
     try {
       // Check cache first
-      const cachedEntries = dashboardCache.getRecentEntries()
-      if (cachedEntries) {
-        return {
-          success: true,
-          data: cachedEntries,
-          message: "Recent entries retrieved from cache",
-        }
-      }
+      // const cachedEntries = dashboardCache.getRecentEntries()
+      // if (cachedEntries) {
+      //   return {
+      //     success: true,
+      //     data: cachedEntries,
+      //     message: "Recent entries retrieved from cache",
+      //   }
+      // }
 
       // Fetch from API and cache
-      const response = await api.get("/api/diary")
+      const response = await api.get("/api/diary/recent/5")
       if (response.data) {
-        dashboardCache.setRecentEntries(response.data)
+       // dashboardCache.setRecentEntries(response.data)
         return {
           success: true,
-          data: response.data.slice(0, 5),
+          data: response.data,
           message: "Recent entries retrieved successfully",
         }
       }
