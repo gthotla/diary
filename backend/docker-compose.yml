@@ -3,7 +3,7 @@ version: '3.8'
 services:
   redis:
     image: redis:alpine
-    conatiner_name: lifelog-redis
+    container_name: lifelog-redis
     restart: unless-stopped
     ports: 
        - "6379:6379"
@@ -17,7 +17,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-      container_name: lifelog-backend
+    container_name: lifelog-backend
     restart: unless-stopped
     ports:
      - "5000:5000"
@@ -49,8 +49,38 @@ services:
       interval: 30s
       timeout: 10s
       retries: 5
+  prometheus:
+    image: prom/prometheus:v2.54.0
+    container_name: lifelog-prometheus
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    depends_on:
+      - backend
+    networks:
+      - lifelog-network
+  grafana:
+    image: grafana/grafana:11.1.4
+    container_name: lifelog-grafana
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=${GRAFANA_ADMIN_USER:-admin}
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_ADMIN_PASSWORD:-admin}
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/provisioning/datasources:/etc/grafana/provisioning/datasources
+    depends_on:
+      - prometheus
+    networks:
+      - lifelog-network
 volumes:
    redis_data:
+      driver: local
+   grafana_data:
       driver: local
 networks:
    lifelog-network:

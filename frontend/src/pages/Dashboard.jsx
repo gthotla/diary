@@ -24,6 +24,7 @@ import {
   Monitor,
 } from "lucide-react"
 import { motion } from "framer-motion"
+import diaryApi from "@/services/diaryApi"
 import EntryList from "@/components/entry-list"
 import EntryForm from "@/components/entry-form"
 import TodoKanban from "./todo-kanban"
@@ -67,26 +68,25 @@ export default function Dashboard() {
     setIsLoading(true)
 
     try {
-      // Import diaryApi dynamically to avoid circular imports
-      const { getRecentEntries } = await import('../services/diaryApi')
-      const result = await getRecentEntries()
+    
+      const result = await diaryApi.getRecentEntries();
 
       if (result.success) {
         const stats = {
-          totalEntries: result.entries.length, // This will be updated with real count from user profile
+        //  totalEntries: result.entries.length, // This will be updated with real count from user profile
           totalTodos: user?.todosCount || 0,
           completedTodos: user?.completedTodosCount || 0,
-          currentStreak: calculateStreak(result.entries),
+          currentStreak: calculateStreak(result.data.entries),
         }
 
         setDashboardData({
-          entries: result.entries,
+          entries: result.data.entries,
           todos: [],
           stats,
         })
 
         console.log("✅ Recent entries loaded:", {
-          entries: result.entries.length,
+          entries: result.data.entries.length,
           streak: stats.currentStreak,
         })
       } else {
@@ -385,20 +385,13 @@ export default function Dashboard() {
               </div>
 
               {/* Stats Cards */}
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {[
-                  {
-                    title: "Recent Entries",
-                    value: dashboardData.stats.totalEntries,
-                    icon: BookOpen,
-                    description: "Cached entries",
-                    color: "text-blue-600",
-                  },
                   {
                     title: "Todo Tasks",
                     value: `${dashboardData.stats.completedTodos}/${dashboardData.stats.totalTodos}`,
                     icon: CheckSquare,
-                    description: "Visit todos tab",
+                    description: "Completed tasks",
                     color: "text-green-600",
                   },
                   {
@@ -412,7 +405,7 @@ export default function Dashboard() {
                     title: "This Week",
                     value: weeklyData.reduce((sum, day) => sum + day.entries, 0),
                     icon: Calendar,
-                    description: "Recent entries",
+                    description: "Entries this week",
                     color: "text-purple-600",
                   },
                 ].map((stat, index) => (
