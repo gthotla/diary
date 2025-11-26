@@ -9,15 +9,15 @@ import swaggerUi from 'swagger-ui-express';
 import swaggerSpec from './utils/swagger.js'; // Import swagger spec
 import cors from 'cors';
 import cron from 'node-cron';
-import multer from 'multer';  
-import client  from 'prom-client';
+import multer from 'multer';
+import client from 'prom-client';
 //import {processTodosForAllUsers} from './cron/eodProcessor.js';
 
 // Import Routes
 import todoRoutes from './routes/todo.js';
-import diaryRoutes from './routes/diary.js'; 
+import diaryRoutes from './routes/diary.js';
 import userRoutes from './routes/userRoute.js';
-import healthRoutes from './routes/health.js'; 
+import healthRoutes from './routes/health.js';
 
 // Load environment variables
 config();
@@ -25,14 +25,14 @@ config();
 // Initialize Express app
 const app = express();
 const register = new client.Registry();
-client.collectDefaultMetrics({register});
+client.collectDefaultMetrics({ register });
 
 
 const httpRequestDurationSeconds = new client.Histogram({
   name: 'http_request_duration_seconds',
   help: 'Duration of HTTP requests in seconds',
   labelNames: ['method', 'route', 'status_code'],
-  buckets: [0.05,  0.1 , 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.5, 2, 5]
+  buckets: [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.5, 2, 5]
 });
 
 register.registerMetric(httpRequestDurationSeconds);
@@ -56,8 +56,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(cors({
-  origin: process.env.FRONTEND_URL ,
-  methods: ['GET', 'POST', 'PUT', 'DELETE','PATCH'],
+  origin: process.env.FRONTEND_URL,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
   credentials: true,
 }));
 app.use(requestLogger); // if this logs tokens, it must be after cookieParser
@@ -74,12 +74,12 @@ const stroage = multer.memoryStorage();
 const upload = multer({ storage: stroage });
 // Routes
 app.get('/', (req, res) => res.send('API is running...'));
-app.get('/metrics', async(req,res)=>{
+app.get('/metrics', async (req, res) => {
   res.set('Content-Type', register.contentType);
   res.end(await register.metrics());
 })
 app.use('/api', healthRoutes); // Health endpoints at /api/health/*
-app.use('/api/users', userRoutes); 
+app.use('/api/users', userRoutes);
 app.use('/api/todos', todoRoutes);
 app.use('/api/diary', diaryRoutes); // optional
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
@@ -91,32 +91,38 @@ app.use((err, req, res, next) => {
 });
 
 // Start server
-const PORT = process.env.PORT ;
-const server = app.listen(PORT, () =>{ 
+// Start server
+const PORT = process.env.PORT || 5000;
+let server;
+if (process.env.NODE_ENV !== 'test') {
+  server = app.listen(PORT, () => {
     logger.info(`🚀 Server running on port ${PORT}`);
     console.log(`🚀 Server running on port ${PORT}`);
-});
+  });
+}
+
+export { app };
 
 // Graceful shutdown
 const gracefulShutdown = async (signal) => {
-    logger.info(`${signal} received. Starting graceful shutdown...`);
-    
-    // Close server
-    server.close(async () => {
-        logger.info('HTTP server closed.');
-        
-        // Close Redis connection
-        await closeRedisConnection();
-        
-        // Exit process
-        process.exit(0);
-    });
-    
-    // Force close after 10 seconds
-    setTimeout(() => {
-        logger.error('Could not close connections in time, forcefully shutting down');
-        process.exit(1);
-    }, 10000);
+  logger.info(`${signal} received. Starting graceful shutdown...`);
+
+  // Close server
+  server.close(async () => {
+    logger.info('HTTP server closed.');
+
+    // Close Redis connection
+    await closeRedisConnection();
+
+    // Exit process
+    process.exit(0);
+  });
+
+  // Force close after 10 seconds
+  setTimeout(() => {
+    logger.error('Could not close connections in time, forcefully shutting down');
+    process.exit(1);
+  }, 10000);
 };
 
 // Handle shutdown signals

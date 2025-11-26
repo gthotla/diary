@@ -6,6 +6,7 @@ import logger from '../utils/logger.js';
 //FUcntion to create a  diary entry
 export const createDiaryEntry = async (data) => {
   try {
+    //console.log(data)
     const { title, entry, mood, images, videos, links, userId } = data;
     const newDiaryEntry = new Diary({
       title,
