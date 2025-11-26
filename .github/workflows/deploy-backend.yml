@@ -71,6 +71,16 @@ jobs:
           
           echo "✅ Image pushed successfully: $IMAGE:$TAG"
 
+      - name: Copy Config Files to VM
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.VM_HOST }}
+          username: ${{ secrets.VM_USERNAME }}
+          key: ${{ secrets.VM_SSH_KEY }}
+          source: "backend/docker-compose.yml,backend/prometheus.yml,backend/grafana"
+          target: "/home/azureuser/diary"
+          strip_components: 1
+
       - name: Deploy to Production VM
         uses: appleboy/ssh-action@v1.0.0
         with:
@@ -78,19 +88,12 @@ jobs:
           username: ${{ secrets.VM_USERNAME }}
           key: ${{ secrets.VM_SSH_KEY }}
           script: |
-            DOCKER_TAG="${{ env.DOCKER_TAG }}"
-            IMAGE="${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:$DOCKER_TAG"
-            ENV_FILE="/home/azureuser/backend-prod.env"
-            CONTAINER_NAME="diary-backend"
-            REDIS_NAME="diary-redis"
-            PORT_MAPPING="5000:5000"
+            cd /home/azureuser/diary
             
-            echo "🚀 Deploying to Production Environment"
-            echo "📦 Image: $IMAGE"
-            
-            # Create production environment file
-            echo "🔧 Creating production environment file..."
-            cat > $ENV_FILE << EOF
+            # Create .env file for docker-compose
+            echo "🔧 Creating environment file..."
+            cat > .env << EOF
+            IMAGE_NAME=${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.DOCKER_TAG }}
             MONGO_URI=${{ secrets.MONGO_URI }}
             FRONTEND_URL=${{ secrets.FRONTEND_URL }}
             NODE_ENV=production
@@ -103,10 +106,10 @@ jobs:
             CLOUDFRONT_DOMAIN=${{ secrets.CLOUDFRONT_DOMAIN }}
             CLOUDFRONT_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
             CLOUDFRONT_KEY_PAIR_ID=${{ secrets.CLOUDFRONT_KEY_PAIR_ID }}
-            LOCAL_MASTER_KEY=${{ secrets.LOCAL_MASTER_KEY }}
-            REDIS_HOST=$REDIS_NAME
-            REDIS_PORT=6379
             CLOUDFRONT_PRIVATE_KEY_PATH=/app/secrets/private_key.pem
+            LOCAL_MASTER_KEY=${{ secrets.LOCAL_MASTER_KEY }}
+            GRAFANA_ADMIN_USER=${{ secrets.GRAFANA_ADMIN_USER }}
+            GRAFANA_ADMIN_PASSWORD=${{ secrets.GRAFANA_ADMIN_PASSWORD }}
             EOF
             
             # Create private key file
@@ -114,76 +117,37 @@ jobs:
             echo "${{ secrets.CLOUDFRONT_PRIVATE_KEY_BASE64 }}" | base64 -d > private_key.pem
             chmod 600 private_key.pem
             
-            # Stop and remove existing containers (zero-downtime alternative below)
-            echo "🛑 Stopping existing containers..."
-            docker stop $CONTAINER_NAME || true
-            docker rm $CONTAINER_NAME || true
+            # Deploy with Docker Compose
+            echo "🚀 Deploying with Docker Compose..."
             
-            # Start/Restart Redis
-            echo "🔴 Starting Redis..."
-            docker stop $REDIS_NAME || true
-            docker rm $REDIS_NAME || true
-            docker run -d \
-              --name $REDIS_NAME \
-              --restart unless-stopped \
-              -v redis_data:/data \
-              redis:alpine redis-server --appendonly yes
+            # Check if docker compose plugin is available, else use docker-compose
+            if docker compose version >/dev/null 2>&1; then
+              COMPOSE_CMD="docker compose"
+            else
+              COMPOSE_CMD="docker-compose"
+            fi
             
-            # Pull new image
-            echo "📥 Pulling new image..."
-            docker pull $IMAGE
+            $COMPOSE_CMD pull
+            $COMPOSE_CMD up -d --remove-orphans
             
-            # Run new backend container
-            echo "🐳 Starting new backend container..."
-            docker run -d \
-              --name $CONTAINER_NAME \
-              --restart unless-stopped \
-              -p $PORT_MAPPING \
-              --env-file $ENV_FILE \
-              -v $(pwd)/private_key.pem:/app/secrets/private_key.pem:ro \
-              -v backend_logs:/app/logs \
-              --link $REDIS_NAME:$REDIS_NAME \
-              $IMAGE
-            
-            # Wait for container to be ready
+            # Wait for backend to be ready
             echo "⏳ Waiting for backend to be ready..."
-            sleep 50
+            sleep 30
             
-            # Health check with retries
+            # Health check
             echo "🏥 Running health check..."
-            HEALTH_CHECK_PASSED=false
-            for i in {1..5}; do
-              if curl  http://localhost:5000/api/health; then
-                echo "✅ Health check passed on attempt $i"
-                HEALTH_CHECK_PASSED=true
-                break
-              else
-                echo "❌ Health check failed on attempt $i, retrying in 10s..."
-                sleep 10
-              fi
-            done
-            
-            if [ "$HEALTH_CHECK_PASSED" = false ]; then
-              echo "❌ All health checks failed! Rolling back..."
-              echo "📋 Container logs:"
-              docker logs $CONTAINER_NAME --tail 100
-              docker stop $CONTAINER_NAME
-              docker rm $CONTAINER_NAME
+            if curl --fail http://localhost:5000/api/health; then
+              echo "✅ Health check passed!"
+            else
+              echo "❌ Health check failed!"
+              $COMPOSE_CMD logs --tail 50 backend
               exit 1
             fi
             
-            # Success
-            echo "🎉 Production deployment successful!"
-            echo "🌐 Backend is running on http://$(curl -s ifconfig.me):5000"
-            echo "📊 Container status:"
-            docker ps --filter name=$CONTAINER_NAME
-            
-            # Cleanup old images (keep last 3 versions)
-            echo "🧹 Cleaning up old images..."
-            docker images ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }} --format "table {{.Repository}}\t{{.Tag}}\t{{.ID}}" | tail -n +2 | head -n -3 | awk '{print $3}' | xargs -r docker rmi || true
+            # Cleanup
+            echo "🧹 Cleaning up..."
             docker system prune -f
 
-      
       - name: Send Deployment Notification
         if: always()
         uses: dawidd6/action-send-mail@v3
@@ -215,4 +179,3 @@ jobs:
             </ul>
           to: ganeshthotla594@gmail.com
           from: hellchintu82@gmail.com
-          

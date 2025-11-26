@@ -35,6 +35,7 @@ export const createEntryController = asyncHandler(async (req, res) => {
     ...req.body,
     userId: req.user.userId
   };
+  console.log(data)
 
   if (req.files && req.files.length > 0) {
     const uploadedImages = await Promise.all(req.files.map(uploadFileToS3));

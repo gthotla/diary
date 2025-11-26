@@ -5,29 +5,26 @@ const diaryApi = {
   // Create a new diary entry
   createEntry: async (entryData) => {
     try {
-      const formData = new FormData()
+      let response
 
-      // Add text fields
-      Object.keys(entryData).forEach((key) => {
-        if (key !== "images" && entryData[key] !== undefined) {
-          formData.append(key, entryData[key])
-        }
-      })
-
-      // Add images if present
-      if (entryData.images && entryData.images.length > 0) {
-        entryData.images.forEach((image) => {
-          formData.append("images", image)
+      // Check if entryData is already FormData (has images)
+      if (entryData instanceof FormData) {
+        // Send as multipart/form-data with images
+        response = await api.post("/api/diary", entryData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+          timeout: 1000000, // Set timeout to 10 seconds
+        })
+      } else {
+        // Send as JSON (no images)
+        response = await api.post("/api/diary", entryData, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+          timeout: 10000,
         })
       }
-
-      const response = await api.post("/api/diary", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      },{
-        timeout: 10000, // Set timeout to 10 seconds
-      })
 
       if (response.data && response.data.success !== false) {
         // Add to dashboard cache only
@@ -124,7 +121,24 @@ const diaryApi = {
   // Update diary entry
   updateEntry: async (id, entryData) => {
     try {
-      const response = await api.put(`/api/diary/${id}`, entryData)
+      let response
+
+      // Check if entryData is FormData (has new images)
+      if (entryData instanceof FormData) {
+        // Send as multipart/form-data
+        response = await api.put(`/api/diary/${id}`, entryData, {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        })
+      } else {
+        // Send as JSON (no new images)
+        response = await api.put(`/api/diary/${id}`, entryData, {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        })
+      }
 
       if (response.data) {
         // Update dashboard cache only

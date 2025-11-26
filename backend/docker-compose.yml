@@ -14,6 +14,7 @@ services:
       - lifelog-network
 
   backend:
+    image: ${IMAGE_NAME:-ganesh594/diary-backend:latest}
     build:
       context: .
       dockerfile: Dockerfile
