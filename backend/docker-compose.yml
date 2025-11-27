@@ -34,12 +34,12 @@ services:
       - CLOUDFRONT_DOMAIN=${CLOUDFRONT_DOMAIN}
       - CLOUDFRONT_DISTRIBUTION_ID=${CLOUDFRONT_DISTRIBUTION_ID}
       - CLOUDFRONT_KEY_PAIR_ID=${CLOUDFRONT_KEY_PAIR_ID}
-      - CLOUDFRONT_PRIVATE_KEY_PATH=/app/secrets/private_key.pem
+      - CLOUDFRONT_PRIVATE_KEY_PATH=/app/private_key.pem
       - REDIS_HOST=redis
       - REDIS_PORT=6379
       - LOCAL_MASTER_KEY=${LOCAL_MASTER_KEY}
     volumes:
-      - ./private_key.pem:/app/secrets/private_key.pem:ro
+      - ./private_key.pem:/app/private_key.pem:ro
       - ./logs:/app/logs
     depends_on:
       - redis

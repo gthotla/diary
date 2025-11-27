@@ -9697,3 +9697,11 @@
 [2025-11-26T09:12:31.154Z] info: SIGINT received. Starting graceful shutdown...
 [2025-11-26T09:12:31.164Z] info: HTTP server closed.
 [2025-11-26T09:12:31.178Z] info: 👋 Redis connection closed gracefully
+[2025-11-27T10:27:57.387Z] info: 🚀 Server running on port 5000
+[2025-11-27T10:27:57.395Z] info: ✅ Connected to Redis server
+[2025-11-27T10:27:57.402Z] info: 🚀 Redis client ready
+[2025-11-27T10:27:57.404Z] info: 🎯 Redis initialized successfully
+[2025-11-27T10:27:57.422Z] info: Connected to MongoDb
+[2025-11-27T10:27:59.940Z] info: SIGINT received. Starting graceful shutdown...
+[2025-11-27T10:27:59.945Z] info: HTTP server closed.
+[2025-11-27T10:27:59.951Z] info: 👋 Redis connection closed gracefully
