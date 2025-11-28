@@ -2,7 +2,7 @@ import axios from "axios"
 
 // Create axios instance with cookie support
 const api = axios.create({
-  baseURL: import.meta.env.BACKEND_URL || "http://localhost:5000",
+  baseURL: import.meta.env.VITE_BACKEND_URL,
   timeout: 5000,
   headers: {
     "Content-Type": "application/json",
@@ -48,6 +48,7 @@ const authService = {
   // Login user
   login: async (credentials) => {
     try {
+      console.log(api.getUri());
       const response = await api.post("/api/users/login", credentials, {
         timeout: 5000,
       })
