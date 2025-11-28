@@ -117,7 +117,7 @@ jobs:
             # Create private key file
             echo "🔑 Creating private key file..."
             echo "${{ secrets.CLOUDFRONT_PRIVATE_KEY_BASE64 }}" | base64 -d > private_key.pem
-            chmod 600 private_key.pem
+            chmod 644 private_key.pem
             
             # Check and Install Docker Compose if missing
             echo "🔍 Checking for Docker Compose..."
