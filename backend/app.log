@@ -9705,3 +9705,228 @@
 [2025-11-27T10:27:59.940Z] info: SIGINT received. Starting graceful shutdown...
 [2025-11-27T10:27:59.945Z] info: HTTP server closed.
 [2025-11-27T10:27:59.951Z] info: 👋 Redis connection closed gracefully
+[2025-11-28T07:57:01.764Z] info: 🚀 Server running on port 5000
+[2025-11-28T07:57:01.771Z] info: ✅ Connected to Redis server
+[2025-11-28T07:57:01.776Z] info: 🚀 Redis client ready
+[2025-11-28T07:57:01.777Z] info: 🎯 Redis initialized successfully
+[2025-11-28T07:57:31.767Z] error: Error connecting to MongoDB:
+[2025-11-28T07:59:42.509Z] info: 🚀 Server running on port 5000
+[2025-11-28T07:59:42.522Z] info: ✅ Connected to Redis server
+[2025-11-28T07:59:42.535Z] info: 🚀 Redis client ready
+[2025-11-28T07:59:42.537Z] info: 🎯 Redis initialized successfully
+[2025-11-28T08:00:12.503Z] error: Error connecting to MongoDB:
+[2025-11-28T08:02:10.453Z] info: 🚀 Server running on port 5000
+[2025-11-28T08:02:10.463Z] info: ✅ Connected to Redis server
+[2025-11-28T08:02:10.466Z] info: 🚀 Redis client ready
+[2025-11-28T08:02:10.469Z] info: 🎯 Redis initialized successfully
+[2025-11-28T08:02:40.457Z] error: Error connecting to MongoDB:
+[2025-11-28T08:05:15.961Z] info: 🚀 Server running on port 5000
+[2025-11-28T08:05:15.975Z] info: ✅ Connected to Redis server
+[2025-11-28T08:05:15.982Z] info: 🚀 Redis client ready
+[2025-11-28T08:05:15.989Z] info: Connected to MongoDb
+[2025-11-28T08:05:15.994Z] info: 🎯 Redis initialized successfully
+[2025-11-28T08:05:25.256Z] info: POST /api/users/login 400 - 29.27ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T08:05:34.408Z] info: POST /api/users/login 400 - 5.66ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T08:07:22.403Z] info: POST /api/users/login 400 - 5.67ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T08:07:39.387Z] info: POST /api/users/login 400 - 4.25ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T08:08:29.705Z] info: POST /api/users/login 400 - 4.76ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T08:10:14.368Z] info: POST /api/users/login 400 - 5.07ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T08:15:09.291Z] info: 🚀 Server running on port 5000
+[2025-11-28T08:15:09.304Z] info: ✅ Connected to Redis server
+[2025-11-28T08:15:09.313Z] info: 🚀 Redis client ready
+[2025-11-28T08:15:09.324Z] info: Connected to MongoDb
+[2025-11-28T08:15:09.329Z] info: 🎯 Redis initialized successfully
+[2025-11-28T08:16:31.464Z] info: 🚀 Server running on port 5000
+[2025-11-28T08:16:31.481Z] info: ✅ Connected to Redis server
+[2025-11-28T08:16:31.490Z] info: 🚀 Redis client ready
+[2025-11-28T08:16:31.498Z] info: Connected to MongoDb
+[2025-11-28T08:16:31.502Z] info: 🎯 Redis initialized successfully
+[2025-11-28T08:17:11.477Z] info: 🚀 Server running on port 5000
+[2025-11-28T08:17:11.502Z] info: ✅ Connected to Redis server
+[2025-11-28T08:17:11.519Z] info: 🚀 Redis client ready
+[2025-11-28T08:17:11.529Z] info: Connected to MongoDb
+[2025-11-28T08:17:11.537Z] info: 🎯 Redis initialized successfully
+[2025-11-28T08:17:27.761Z] info: SIGINT received. Starting graceful shutdown...
+[2025-11-28T08:17:27.766Z] info: HTTP server closed.
+[2025-11-28T08:17:27.772Z] info: 👋 Redis connection closed gracefully
+[2025-11-28T09:25:25.571Z] info: 🚀 Server running on port 5000
+[2025-11-28T09:25:25.578Z] info: ✅ Connected to Redis server
+[2025-11-28T09:25:25.585Z] info: 🚀 Redis client ready
+[2025-11-28T09:25:25.586Z] info: 🎯 Redis initialized successfully
+[2025-11-28T09:25:55.569Z] error: Error connecting to MongoDB:
+[2025-11-28T09:26:32.911Z] info: 🚀 Server running on port 5000
+[2025-11-28T09:26:32.937Z] info: ✅ Connected to Redis server
+[2025-11-28T09:26:32.947Z] info: 🚀 Redis client ready
+[2025-11-28T09:26:32.960Z] info: 🎯 Redis initialized successfully
+[2025-11-28T09:27:02.909Z] error: Error connecting to MongoDB:
+[2025-11-28T09:27:24.301Z] info: 🚀 Server running on port 5000
+[2025-11-28T09:27:24.311Z] info: ✅ Connected to Redis server
+[2025-11-28T09:27:24.321Z] info: 🚀 Redis client ready
+[2025-11-28T09:27:24.322Z] info: 🎯 Redis initialized successfully
+[2025-11-28T09:27:24.334Z] info: Connected to MongoDb
+[2025-11-28T09:28:03.317Z] info: GET /api/users/me 200 - 99.47ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:28:03.327Z] info: GET /api/users/me 304 - 53.02ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:28:03.545Z] info: ❌ Cache miss for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T09:28:03.549Z] info: ❌ Cache miss for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T09:28:03.553Z] info: 📊 Fetching recent entries from database for user 6853bed43320467eb5703639
+[2025-11-28T09:28:03.561Z] info: 📊 Fetching recent entries from database for user 6853bed43320467eb5703639
+[2025-11-28T09:28:03.605Z] info: ✅ Cached recent entries for user 6853bed43320467eb5703639
+[2025-11-28T09:28:03.608Z] info: GET /api/diary/recent/5 200 - 79.95ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:28:03.611Z] info: ✅ Cached recent entries for user 6853bed43320467eb5703639
+[2025-11-28T09:28:03.616Z] info: GET /api/diary/recent/5 200 - 100.75ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:28:05.528Z] info: GET /api/diary 200 - 83.05ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:28:05.555Z] info: GET /api/diary 200 - 96.24ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:28:07.141Z] info: GET /api/todos 200 - 27.91ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:28:07.157Z] info: GET /api/todos 200 - 35.35ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:28:08.798Z] info: GET /api/diary 304 - 36.83ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:28:08.813Z] info: GET /api/diary 200 - 36.25ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:28:59.401Z] info: ✅ Invalidated user stats cache for user 6853bed43320467eb5703639
+[2025-11-28T09:28:59.404Z] info: ✅ Invalidated recent entries cache for user 6853bed43320467eb5703639
+[2025-11-28T09:28:59.404Z] info: ✅ Created new diary entry and invalidated caches for user 6853bed43320467eb5703639
+[2025-11-28T09:28:59.412Z] info: POST /api/diary 201 - 73.46ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:29:00.504Z] info: GET /api/diary 200 - 30.10ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:29:00.518Z] info: GET /api/diary 200 - 33.73ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:29:04.122Z] info: GET /api/diary/69296b5b3c96c7d7691d75f3 200 - 23.91ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:29:04.133Z] info: GET /api/diary/69296b5b3c96c7d7691d75f3 200 - 27.16ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:37:30.960Z] info: GET /api/diary/69296b5b3c96c7d7691d75f3 304 - 24.31ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:37:30.969Z] info: GET /api/diary/69296b5b3c96c7d7691d75f3 200 - 23.46ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:38:09.304Z] info: ❌ Cache miss for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T09:38:09.305Z] info: 📊 Fetching recent entries from database for user 6853bed43320467eb5703639
+[2025-11-28T09:38:09.310Z] info: ❌ Cache miss for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T09:38:09.311Z] info: 📊 Fetching recent entries from database for user 6853bed43320467eb5703639
+[2025-11-28T09:38:09.325Z] info: ✅ Cached recent entries for user 6853bed43320467eb5703639
+[2025-11-28T09:38:09.328Z] info: GET /api/diary/recent/5 200 - 33.78ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:38:09.330Z] info: ✅ Cached recent entries for user 6853bed43320467eb5703639
+[2025-11-28T09:38:09.335Z] info: GET /api/diary/recent/5 200 - 34.68ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:38:43.163Z] info: ✅ Invalidated user stats cache for user 6853bed43320467eb5703639
+[2025-11-28T09:38:43.175Z] info: ✅ Invalidated recent entries cache for user 6853bed43320467eb5703639
+[2025-11-28T09:38:43.177Z] info: ✅ Created new diary entry and invalidated caches for user 6853bed43320467eb5703639
+[2025-11-28T09:38:43.191Z] info: POST /api/diary 201 - 9474.59ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:38:44.342Z] info: GET /api/diary 200 - 18.69ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:38:44.355Z] info: GET /api/diary 200 - 27.37ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:38:47.082Z] info: GET /api/diary/69296da33c96c7d7691d75fd 200 - 66.91ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:38:47.146Z] info: GET /api/diary/69296da33c96c7d7691d75fd 200 - 126.00ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:39:06.732Z] info: ❌ Cache miss for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T09:39:06.733Z] info: 📊 Fetching recent entries from database for user 6853bed43320467eb5703639
+[2025-11-28T09:39:06.750Z] info: ❌ Cache miss for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T09:39:06.750Z] info: ✅ Cached recent entries for user 6853bed43320467eb5703639
+[2025-11-28T09:39:06.751Z] info: 📊 Fetching recent entries from database for user 6853bed43320467eb5703639
+[2025-11-28T09:39:06.753Z] info: GET /api/diary/recent/5 200 - 27.77ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:39:06.776Z] info: GET /api/diary 304 - 30.92ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:39:06.782Z] info: GET /api/diary 200 - 21.58ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:39:06.782Z] info: ✅ Cached recent entries for user 6853bed43320467eb5703639
+[2025-11-28T09:39:06.784Z] info: GET /api/diary/recent/5 200 - 46.76ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:45:47.313Z] info: 🚀 Server running on port 5000
+[2025-11-28T09:45:47.325Z] info: ✅ Connected to Redis server
+[2025-11-28T09:45:47.336Z] info: 🚀 Redis client ready
+[2025-11-28T09:45:47.344Z] info: Connected to MongoDb
+[2025-11-28T09:45:47.352Z] info: 🎯 Redis initialized successfully
+[2025-11-28T09:56:57.625Z] info: GET /api/users/me 200 - 94.53ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:56:57.634Z] info: GET /api/users/me 304 - 41.99ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:56:58.204Z] info: ❌ Cache miss for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T09:56:58.205Z] info: 📊 Fetching recent entries from database for user 6853bed43320467eb5703639
+[2025-11-28T09:56:58.227Z] info: ✅ Cached recent entries for user 6853bed43320467eb5703639
+[2025-11-28T09:56:58.230Z] info: GET /api/diary/recent/5 304 - 39.06ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:56:58.242Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T09:56:58.244Z] info: GET /api/diary/recent/5 200 - 21.60ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:56:58.292Z] info: GET /api/diary 304 - 58.06ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:56:58.305Z] info: GET /api/diary 304 - 57.78ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:00.854Z] info: GET /api/users/me 304 - 7.31ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:00.864Z] info: GET /api/users/me 200 - 8.99ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:01.357Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T09:58:01.359Z] info: GET /api/diary/recent/5 200 - 6.16ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:01.368Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T09:58:01.369Z] info: GET /api/diary/recent/5 200 - 8.53ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:01.377Z] info: GET /api/diary 304 - 13.25ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:01.387Z] info: GET /api/diary 200 - 16.93ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:04.672Z] info: GET /api/users/me 304 - 15.53ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:04.676Z] info: GET /api/users/me 200 - 13.75ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:04.921Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T09:58:04.922Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T09:58:04.924Z] info: GET /api/diary/recent/5 304 - 17.03ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:04.925Z] info: GET /api/diary/recent/5 200 - 13.89ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:04.933Z] info: GET /api/diary 304 - 17.85ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:04.952Z] info: GET /api/diary 200 - 17.79ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:20.840Z] info: GET /api/users/me 304 - 14.56ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:20.845Z] info: GET /api/users/me 200 - 13.86ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:20.922Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T09:58:20.926Z] info: GET /api/diary/recent/5 304 - 19.85ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:20.931Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T09:58:20.937Z] info: GET /api/diary/recent/5 200 - 21.29ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:21.000Z] info: GET /api/diary 304 - 27.00ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:21.037Z] info: GET /api/diary 200 - 55.95ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T09:58:44.225Z] info: GET /api/users/me 401 - 2.71ms - IP: ::1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+[2025-11-28T09:58:44.234Z] info: GET /api/users/me 401 - 3.13ms - IP: ::1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36
+[2025-11-28T10:00:51.701Z] info: GET /api/users/me 304 - 12.26ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:00:51.703Z] info: GET /api/users/me 200 - 9.44ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:00:51.801Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T10:00:51.803Z] info: GET /api/diary/recent/5 304 - 5.27ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:00:51.810Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T10:00:51.812Z] info: GET /api/diary/recent/5 200 - 8.26ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:00:52.309Z] info: GET /api/diary 304 - 37.97ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:00:52.327Z] info: GET /api/diary 200 - 43.07ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:01:04.260Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T10:01:04.262Z] info: GET /api/diary/recent/5 304 - 8.83ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:09:07.851Z] info: 🚀 Server running on port 5000
+[2025-11-28T10:09:07.896Z] info: ✅ Connected to Redis server
+[2025-11-28T10:09:07.933Z] info: Connected to MongoDb
+[2025-11-28T10:09:07.943Z] info: 🚀 Redis client ready
+[2025-11-28T10:09:07.946Z] info: 🎯 Redis initialized successfully
+[2025-11-28T10:13:56.738Z] info: 🚀 Server running on port 5000
+[2025-11-28T10:13:56.755Z] info: ✅ Connected to Redis server
+[2025-11-28T10:13:56.774Z] info: 🚀 Redis client ready
+[2025-11-28T10:13:56.782Z] info: Connected to MongoDb
+[2025-11-28T10:13:56.789Z] info: 🎯 Redis initialized successfully
+[2025-11-28T10:15:07.057Z] info: GET /api/users/me 200 - 69.28ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:07.066Z] info: GET /api/users/me 200 - 119.03ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:07.258Z] info: ❌ Cache miss for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T10:15:07.262Z] info: 📊 Fetching recent entries from database for user 6853bed43320467eb5703639
+[2025-11-28T10:15:07.275Z] info: ❌ Cache miss for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T10:15:07.279Z] info: 📊 Fetching recent entries from database for user 6853bed43320467eb5703639
+[2025-11-28T10:15:07.392Z] info: GET /api/diary 304 - 104.38ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:07.397Z] info: ✅ Cached recent entries for user 6853bed43320467eb5703639
+[2025-11-28T10:15:07.398Z] info: ✅ Cached recent entries for user 6853bed43320467eb5703639
+[2025-11-28T10:15:07.404Z] info: GET /api/diary/recent/5 200 - 173.75ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:07.407Z] info: GET /api/diary/recent/5 200 - 164.94ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:07.429Z] info: GET /api/diary 200 - 105.40ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:09.942Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T10:15:09.944Z] info: GET /api/diary/recent/5 200 - 6.10ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:30.653Z] info: GET /api/diary 304 - 26.67ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:30.669Z] info: GET /api/diary 200 - 34.11ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:31.355Z] info: GET /api/todos 200 - 15.78ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:31.372Z] info: GET /api/todos 200 - 13.28ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:32.609Z] info: GET /api/diary 304 - 35.22ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:32.630Z] info: GET /api/diary 200 - 46.60ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:34.442Z] info: GET /api/todos 304 - 46.73ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:34.482Z] info: GET /api/todos 200 - 81.19ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:38.313Z] info: DELETE /api/todos/690446a4eb3792a1c9f887be 200 - 44.96ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:39.416Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T10:15:39.423Z] info: GET /api/diary/recent/5 304 - 18.16ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:44.316Z] info: GET /api/users/me 200 - 18.34ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:44.335Z] info: GET /api/users/me 200 - 16.50ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:44.386Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T10:15:44.389Z] info: GET /api/diary/recent/5 304 - 10.92ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:44.391Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T10:15:44.395Z] info: GET /api/diary/recent/5 200 - 12.96ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:44.490Z] info: GET /api/diary 200 - 25.89ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:44.506Z] info: GET /api/diary 304 - 34.28ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:46.598Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T10:15:46.602Z] info: GET /api/diary/recent/5 304 - 13.10ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:48.815Z] info: GET /api/todos 200 - 12.45ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:48.837Z] info: GET /api/todos 200 - 14.51ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:53.452Z] info: DELETE /api/todos/68b27af9e3444b8bc9b05788 200 - 12.27ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:59.012Z] info: GET /api/users/me 200 - 37.05ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:59.020Z] info: GET /api/users/me 200 - 35.16ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:59.083Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T10:15:59.086Z] info: GET /api/diary/recent/5 304 - 16.17ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:59.088Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T10:15:59.094Z] info: GET /api/diary/recent/5 200 - 18.61ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:59.156Z] info: GET /api/diary 304 - 36.97ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:15:59.179Z] info: GET /api/diary 200 - 45.55ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:16:01.566Z] info: GET /api/todos 200 - 16.54ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:16:01.577Z] info: GET /api/todos 200 - 21.69ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:16:03.506Z] info: ✅ Cache hit for user 6853bed43320467eb5703639 recent entries
+[2025-11-28T10:16:03.509Z] info: GET /api/diary/recent/5 304 - 8.82ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0
+[2025-11-28T10:16:16.308Z] info: SIGINT received. Starting graceful shutdown...
+[2025-11-28T10:16:16.312Z] info: HTTP server closed.
+[2025-11-28T10:16:16.318Z] info: 👋 Redis connection closed gracefully
