@@ -51,6 +51,9 @@ export const createEntryController = asyncHandler(async (req, res) => {
 
     data.images = uploadedImages.map(img => ({ key: img.key })); // Only store key in DB
     console.log('DEBUG: Data Images to Save:', data.images);
+  } else {
+    // If no files uploaded, ensure images is empty array to avoid Mongoose casting errors
+    data.images = [];
   }
 
   const entry = await createDiaryEntry(data);
