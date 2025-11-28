@@ -11,6 +11,7 @@ const diaryApi = {
       if (entryData instanceof FormData) {
         // Send as multipart/form-data with images
         response = await api.post("/api/diary", entryData, {
+          headers: { "Content-Type": undefined },
           timeout: 1000000, // Set timeout to 10 seconds
         })
       } else {
@@ -123,7 +124,9 @@ const diaryApi = {
       // Check if entryData is FormData (has new images)
       if (entryData instanceof FormData) {
         // Send as multipart/form-data
-        response = await api.put(`/api/diary/${id}`, entryData)
+        response = await api.put(`/api/diary/${id}`, entryData, {
+          headers: { "Content-Type": undefined },
+        })
       } else {
         // Send as JSON (no new images)
         response = await api.put(`/api/diary/${id}`, entryData, {

@@ -68,12 +68,12 @@ export default function Dashboard() {
     setIsLoading(true)
 
     try {
-    
+
       const result = await diaryApi.getRecentEntries();
 
       if (result.success) {
         const stats = {
-        //  totalEntries: result.entries.length, // This will be updated with real count from user profile
+          //  totalEntries: result.entries.length, // This will be updated with real count from user profile
           totalTodos: user?.todosCount || 0,
           completedTodos: user?.completedTodosCount || 0,
           currentStreak: calculateStreak(result.data.entries),

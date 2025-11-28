@@ -4,9 +4,7 @@ import axios from "axios"
 const api = axios.create({
   baseURL: import.meta.env.VITE_BACKEND_URL,
   timeout: 5000,
-  headers: {
-    "Content-Type": "application/json",
-  },
+  // Removed default Content-Type to allow browser to set boundary for FormData
   withCredentials: true, // Send cookies in requests
 })
 
@@ -106,7 +104,7 @@ const authService = {
       const isFormData = userData instanceof FormData
       const config = {
         timeout: 8000,
-        headers: isFormData ? { "Content-Type": "multipart/form-data" } : { "Content-Type": "application/json" },
+        headers: isFormData ? { "Content-Type": undefined } : { "Content-Type": "application/json" },
       }
 
       const response = await api.post("/api/users/register", userData, config)

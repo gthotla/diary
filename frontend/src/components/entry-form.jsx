@@ -201,9 +201,16 @@ export default function EntryForm({ entry = null, onSave, onCancel }) {
           submitData.append("existingImages", JSON.stringify(existingImages))
         }
 
-        selectedImages.forEach((image) => {
+        selectedImages.forEach((image, index) => {
+          console.log(`DEBUG: Appending image ${index}:`, image.name, image.size, image.type);
           submitData.append("images", image)
         })
+
+        // Log FormData entries
+        console.log("DEBUG: FormData entries:");
+        for (let pair of submitData.entries()) {
+          console.log(pair[0] + ', ' + (pair[1] instanceof File ? `${pair[1].name} (${pair[1].size} bytes)` : pair[1]));
+        }
 
         console.log("📤 Sending FormData with images")
 

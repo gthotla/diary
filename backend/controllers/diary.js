@@ -93,23 +93,14 @@ export const getEntryByIdController = asyncHandler(async (req, res) => {
 
   try {
     entry.images = await Promise.all(entry.images.map(async (img) => {
-      // SAFETY CHECK: If key is missing, return null
-      if (!img.key) {
-        console.error("Missing key for image in entry:", entry._id);
-        return null;
-      }
       const url = await getCFSignedUrl(img.key, 3600);
       return { key: img.key, url };
     }));
-
-    // Filter out nulls
-    entry.images = entry.images.filter(img => img !== null);
 
   } catch (err) {
     console.error("Signed URL error:", err);
     throw new Error("CloudFront URL generation failed");
   }
-
   const response = {
     _id: entry._id,
     title: entry.title,
