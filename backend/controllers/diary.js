@@ -55,12 +55,7 @@ export const createEntryController = asyncHandler(async (req, res) => {
 
   const entry = await createDiaryEntry(data);
   console.log('Created Entry:', entry);
-  if (!updated) {
-    res.status(404);
-    throw new Error('Entry not found or not authorized');
-  }
-  console.log('Updated Entry:', updated);
-  res.status(200).json(updated);
+  res.status(201).json(entry);
 });
 
 // @desc Get all diary entries for logged in user
