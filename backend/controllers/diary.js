@@ -20,11 +20,18 @@ import { response } from 'express';
 
 // Helper to upload one file and return { key, url }
 const uploadFileToS3 = async (file) => {
-  const key = `${uuidv4()}-${file.originalname}`;
+  console.log('DEBUG: Processing file:', file.originalname);
+  const uuid = uuidv4();
+  console.log('DEBUG: Generated UUID:', uuid);
+
+  const key = `${uuid}-${file.originalname}`;
+  console.log('DEBUG: Generated Key:', key);
+
   await uploadFile(file.buffer, key, file.mimetype);
   const url = await getCFSignedUrl(key, 3600);
+  console.log('DEBUG: Generated URL:', url);
+
   return { key, url };
- // return {key};
 };
 
 // @desc Create a new diary entry
@@ -35,16 +42,25 @@ export const createEntryController = asyncHandler(async (req, res) => {
     ...req.body,
     userId: req.user.userId
   };
-  console.log(data)
+  console.log('DEBUG: Request Body:', data);
 
   if (req.files && req.files.length > 0) {
+    console.log('DEBUG: Files received:', req.files.length);
     const uploadedImages = await Promise.all(req.files.map(uploadFileToS3));
+    console.log('DEBUG: Uploaded Images:', uploadedImages);
+
     data.images = uploadedImages.map(img => ({ key: img.key })); // Only store key in DB
+    console.log('DEBUG: Data Images to Save:', data.images);
   }
 
   const entry = await createDiaryEntry(data);
   console.log('Created Entry:', entry);
-  res.status(201).json(entry);
+  if (!updated) {
+    res.status(404);
+    throw new Error('Entry not found or not authorized');
+  }
+  console.log('Updated Entry:', updated);
+  res.status(200).json(updated);
 });
 
 // @desc Get all diary entries for logged in user
@@ -53,19 +69,15 @@ export const createEntryController = asyncHandler(async (req, res) => {
 export const getAllEntriesController = asyncHandler(async (req, res) => {
   const entries = await getAllDiaryEntries(req.user.userId);
 
- const response= entries.map(entry => ({
-    _id: entry._id,   
+  const response = entries.map(entry => ({
+    _id: entry._id,
     title: entry.title,
     content: entry.entry,
     date: entry.date,
     mood: entry.mood,
     createdAt: entry.createdAt,
-    updatedAt: entry.updatedAt,     
- }));
-
-
- // console.log('Updated Entries:', updateEntries);
-  // Return the updated entries with signed URLs for images
+    updatedAt: entry.updatedAt,
+  }));
 
   res.status(200).json(response);
 });
@@ -81,23 +93,32 @@ export const getEntryByIdController = asyncHandler(async (req, res) => {
     throw new Error('Entry not found');
   }
 
-   try {
+  try {
     entry.images = await Promise.all(entry.images.map(async (img) => {
+      // SAFETY CHECK: If key is missing, return null
+      if (!img.key) {
+        console.error("Missing key for image in entry:", entry._id);
+        return null;
+      }
       const url = await getCFSignedUrl(img.key, 3600);
       return { key: img.key, url };
     }));
+
+    // Filter out nulls
+    entry.images = entry.images.filter(img => img !== null);
 
   } catch (err) {
     console.error("Signed URL error:", err);
     throw new Error("CloudFront URL generation failed");
   }
-  const response={
+
+  const response = {
     _id: entry._id,
     title: entry.title,
     content: entry.entry,
     date: entry.date,
     mood: entry.mood,
-    images: entry.images.map(img=>({url:img.url})), // Now contains { key, url }
+    images: entry.images.map(img => ({ url: img.url })), // Now contains { key, url }
     videos: entry.videos,
     links: entry.links,
     createdAt: entry.createdAt,
@@ -146,10 +167,10 @@ export const getEntriesInRangeController = asyncHandler(async (req, res) => {
   const entries = await getDiaryInRange(req.user.userId, start, end);
 
   if (!entries || entries.length === 0) {
-    res.status(404);    
-    throw new Error('No entries found for the given date range');  
-  }   
-  const response= entries.map(entry => ({
+    res.status(404);
+    throw new Error('No entries found for the given date range');
+  }
+  const response = entries.map(entry => ({
     _id: entry._id,
     title: entry.title,
     content: entry.content,
@@ -175,7 +196,7 @@ export const getEntriesByTimeController = asyncHandler(async (req, res) => {
   const entries = await getEntriesByTime(req.user.userId, type, value);
 
   if (!entries || entries.length === 0) {
-    res.status(404);  
+    res.status(404);
     throw new Error(`No entries found for the given ${type}`);
   }
   const updateEntries = entries.map(entry => ({
@@ -195,7 +216,7 @@ export const getEntriesByTimeController = asyncHandler(async (req, res) => {
 // @access Private
 export const getRecentEntriesController = asyncHandler(async (req, res) => {
   const limit = parseInt(req.params.limit) || 5;
-  
+
   // Validate limit
   if (limit < 1 || limit > 50) {
     res.status(400);
@@ -203,7 +224,7 @@ export const getRecentEntriesController = asyncHandler(async (req, res) => {
   }
 
   const result = await getRecentEntries(req.user.userId, limit);
-  
+
   if (!result.success) {
     res.status(500);
     throw new Error(result.error || 'Failed to fetch recent entries');
