@@ -11,9 +11,6 @@ const diaryApi = {
       if (entryData instanceof FormData) {
         // Send as multipart/form-data with images
         response = await api.post("/api/diary", entryData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
           timeout: 1000000, // Set timeout to 10 seconds
         })
       } else {
@@ -79,7 +76,7 @@ const diaryApi = {
       // Fetch from API and cache
       const response = await api.get("/api/diary/recent/5")
       if (response.data) {
-       // dashboardCache.setRecentEntries(response.data)
+        // dashboardCache.setRecentEntries(response.data)
         return {
           success: true,
           data: response.data,
@@ -126,11 +123,7 @@ const diaryApi = {
       // Check if entryData is FormData (has new images)
       if (entryData instanceof FormData) {
         // Send as multipart/form-data
-        response = await api.put(`/api/diary/${id}`, entryData, {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        })
+        response = await api.put(`/api/diary/${id}`, entryData)
       } else {
         // Send as JSON (no new images)
         response = await api.put(`/api/diary/${id}`, entryData, {
