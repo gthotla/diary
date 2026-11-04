@@ -138,4 +138,44 @@ describe('Diary Controller', () => {
             expect(diaryService.createDiaryEntry).toHaveBeenCalled();
         });
     });
+
+    describe('Operational endpoints', () => {
+        it('should report a healthy service', async () => {
+            const res = await request(app).get('/api/health');
+
+            expect(res.statusCode).toBe(200);
+            expect(res.body.status).toBe('ok');
+            expect(res.body).toEqual(expect.objectContaining({
+                timestamp: expect.any(String),
+                uptime: expect.any(Number)
+            }));
+        });
+
+        it('should report liveness without requiring external services', async () => {
+            const res = await request(app).get('/api/health/live');
+
+            expect(res.statusCode).toBe(200);
+            expect(res.body.alive).toBe(true);
+            expect(res.body.uptime).toEqual(expect.any(Number));
+        });
+
+        it('should expose Prometheus metrics', async () => {
+            const res = await request(app).get('/metrics');
+
+            expect(res.statusCode).toBe(200);
+            expect(res.headers['content-type']).toContain('text/plain');
+            expect(res.text).toBe('metrics');
+        });
+
+        it('should fail readiness when required services are unavailable', async () => {
+            const res = await request(app).get('/api/health/ready');
+
+            expect(res.statusCode).toBe(503);
+            expect(res.body.ready).toBe(false);
+            expect(res.body.services).toEqual(expect.arrayContaining([
+                expect.objectContaining({ service: 'mongodb', ready: false }),
+                expect.objectContaining({ service: 'redis', ready: false })
+            ]));
+        });
+    });
 });

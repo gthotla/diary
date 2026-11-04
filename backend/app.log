@@ -9930,3 +9930,59 @@
 [2025-11-28T10:16:16.308Z] info: SIGINT received. Starting graceful shutdown...
 [2025-11-28T10:16:16.312Z] info: HTTP server closed.
 [2025-11-28T10:16:16.318Z] info: 👋 Redis connection closed gracefully
+[2025-12-09T17:21:43.428Z] info: 🚀 Server running on port 5000
+[2025-12-09T17:21:43.441Z] info: ✅ Connected to Redis server
+[2025-12-09T17:21:43.457Z] info: 🚀 Redis client ready
+[2025-12-09T17:21:43.462Z] info: 🎯 Redis initialized successfully
+[2025-12-09T17:21:43.487Z] info: Connected to MongoDb
+[2025-12-09T17:21:47.891Z] info: GET /metrics 200 - 10.69ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:22:03.016Z] info: GET /metrics 200 - 10.23ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:22:18.572Z] info: GET /metrics 200 - 6.47ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:22:34.263Z] info: GET /metrics 200 - 6.81ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:22:49.492Z] info: GET /metrics 200 - 3.44ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:23:04.595Z] info: GET /metrics 200 - 1.83ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:23:20.278Z] info: GET /metrics 200 - 5.95ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:23:35.611Z] info: GET /metrics 200 - 2.92ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:23:50.897Z] info: GET /metrics 200 - 5.72ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:24:06.433Z] info: GET /metrics 200 - 7.49ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:24:21.593Z] info: GET /metrics 200 - 2.62ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:24:37.263Z] info: GET /metrics 200 - 4.36ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:24:52.698Z] info: GET /metrics 200 - 1.50ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:25:08.163Z] info: GET /metrics 200 - 3.73ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:25:23.581Z] info: GET /metrics 200 - 3.61ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:25:38.985Z] info: GET /metrics 200 - 5.15ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:25:54.319Z] info: GET /metrics 200 - 2.62ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:26:09.761Z] info: GET /metrics 200 - 4.51ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:26:18.358Z] info: GET /api/metrcis 404 - 5.06ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0
+[2025-12-09T17:26:25.118Z] info: GET /metrics 200 - 4.44ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:26:34.704Z] info: GET /metrcis 404 - 1.65ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0
+[2025-12-09T17:26:40.521Z] info: GET /metrics 200 - 1.80ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0
+[2025-12-09T17:26:40.568Z] info: GET /metrics 200 - 2.52ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:26:40.634Z] info: GET /favicon.ico 404 - 0.73ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0
+[2025-12-09T17:26:52.230Z] info: GET /metrics 200 - 5.88ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0
+[2025-12-09T17:26:55.967Z] info: GET /metrics 200 - 13.64ms - IP: ::ffff:127.0.0.1 - UA: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:146.0) Gecko/20100101 Firefox/146.0
+[2025-12-09T17:26:56.014Z] info: GET /metrics 200 - 4.75ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:27:11.431Z] info: GET /metrics 200 - 2.28ms - IP: ::ffff:127.0.0.1 - UA: Prometheus/2.54.0
+[2025-12-09T17:27:13.173Z] info: SIGINT received. Starting graceful shutdown...
+[2025-12-09T17:27:13.177Z] info: HTTP server closed.
+[2025-12-09T17:27:13.186Z] info: 👋 Redis connection closed gracefully
+[2026-11-04T11:10:53.879Z] info: GET /api/diary 200 - 3.55ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:10:53.926Z] info: POST /api/diary 201 - 19.00ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:20.400Z] info: GET /api/diary 200 - 3.83ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:20.450Z] info: POST /api/diary 201 - 19.73ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:20.453Z] info: GET /api/health 200 - 0.39ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:20.457Z] info: GET /api/health/live 200 - 0.39ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:20.461Z] info: GET /metrics 200 - 0.33ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:20.465Z] info: GET /api/health/ready 503 - 0.59ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:24.506Z] info: GET /api/diary 200 - 2.28ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:24.556Z] info: POST /api/diary 201 - 25.05ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:24.560Z] info: GET /api/health 200 - 0.38ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:24.564Z] info: GET /api/health/live 200 - 0.37ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:24.567Z] info: GET /metrics 200 - 0.28ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:24.571Z] info: GET /api/health/ready 503 - 0.71ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:38.460Z] info: GET /api/diary 200 - 3.27ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:38.503Z] info: POST /api/diary 201 - 17.83ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:38.509Z] info: GET /api/health 200 - 0.47ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:38.513Z] info: GET /api/health/live 200 - 0.39ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:38.517Z] info: GET /metrics 200 - 0.32ms - IP: ::ffff:127.0.0.1 - UA: undefined
+[2026-11-04T11:26:38.520Z] info: GET /api/health/ready 503 - 0.56ms - IP: ::ffff:127.0.0.1 - UA: undefined

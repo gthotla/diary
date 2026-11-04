@@ -1,0 +1,72 @@
+name: Configure Production VM
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: configure-production-vm
+  cancel-in-progress: false
+
+jobs:
+  configure:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Ansible
+        run: |
+          python3 -m pip install --user --disable-pip-version-check ansible
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+
+      - name: Validate deployment inputs
+        env:
+          VM_HOST: ${{ secrets.VM_HOST }}
+          VM_USERNAME: ${{ secrets.VM_USERNAME }}
+          VM_SSH_KEY: ${{ secrets.VM_SSH_KEY }}
+        run: |
+          test -n "$VM_HOST" || { echo "::error::VM_HOST is not configured"; exit 1; }
+          test -n "$VM_USERNAME" || { echo "::error::VM_USERNAME is not configured"; exit 1; }
+          test -n "$VM_SSH_KEY" || { echo "::error::VM_SSH_KEY is not configured"; exit 1; }
+
+      - name: Prepare SSH credentials
+        env:
+          VM_SSH_KEY: ${{ secrets.VM_SSH_KEY }}
+          VM_HOST: ${{ secrets.VM_HOST }}
+        run: |
+          umask 077
+          install -m 600 /dev/null "$RUNNER_TEMP/vm_key"
+          printf '%s\n' "$VM_SSH_KEY" > "$RUNNER_TEMP/vm_key"
+          ssh-keyscan -H "$VM_HOST" > "$RUNNER_TEMP/known_hosts"
+
+      - name: Create inventory
+        env:
+          VM_HOST: ${{ secrets.VM_HOST }}
+          VM_USERNAME: ${{ secrets.VM_USERNAME }}
+        run: |
+          printf '[diary]\ndiary-vm ansible_host=%s ansible_user=%s\n\n[diary:vars]\nansible_python_interpreter=/usr/bin/python3\n' \
+            "$VM_HOST" "$VM_USERNAME" > "$RUNNER_TEMP/inventory.ini"
+
+      - name: Check Ansible playbook syntax
+        run: |
+          ansible-playbook \
+            --syntax-check \
+            -i "$RUNNER_TEMP/inventory.ini" \
+            ansible/site.yml
+
+      - name: Configure VM
+        run: |
+          ansible-playbook \
+            -i "$RUNNER_TEMP/inventory.ini" \
+            --private-key "$RUNNER_TEMP/vm_key" \
+            --ssh-common-args="-o UserKnownHostsFile=$RUNNER_TEMP/known_hosts" \
+            ansible/site.yml
+
+      - name: Remove temporary credentials
+        if: always()
+        run: |
+          rm -f "$RUNNER_TEMP/vm_key" "$RUNNER_TEMP/known_hosts" "$RUNNER_TEMP/inventory.ini"

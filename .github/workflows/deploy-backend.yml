@@ -31,10 +31,7 @@ jobs:
         run: npm ci
       - name: Run tests
         working-directory: ./backend
-        run: npm test || echo "No tests configured"
-      - name: Lint code
-        working-directory: ./backend
-        run: npm run lint || echo "No linting configured"
+        run: npm test -- --runInBand
 
   deploy-production:
     needs: test
@@ -108,7 +105,7 @@ jobs:
             CLOUDFRONT_DOMAIN=${{ secrets.CLOUDFRONT_DOMAIN }}
             CLOUDFRONT_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
             CLOUDFRONT_KEY_PAIR_ID=${{ secrets.CLOUDFRONT_KEY_PAIR_ID }}
-            CLOUDFRONT_PRIVATE_KEY_PATH=/app/secrets/private_key.pem
+            CLOUDFRONT_PRIVATE_KEY_PATH=/app/private_key.pem
             LOCAL_MASTER_KEY=${{ secrets.LOCAL_MASTER_KEY }}
             GRAFANA_ADMIN_USER=${{ secrets.GRAFANA_ADMIN_USER }}
             GRAFANA_ADMIN_PASSWORD=${{ secrets.GRAFANA_ADMIN_PASSWORD }}
@@ -119,27 +116,16 @@ jobs:
             echo "${{ secrets.CLOUDFRONT_PRIVATE_KEY_BASE64 }}" | base64 -d > private_key.pem
             chmod 644 private_key.pem
             
-            # Check and Install Docker Compose if missing
-            echo "🔍 Checking for Docker Compose..."
-            if docker compose version >/dev/null 2>&1; then
-              COMPOSE_CMD="docker compose"
-              echo "✅ Docker Compose (plugin) found."
-            elif command -v docker-compose >/dev/null 2>&1; then
-              COMPOSE_CMD="docker-compose"
-              echo "✅ Docker Compose (standalone) found."
-            else
-              echo "⚠️ Docker Compose not found. Installing..."
-              # Install standalone docker-compose
-              sudo curl -SL "https://github.com/docker/compose/releases/download/v2.29.1/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-              sudo chmod +x /usr/local/bin/docker-compose
-              COMPOSE_CMD="docker-compose"
-              echo "✅ Docker Compose installed successfully."
-            fi
+            # Docker and Compose are provisioned separately by Ansible.
+            echo "🔍 Checking Docker and Docker Compose..."
+            docker info >/dev/null
+            docker compose version >/dev/null
+            COMPOSE_CMD="docker compose"
             
             # Deploy with Docker Compose
             echo "🚀 Deploying with Docker Compose..."
-            $COMPOSE_CMD pull
-            $COMPOSE_CMD up -d --remove-orphans
+            $COMPOSE_CMD pull backend
+            $COMPOSE_CMD up -d --no-build backend
             
             # Wait for backend to be ready
             echo "⏳ Waiting for backend to be ready..."
@@ -152,6 +138,15 @@ jobs:
             else
               echo "❌ Health check failed!"
               $COMPOSE_CMD logs --tail 50 backend
+              exit 1
+            fi
+
+            echo "📈 Checking metrics endpoint..."
+            if curl --fail http://localhost:5000/metrics >/dev/null; then
+              echo "✅ Metrics endpoint passed!"
+            else
+              echo "❌ Metrics endpoint failed!"
+              $COMPOSE_CMD logs --tail 50 backend prometheus
               exit 1
             fi
             
