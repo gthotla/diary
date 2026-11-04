@@ -124,25 +124,15 @@ jobs:
             echo "${{ secrets.CLOUDFRONT_PRIVATE_KEY_BASE64 }}" | base64 -d > private_key.pem
             chmod 644 private_key.pem
 
-            # Render Grafana email contact point (recipient from secrets).
-            # Guarded: an empty address would render `addresses:` blank and
-            # Grafana exits on boot ("could not find addresses in settings"), which
-            # shows up as nginx 502 / connection refused on :3000.
+            # Point the provisioned Grafana contact point at the real recipient.
+            # The repo file carries a dummy address (admin@example.com); sed swaps
+            # it for the secret. No heredoc: nested heredocs break under ssh-action.
+            # Guarded: a blank address makes Grafana exit on boot, which shows up
+            # as nginx 502 / connection refused on :3000.
             if [ -n "${{ secrets.ALERT_EMAIL }}" ]; then
-              echo "📧 Rendering Grafana contact point from secrets..."
-              cat > grafana/provisioning/alerting/contact-points.yml << AMEOF
-              apiVersion: 1
-              contactPoints:
-                - orgId: 1
-                  name: diary-mail
-                  receivers:
-                    - uid: diary-mail-email
-                      type: email
-                      settings:
-                        addresses: ${{ secrets.ALERT_EMAIL }}
-                        singleEmail: true
-                      disableResolveMessage: false
-              AMEOF
+              echo "📧 Setting Grafana alert recipient from secrets..."
+              sed -i "s|admin@example.com|${{ secrets.ALERT_EMAIL }}|g" grafana/provisioning/alerting/contact-points.yml
+              grep -q "addresses:" grafana/provisioning/alerting/contact-points.yml
             else
               echo "⚠️ ALERT_EMAIL not set - keeping placeholder contact point (no mail will send)."
             fi
