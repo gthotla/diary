@@ -4,8 +4,8 @@
   become: true
   vars:
     app_dir: /home/azureuser/diary
-    nginx_server_name: api.sineops.live
-    grafana_server_name: grafana.sineops.live
+    nginx_server_name: diary-api.sineops.app
+    grafana_server_name: diary-grafana.sineops.app
   tasks:
     - name: Install runtime and reverse proxy packages
       ansible.builtin.apt:
