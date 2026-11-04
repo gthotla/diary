@@ -109,13 +109,13 @@ jobs:
             LOCAL_MASTER_KEY=${{ secrets.LOCAL_MASTER_KEY }}
             GRAFANA_ADMIN_USER=${{ secrets.GRAFANA_ADMIN_USER }}
             GRAFANA_ADMIN_PASSWORD=${{ secrets.GRAFANA_ADMIN_PASSWORD }}
-            # Mail (unified keys): Grafana alerts reuse the same Gmail account as
-            # the deploy-success mail (EMAIL_USERNAME / EMAIL_PASSWORD).
+            # Mail: auth reuses the existing working Gmail secrets.
+            # Recipient/sender addresses are separate secrets (no hardcoded mails).
             SMTP_HOST=smtp.gmail.com:587
-            SMTP_FROM=${{ secrets.EMAIL_USERNAME }}
+            SMTP_FROM=${{ secrets.SENDER_MAIL }}
             SMTP_USERNAME=${{ secrets.EMAIL_USERNAME }}
             SMTP_PASSWORD=${{ secrets.EMAIL_PASSWORD }}
-            ALERT_EMAIL_TO=${{ secrets.EMAIL_USERNAME }}
+            ALERT_EMAIL_TO=${{ secrets.ALERT_EMAIL }}
             GF_SMTP_ENABLED=true
             EOF
             
@@ -124,11 +124,11 @@ jobs:
             echo "${{ secrets.CLOUDFRONT_PRIVATE_KEY_BASE64 }}" | base64 -d > private_key.pem
             chmod 644 private_key.pem
 
-            # Render Grafana email contact point (same Gmail as deploy mail).
+            # Render Grafana email contact point (recipient from secrets).
             # Guarded: an empty address would render `addresses:` blank and
             # Grafana exits on boot ("could not find addresses in settings"), which
             # shows up as nginx 502 / connection refused on :3000.
-            if [ -n "${{ secrets.EMAIL_USERNAME }}" ]; then
+            if [ -n "${{ secrets.ALERT_EMAIL }}" ]; then
               echo "📧 Rendering Grafana contact point from secrets..."
               cat > grafana/provisioning/alerting/contact-points.yml << AMEOF
               apiVersion: 1
@@ -139,12 +139,12 @@ jobs:
                     - uid: diary-mail-email
                       type: email
                       settings:
-                        addresses: ${{ secrets.EMAIL_USERNAME }}
+                        addresses: ${{ secrets.ALERT_EMAIL }}
                         singleEmail: true
                       disableResolveMessage: false
               AMEOF
             else
-              echo "⚠️ EMAIL_USERNAME not set - keeping placeholder contact point (no mail will send)."
+              echo "⚠️ ALERT_EMAIL not set - keeping placeholder contact point (no mail will send)."
             fi
             
             # Docker and Compose are provisioned separately by Ansible.
@@ -215,5 +215,5 @@ jobs:
               <li><a href="https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}">View Deployment Logs</a></li>
               <li><a href="http://your-vm-ip:5000/api/health">Backend Health Check</a></li>
             </ul>
-          to: ganeshthotla594@gmail.com
-          from: hellchintu82@gmail.com
+          to: ${{ secrets.ALERT_EMAIL }}
+          from: ${{ secrets.SENDER_MAIL }}
