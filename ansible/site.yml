@@ -1,0 +1,71 @@
+---
+- name: Configure Diary production VM
+  hosts: diary
+  become: true
+  vars:
+    app_dir: /home/azureuser/diary
+    nginx_server_name: api.sineops.live
+    grafana_server_name: grafana.sineops.live
+  tasks:
+    - name: Install runtime and reverse proxy packages
+      ansible.builtin.apt:
+        name:
+          - ca-certificates
+          - curl
+          - docker.io
+          - docker-compose-v2
+          - nginx
+          - certbot
+          - python3-certbot-nginx
+        state: present
+        update_cache: true
+
+    - name: Enable Docker
+      ansible.builtin.service:
+        name: docker
+        state: started
+        enabled: true
+
+    - name: Add deployment user to Docker group
+      ansible.builtin.user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: true
+
+    - name: Create application directory
+      ansible.builtin.file:
+        path: "{{ app_dir }}"
+        state: directory
+        owner: "{{ ansible_user }}"
+        group: "{{ ansible_user }}"
+        mode: "0750"
+
+    - name: Configure API reverse proxy
+      ansible.builtin.template:
+        src: templates/api.nginx.conf.j2
+        dest: /etc/nginx/sites-available/diary-api
+        mode: "0644"
+      notify: Reload nginx
+
+    - name: Enable API reverse proxy
+      ansible.builtin.file:
+        src: /etc/nginx/sites-available/diary-api
+        dest: /etc/nginx/sites-enabled/diary-api
+        state: link
+      notify: Reload nginx
+
+    - name: Remove default Nginx site
+      ansible.builtin.file:
+        path: /etc/nginx/sites-enabled/default
+        state: absent
+      notify: Reload nginx
+
+    - name: Validate Nginx configuration
+      ansible.builtin.command: nginx -t
+      changed_when: false
+
+  handlers:
+    - name: Reload nginx
+      ansible.builtin.service:
+        name: nginx
+        state: reloaded
