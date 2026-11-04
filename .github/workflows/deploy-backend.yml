@@ -122,21 +122,28 @@ jobs:
             echo "${{ secrets.CLOUDFRONT_PRIVATE_KEY_BASE64 }}" | base64 -d > private_key.pem
             chmod 644 private_key.pem
 
-            # Render Grafana email contact point from secrets (real address never committed)
-            echo "📧 Rendering Grafana contact point from secrets..."
-            cat > grafana/provisioning/alerting/contact-points.yml << AMEOF
-            apiVersion: 1
-            contactPoints:
-              - orgId: 1
-                name: diary-mail
-                receivers:
-                  - uid: diary-mail-email
-                    type: email
-                    settings:
-                      addresses: ${{ secrets.ALERT_EMAIL_TO }}
-                      singleEmail: true
-                    disableResolveMessage: false
-            AMEOF
+            # Render Grafana email contact point from secrets (real address never committed).
+            # Guarded: an empty ALERT_EMAIL_TO would render `addresses:` blank and
+            # Grafana exits on boot ("could not find addresses in settings"), which
+            # shows up as nginx 502 / connection refused on :3000.
+            if [ -n "${{ secrets.ALERT_EMAIL_TO }}" ]; then
+              echo "📧 Rendering Grafana contact point from secrets..."
+              cat > grafana/provisioning/alerting/contact-points.yml << AMEOF
+              apiVersion: 1
+              contactPoints:
+                - orgId: 1
+                  name: diary-mail
+                  receivers:
+                    - uid: diary-mail-email
+                      type: email
+                      settings:
+                        addresses: ${{ secrets.ALERT_EMAIL_TO }}
+                        singleEmail: true
+                      disableResolveMessage: false
+              AMEOF
+            else
+              echo "⚠️ ALERT_EMAIL_TO not set - keeping placeholder contact point (no mail will send)."
+            fi
             
             # Docker and Compose are provisioned separately by Ansible.
             echo "🔍 Checking Docker and Docker Compose..."
