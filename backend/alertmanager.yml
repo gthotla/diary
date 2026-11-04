@@ -1,9 +1,11 @@
-# Alertmanager config. SMTP / receiver addresses are injected from the
-# environment (see docker-compose.yml `alertmanager` service + --config.expand-env).
-# Required env: SMTP_HOST, SMTP_FROM, ALERT_EMAIL_TO (+ SMTP_USERNAME/SMTP_PASSWORD for Gmail).
+# Alertmanager config. Plain defaults are committed for local testing.
+# Production: the deploy workflow REWRITES this file on the VM from
+# GitHub secrets (SMTP_HOST/SMTP_FROM/SMTP_USERNAME/SMTP_PASSWORD/
+# ALERT_EMAIL_TO) before `docker compose up`, so real credentials are
+# never committed. See .github/workflows/deploy-backend.yml.
 global:
-  smtp_smarthost: '${SMTP_HOST:-smtp.gmail.com:587}'
-  smtp_from: '${SMTP_FROM:-diary-alerts@sineops.app}'
+  smtp_smarthost: 'smtp.gmail.com:587'
+  smtp_from: 'diary-alerts@sineops.app'
   smtp_require_tls: true
 
 route:
@@ -16,10 +18,10 @@ route:
 receivers:
   - name: 'diary-mail'
     email_configs:
-      - to: '${ALERT_EMAIL_TO:-admin@example.com}'
-        smarthost: '${SMTP_HOST:-smtp.gmail.com:587}'
-        from: '${SMTP_FROM:-diary-alerts@sineops.app}'
-        auth_username: '${SMTP_USERNAME:-}'
-        auth_password: '${SMTP_PASSWORD:-}'
+      - to: 'admin@example.com'
+        smarthost: 'smtp.gmail.com:587'
+        from: 'diary-alerts@sineops.app'
+        auth_username: ''
+        auth_password: ''
         require_tls: true
         send_resolved: true

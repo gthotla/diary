@@ -68,19 +68,10 @@ services:
     image: prom/alertmanager:v0.27.0
     container_name: lifelog-alertmanager
     restart: unless-stopped
-    command:
-      - '--config.file=/etc/alertmanager/alertmanager.yml'
-      - '--config.expand-env=true'
     volumes:
       - ./alertmanager.yml:/etc/alertmanager/alertmanager.yml
     ports:
       - "127.0.0.1:9093:9093"
-    environment:
-      - SMTP_HOST=${SMTP_HOST:-smtp.gmail.com:587}
-      - SMTP_FROM=${SMTP_FROM:-diary-alerts@sineops.app}
-      - SMTP_USERNAME=${SMTP_USERNAME:-}
-      - SMTP_PASSWORD=${SMTP_PASSWORD:-}
-      - ALERT_EMAIL_TO=${ALERT_EMAIL_TO:-admin@example.com}
     networks:
       - lifelog-network
   grafana:
