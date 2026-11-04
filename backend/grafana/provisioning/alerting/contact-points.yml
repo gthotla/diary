@@ -1,0 +1,15 @@
+# Grafana email contact point. The address below is a local-dev placeholder.
+# Production: the deploy workflow REWRITES this file on the VM from the
+# ALERT_EMAIL_TO secret before `docker compose up`. SMTP itself comes from
+# GF_SMTP_* env vars (see docker-compose.yml grafana service).
+apiVersion: 1
+contactPoints:
+  - orgId: 1
+    name: diary-mail
+    receivers:
+      - uid: diary-mail-email
+        type: email
+        settings:
+          addresses: admin@example.com
+          singleEmail: true
+        disableResolveMessage: false

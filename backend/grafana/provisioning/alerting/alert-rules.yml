@@ -1,0 +1,161 @@
+# Grafana-managed alert rules (replaces the old Prometheus alerts.yml).
+# Each rule: PromQL query (A) -> reduce to last value (B) -> threshold (C).
+# Evaluated every 1m against the `prometheus` datasource.
+apiVersion: 1
+groups:
+  - orgId: 1
+    name: diary-backend
+    folder: diary-backend
+    interval: 1m
+    rules:
+      - uid: diary-high-error-ratio
+        title: DiaryHighErrorRatio
+        condition: C
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              datasource: { type: prometheus, uid: prometheus }
+              expr: sum(rate(http_request_errors_total{status_code=~"5.."}[5m])) / clamp_min(sum(rate(http_requests_total[5m])), 0.0001)
+              intervalMs: 1000
+              maxDataPoints: 43200
+              range: true
+          - refId: B
+            relativeTimeRange: { from: 0, to: 0 }
+            datasourceUid: __expr__
+            model:
+              datasource: { type: __expr__, uid: __expr__ }
+              expression: A
+              reducer: last
+              type: reduce
+          - refId: C
+            relativeTimeRange: { from: 0, to: 0 }
+            datasourceUid: __expr__
+            model:
+              datasource: { type: __expr__, uid: __expr__ }
+              expression: $B > 0.7
+              type: math
+        noDataState: NoData
+        execErrState: Error
+        for: 2m
+        annotations:
+          summary: "High 5xx error ratio (>70%) on diary-backend"
+          description: "More than 70% of requests failed with 5xx over the last 5 minutes."
+        labels:
+          severity: critical
+        isPaused: false
+
+      - uid: diary-continuous-5xx
+        title: DiaryContinuous5xx
+        condition: C
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              datasource: { type: prometheus, uid: prometheus }
+              expr: sum(increase(http_request_errors_total{status_code=~"5.."}[5m]))
+              intervalMs: 1000
+              maxDataPoints: 43200
+              range: true
+          - refId: B
+            relativeTimeRange: { from: 0, to: 0 }
+            datasourceUid: __expr__
+            model:
+              datasource: { type: __expr__, uid: __expr__ }
+              expression: A
+              reducer: last
+              type: reduce
+          - refId: C
+            relativeTimeRange: { from: 0, to: 0 }
+            datasourceUid: __expr__
+            model:
+              datasource: { type: __expr__, uid: __expr__ }
+              expression: $B >= 10
+              type: math
+        noDataState: NoData
+        execErrState: Error
+        for: 1m
+        annotations:
+          summary: "Continuous 5xx errors on diary-backend"
+          description: "10 or more server errors (5xx) in the last 5 minutes."
+        labels:
+          severity: critical
+        isPaused: false
+
+      - uid: diary-high-client-errors
+        title: DiaryHighClientErrors
+        condition: C
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              datasource: { type: prometheus, uid: prometheus }
+              expr: sum(increase(http_request_errors_total{status_code=~"4.."}[5m]))
+              intervalMs: 1000
+              maxDataPoints: 43200
+              range: true
+          - refId: B
+            relativeTimeRange: { from: 0, to: 0 }
+            datasourceUid: __expr__
+            model:
+              datasource: { type: __expr__, uid: __expr__ }
+              expression: A
+              reducer: last
+              type: reduce
+          - refId: C
+            relativeTimeRange: { from: 0, to: 0 }
+            datasourceUid: __expr__
+            model:
+              datasource: { type: __expr__, uid: __expr__ }
+              expression: $B >= 50
+              type: math
+        noDataState: NoData
+        execErrState: Error
+        for: 5m
+        annotations:
+          summary: "Elevated 4xx errors on diary-backend"
+          description: "50 or more client errors (4xx) in the last 5 minutes."
+        labels:
+          severity: warning
+        isPaused: false
+
+      - uid: diary-high-latency
+        title: DiaryHighLatency
+        condition: C
+        data:
+          - refId: A
+            relativeTimeRange: { from: 600, to: 0 }
+            datasourceUid: prometheus
+            model:
+              datasource: { type: prometheus, uid: prometheus }
+              expr: histogram_quantile(0.95, sum by (le) (rate(http_request_duration_seconds_bucket[5m])))
+              intervalMs: 1000
+              maxDataPoints: 43200
+              range: true
+          - refId: B
+            relativeTimeRange: { from: 0, to: 0 }
+            datasourceUid: __expr__
+            model:
+              datasource: { type: __expr__, uid: __expr__ }
+              expression: A
+              reducer: last
+              type: reduce
+          - refId: C
+            relativeTimeRange: { from: 0, to: 0 }
+            datasourceUid: __expr__
+            model:
+              datasource: { type: __expr__, uid: __expr__ }
+              expression: $B > 1
+              type: math
+        noDataState: NoData
+        execErrState: Error
+        for: 5m
+        annotations:
+          summary: "High p95 latency on diary-backend"
+          description: "p95 latency above 1s over the last 5 minutes."
+        labels:
+          severity: warning
+        isPaused: false

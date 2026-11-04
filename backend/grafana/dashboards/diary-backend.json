@@ -29,7 +29,7 @@
       "type": "stat",
       "gridPos": { "h": 4, "w": 6, "x": 6, "y": 0 },
       "datasource": { "type": "prometheus", "uid": "prometheus" },
-      "description": "Continuous-5xx alert fires at >= 10 in 5m (see alerts.yml DiaryContinuous5xx).",
+      "description": "Continuous-5xx Grafana alert fires at >= 10 in 5m (DiaryContinuous5xx).",
       "targets": [
         { "refId": "A", "expr": "sum(increase(http_request_errors_total{status_code=~\"5..\"}[5m]))", "legendFormat": "5xx" }
       ],
@@ -46,7 +46,7 @@
       "type": "stat",
       "gridPos": { "h": 4, "w": 6, "x": 12, "y": 0 },
       "datasource": { "type": "prometheus", "uid": "prometheus" },
-      "description": "70% mail alert: DiaryHighErrorRatio fires when this exceeds 0.7 for 2m.",
+      "description": "70% mail alert: Grafana alert DiaryHighErrorRatio fires when this exceeds 0.7 for 2m.",
       "targets": [
         {
           "refId": "A",
@@ -64,17 +64,17 @@
     },
     {
       "id": 4,
-      "title": "Firing alerts",
+      "title": "4xx errors (5m)",
       "type": "stat",
       "gridPos": { "h": 4, "w": 6, "x": 18, "y": 0 },
       "datasource": { "type": "prometheus", "uid": "prometheus" },
-      "description": "Prometheus ALERTS currently firing (from alerts.yml).",
+      "description": "Client errors in the last 5m. Grafana alert DiaryHighClientErrors fires at >= 50.",
       "targets": [
-        { "refId": "A", "expr": "count(ALERTS{alertstate=\"firing\"})", "legendFormat": "firing" }
+        { "refId": "A", "expr": "sum(increase(http_request_errors_total{status_code=~\"4..\"}[5m]))", "legendFormat": "4xx" }
       ],
       "fieldConfig": {
         "defaults": {
-          "thresholds": { "mode": "absolute", "steps": [{ "value": 0, "color": "green" }, { "value": 1, "color": "red" }] }
+          "thresholds": { "mode": "absolute", "steps": [{ "value": 0, "color": "green" }, { "value": 10, "color": "yellow" }, { "value": 50, "color": "red" }] }
         }
       },
       "options": { "reduceOptions": { "calcs": ["lastNotNull"] } }
@@ -271,7 +271,7 @@
       "title": "Firing alerts list",
       "type": "alertlist",
       "gridPos": { "h": 6, "w": 24, "x": 0, "y": 41 },
-      "description": "Shows DiaryHighErrorRatio / DiaryContinuous5xx when firing.",
+      "description": "Shows Grafana-managed alerts (DiaryHighErrorRatio / DiaryContinuous5xx) when firing.",
       "options": { "alertInstanceLabelFilter": "", "showOptions": "current" }
     }
   ]
