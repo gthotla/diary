@@ -1,0 +1,25 @@
+# Alertmanager config. SMTP / receiver addresses are injected from the
+# environment (see docker-compose.yml `alertmanager` service + --config.expand-env).
+# Required env: SMTP_HOST, SMTP_FROM, ALERT_EMAIL_TO (+ SMTP_USERNAME/SMTP_PASSWORD for Gmail).
+global:
+  smtp_smarthost: '${SMTP_HOST:-smtp.gmail.com:587}'
+  smtp_from: '${SMTP_FROM:-diary-alerts@sineops.app}'
+  smtp_require_tls: true
+
+route:
+  group_by: ['alertname']
+  group_wait: 30s
+  group_interval: 2m
+  repeat_interval: 1h
+  receiver: 'diary-mail'
+
+receivers:
+  - name: 'diary-mail'
+    email_configs:
+      - to: '${ALERT_EMAIL_TO:-admin@example.com}'
+        smarthost: '${SMTP_HOST:-smtp.gmail.com:587}'
+        from: '${SMTP_FROM:-diary-alerts@sineops.app}'
+        auth_username: '${SMTP_USERNAME:-}'
+        auth_password: '${SMTP_PASSWORD:-}'
+        require_tls: true
+        send_resolved: true
