@@ -74,7 +74,7 @@ jobs:
           host: ${{ secrets.VM_HOST }}
           username: ${{ secrets.VM_USERNAME }}
           key: ${{ secrets.VM_SSH_KEY }}
-          source: "backend/docker-compose.yml,backend/prometheus.yml,backend/alerts.yml,backend/alertmanager.yml,backend/grafana"
+          source: "backend/docker-compose.yml,backend/prometheus.yml,backend/grafana"
           target: "/home/azureuser/diary"
           strip_components: 1
 
@@ -122,29 +122,20 @@ jobs:
             echo "${{ secrets.CLOUDFRONT_PRIVATE_KEY_BASE64 }}" | base64 -d > private_key.pem
             chmod 644 private_key.pem
 
-            # Render Alertmanager config from secrets (real SMTP creds never committed)
-            echo "📧 Rendering alertmanager.yml from secrets..."
-            cat > alertmanager.yml << AMEOF
-            global:
-              smtp_smarthost: '${{ secrets.SMTP_HOST }}'
-              smtp_from: '${{ secrets.SMTP_FROM }}'
-              smtp_require_tls: true
-            route:
-              group_by: ['alertname']
-              group_wait: 30s
-              group_interval: 2m
-              repeat_interval: 1h
-              receiver: 'diary-mail'
-            receivers:
-              - name: 'diary-mail'
-                email_configs:
-                  - to: '${{ secrets.ALERT_EMAIL_TO }}'
-                    smarthost: '${{ secrets.SMTP_HOST }}'
-                    from: '${{ secrets.SMTP_FROM }}'
-                    auth_username: '${{ secrets.SMTP_USERNAME }}'
-                    auth_password: '${{ secrets.SMTP_PASSWORD }}'
-                    require_tls: true
-                    send_resolved: true
+            # Render Grafana email contact point from secrets (real address never committed)
+            echo "📧 Rendering Grafana contact point from secrets..."
+            cat > grafana/provisioning/alerting/contact-points.yml << AMEOF
+            apiVersion: 1
+            contactPoints:
+              - orgId: 1
+                name: diary-mail
+                receivers:
+                  - uid: diary-mail-email
+                    type: email
+                    settings:
+                      addresses: ${{ secrets.ALERT_EMAIL_TO }}
+                      singleEmail: true
+                    disableResolveMessage: false
             AMEOF
             
             # Docker and Compose are provisioned separately by Ansible.
@@ -156,7 +147,7 @@ jobs:
             # Deploy with Docker Compose
             echo "🚀 Deploying with Docker Compose..."
             $COMPOSE_CMD pull backend
-            $COMPOSE_CMD up -d backend alertmanager prometheus grafana
+            $COMPOSE_CMD up -d backend prometheus grafana
             
             # Wait for backend to be ready
             echo "⏳ Waiting for backend to be ready..."

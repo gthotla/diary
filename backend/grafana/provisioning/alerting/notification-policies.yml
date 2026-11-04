@@ -1,0 +1,10 @@
+# Root notification policy: group by alert, wait 30s, remind hourly.
+apiVersion: 1
+policies:
+  - orgId: 1
+    receiver: diary-mail
+    group_by:
+      - alertname
+    group_wait: 30s
+    group_interval: 2m
+    repeat_interval: 1h
