@@ -74,7 +74,7 @@ jobs:
           host: ${{ secrets.VM_HOST }}
           username: ${{ secrets.VM_USERNAME }}
           key: ${{ secrets.VM_SSH_KEY }}
-          source: "backend/docker-compose.yml,backend/prometheus.yml,backend/grafana"
+          source: "backend/docker-compose.yml,backend/prometheus.yml,backend/alerts.yml,backend/alertmanager.yml,backend/grafana"
           target: "/home/azureuser/diary"
           strip_components: 1
 
@@ -109,6 +109,12 @@ jobs:
             LOCAL_MASTER_KEY=${{ secrets.LOCAL_MASTER_KEY }}
             GRAFANA_ADMIN_USER=${{ secrets.GRAFANA_ADMIN_USER }}
             GRAFANA_ADMIN_PASSWORD=${{ secrets.GRAFANA_ADMIN_PASSWORD }}
+            SMTP_HOST=${{ secrets.SMTP_HOST }}
+            SMTP_FROM=${{ secrets.SMTP_FROM }}
+            SMTP_USERNAME=${{ secrets.SMTP_USERNAME }}
+            SMTP_PASSWORD=${{ secrets.SMTP_PASSWORD }}
+            ALERT_EMAIL_TO=${{ secrets.ALERT_EMAIL_TO }}
+            GF_SMTP_ENABLED=true
             EOF
             
             # Create private key file
@@ -125,7 +131,7 @@ jobs:
             # Deploy with Docker Compose
             echo "🚀 Deploying with Docker Compose..."
             $COMPOSE_CMD pull backend
-            $COMPOSE_CMD up -d --no-build backend
+            $COMPOSE_CMD up -d backend alertmanager prometheus grafana
             
             # Wait for backend to be ready
             echo "⏳ Waiting for backend to be ready..."

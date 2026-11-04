@@ -1,0 +1,278 @@
+{
+  "title": "Diary Backend - Requests / Failures / Logs / Endpoints",
+  "uid": "diary-backend",
+  "tags": ["diary", "backend", "prometheus"],
+  "timezone": "browser",
+  "refresh": "30s",
+  "time": { "from": "now-1h", "to": "now" },
+  "schemaVersion": 39,
+  "version": 1,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "liveNow": false,
+  "panels": [
+    {
+      "id": 1,
+      "title": "Requests (5m)",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 0, "y": 0 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "Total requests in the last 5 minutes.",
+      "targets": [
+        { "refId": "A", "expr": "sum(increase(http_requests_total[5m]))", "legendFormat": "requests" }
+      ],
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] } }
+    },
+    {
+      "id": 2,
+      "title": "5xx errors (5m)",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 6, "y": 0 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "Continuous-5xx alert fires at >= 10 in 5m (see alerts.yml DiaryContinuous5xx).",
+      "targets": [
+        { "refId": "A", "expr": "sum(increase(http_request_errors_total{status_code=~\"5..\"}[5m]))", "legendFormat": "5xx" }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": { "mode": "absolute", "steps": [{ "value": 0, "color": "green" }, { "value": 1, "color": "yellow" }, { "value": 10, "color": "red" }] }
+        }
+      },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] } }
+    },
+    {
+      "id": 3,
+      "title": "5xx error ratio (5m)",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 12, "y": 0 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "70% mail alert: DiaryHighErrorRatio fires when this exceeds 0.7 for 2m.",
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "100 * (sum(rate(http_request_errors_total{status_code=~\"5..\"}[5m])) / clamp_min(sum(rate(http_requests_total[5m])), 0.0001))",
+          "legendFormat": "error %"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percent",
+          "thresholds": { "mode": "absolute", "steps": [{ "value": 0, "color": "green" }, { "value": 10, "color": "yellow" }, { "value": 70, "color": "red" }] }
+        }
+      },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] } }
+    },
+    {
+      "id": 4,
+      "title": "Firing alerts",
+      "type": "stat",
+      "gridPos": { "h": 4, "w": 6, "x": 18, "y": 0 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "Prometheus ALERTS currently firing (from alerts.yml).",
+      "targets": [
+        { "refId": "A", "expr": "count(ALERTS{alertstate=\"firing\"})", "legendFormat": "firing" }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": { "mode": "absolute", "steps": [{ "value": 0, "color": "green" }, { "value": 1, "color": "red" }] }
+        }
+      },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] } }
+    },
+    {
+      "id": 5,
+      "title": "Live requests in progress",
+      "type": "gauge",
+      "gridPos": { "h": 6, "w": 6, "x": 0, "y": 4 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "http_requests_in_progress - requests being handled right now.",
+      "targets": [
+        { "refId": "A", "expr": "sum(http_requests_in_progress)", "legendFormat": "live" }
+      ],
+      "fieldConfig": { "defaults": { "min": 0, "max": 50 } },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] } }
+    },
+    {
+      "id": 6,
+      "title": "5xx ratio gauge (alert at 0.7)",
+      "type": "gauge",
+      "gridPos": { "h": 6, "w": 6, "x": 6, "y": 4 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "Same ratio as panel 3, 0-1 scale. Red = mail alert threshold.",
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum(rate(http_request_errors_total{status_code=~\"5..\"}[5m])) / clamp_min(sum(rate(http_requests_total[5m])), 0.0001)",
+          "legendFormat": "ratio"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "max": 1,
+          "thresholds": { "mode": "absolute", "steps": [{ "value": 0, "color": "green" }, { "value": 0.3, "color": "yellow" }, { "value": 0.7, "color": "red" }] }
+        }
+      },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] } }
+    },
+    {
+      "id": 7,
+      "title": "p95 latency gauge",
+      "type": "gauge",
+      "gridPos": { "h": 6, "w": 6, "x": 12, "y": 4 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "p95 over all routes. DiaryHighLatency warns above 1s.",
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.95, sum by (le) (rate(http_request_duration_seconds_bucket[5m])))",
+          "legendFormat": "p95"
+        }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "max": 2,
+          "unit": "s",
+          "thresholds": { "mode": "absolute", "steps": [{ "value": 0, "color": "green" }, { "value": 0.5, "color": "yellow" }, { "value": 1, "color": "red" }] }
+        }
+      },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] } }
+    },
+    {
+      "id": 8,
+      "title": "Heap memory",
+      "type": "gauge",
+      "gridPos": { "h": 6, "w": 6, "x": 18, "y": 4 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "Node heap used. 70% of ~512MB container budget ≈ mail-worthy.",
+      "targets": [
+        { "refId": "A", "expr": "nodejs_heap_size_used_bytes", "legendFormat": "heap used" }
+      ],
+      "fieldConfig": {
+        "defaults": {
+          "min": 0,
+          "max": 536870912,
+          "unit": "bytes",
+          "thresholds": { "mode": "absolute", "steps": [{ "value": 0, "color": "green" }, { "value": 268435456, "color": "yellow" }, { "value": 375809638, "color": "red" }] }
+        }
+      },
+      "options": { "reduceOptions": { "calcs": ["lastNotNull"] } }
+    },
+    {
+      "id": 9,
+      "title": "Request rate by status",
+      "type": "timeseries",
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 10 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        { "refId": "A", "expr": "sum by (status_code) (rate(http_requests_total[5m]))", "legendFormat": "{{status_code}}" }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "Request rate by method",
+      "type": "timeseries",
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 10 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        { "refId": "A", "expr": "sum by (method) (rate(http_requests_total[5m]))", "legendFormat": "{{method}}" }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "Latency p50 / p95 / p99",
+      "type": "timeseries",
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 16 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        { "refId": "p50", "expr": "histogram_quantile(0.50, sum by (le) (rate(http_request_duration_seconds_bucket[5m])))", "legendFormat": "p50" },
+        { "refId": "p95", "expr": "histogram_quantile(0.95, sum by (le) (rate(http_request_duration_seconds_bucket[5m])))", "legendFormat": "p95" },
+        { "refId": "p99", "expr": "histogram_quantile(0.99, sum by (le) (rate(http_request_duration_seconds_bucket[5m])))", "legendFormat": "p99" }
+      ],
+      "fieldConfig": { "defaults": { "unit": "s" } }
+    },
+    {
+      "id": 12,
+      "title": "5xx errors over time (alert threshold: 10 / 5m)",
+      "type": "timeseries",
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 16 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "targets": [
+        { "refId": "A", "expr": "sum(increase(http_request_errors_total{status_code=~\"5..\"}[5m]))", "legendFormat": "5xx / 5m" },
+        { "refId": "B", "expr": "sum by (status_code) (rate(http_request_errors_total{status_code=~\"5..\"}[5m]))", "legendFormat": "{{status_code}} rps" }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "Top endpoints by traffic",
+      "type": "bargauge",
+      "gridPos": { "h": 7, "w": 12, "x": 0, "y": 22 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "Highest-traffic normalized routes (IDs collapsed to :id).",
+      "targets": [
+        { "refId": "A", "expr": "topk(10, sum by (route) (rate(http_requests_total[5m])))" , "legendFormat": "{{route}}", "format": "table", "instant": true }
+      ],
+      "options": { "displayMode": "gradient", "orientation": "horizontal", "reduceOptions": { "calcs": ["lastNotNull"] } }
+    },
+    {
+      "id": 14,
+      "title": "Errors by endpoint",
+      "type": "bargauge",
+      "gridPos": { "h": 7, "w": 12, "x": 12, "y": 22 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "Which endpoints produce the errors - start debugging here when alerts fire.",
+      "targets": [
+        { "refId": "A", "expr": "topk(10, sum by (route) (increase(http_request_errors_total[5m])))" , "legendFormat": "{{route}}", "format": "table", "instant": true }
+      ],
+      "options": { "displayMode": "gradient", "orientation": "horizontal", "reduceOptions": { "calcs": ["lastNotNull"] } }
+    },
+    {
+      "id": 15,
+      "title": "p95 latency by endpoint",
+      "type": "timeseries",
+      "gridPos": { "h": 6, "w": 24, "x": 0, "y": 29 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "Slowest endpoints. Uses normalized route label.",
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "histogram_quantile(0.95, sum by (le, route) (rate(http_request_duration_seconds_bucket[5m])))",
+          "legendFormat": "{{route}}"
+        }
+      ],
+      "fieldConfig": { "defaults": { "unit": "s" } }
+    },
+    {
+      "id": 16,
+      "title": "Log volume by level",
+      "type": "timeseries",
+      "gridPos": { "h": 6, "w": 12, "x": 0, "y": 35 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "From log_messages_total, counted in utils/logger.js.",
+      "targets": [
+        { "refId": "A", "expr": "sum by (level) (rate(log_messages_total[5m]))", "legendFormat": "{{level}}" }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Error log rate",
+      "type": "timeseries",
+      "gridPos": { "h": 6, "w": 12, "x": 12, "y": 35 },
+      "datasource": { "type": "prometheus", "uid": "prometheus" },
+      "description": "Spikes here usually precede the 5xx mail alerts.",
+      "targets": [
+        { "refId": "A", "expr": "sum(rate(log_messages_total{level=\"error\"}[5m]))", "legendFormat": "errors/s" },
+        { "refId": "B", "expr": "sum(rate(log_messages_total{level=\"warn\"}[5m]))", "legendFormat": "warn/s" }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Firing alerts list",
+      "type": "alertlist",
+      "gridPos": { "h": 6, "w": 24, "x": 0, "y": 41 },
+      "description": "Shows DiaryHighErrorRatio / DiaryContinuous5xx when firing.",
+      "options": { "alertInstanceLabelFilter": "", "showOptions": "current" }
+    }
+  ]
+}
