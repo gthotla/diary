@@ -17,6 +17,7 @@
           - nginx
           - certbot
           - python3-certbot-nginx
+          - fail2ban
         state: present
         update_cache: true
 
@@ -64,8 +65,33 @@
       ansible.builtin.command: nginx -t
       changed_when: false
 
+    - name: Install Fail2ban scanner jail
+      ansible.builtin.template:
+        src: templates/fail2ban-jail.local.j2
+        dest: /etc/fail2ban/jail.local
+        mode: "0644"
+      notify: Restart fail2ban
+
+    - name: Install Fail2ban nginx-scanners filter
+      ansible.builtin.template:
+        src: templates/fail2ban-nginx-scanners.conf.j2
+        dest: /etc/fail2ban/filter.d/nginx-scanners.conf
+        mode: "0644"
+      notify: Restart fail2ban
+
+    - name: Enable Fail2ban
+      ansible.builtin.service:
+        name: fail2ban
+        state: started
+        enabled: true
+
   handlers:
     - name: Reload nginx
       ansible.builtin.service:
         name: nginx
         state: reloaded
+
+    - name: Restart fail2ban
+      ansible.builtin.service:
+        name: fail2ban
+        state: restarted
