@@ -1,0 +1,19 @@
+# Managed by Ansible. Local overrides for Fail2ban.
+[DEFAULT]
+bantime = 1h
+findtime = 10m
+maxretry = 5
+banaction = iptables-multiport
+
+[sshd]
+enabled = true
+
+[nginx-scanners]
+enabled = true
+port = http,https
+filter = nginx-scanners
+logpath = /var/log/nginx/access.log
+          /var/log/nginx/scanners.log
+maxretry = 5
+findtime = 600
+bantime = 3600

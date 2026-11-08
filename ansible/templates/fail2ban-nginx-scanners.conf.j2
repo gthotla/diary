@@ -1,0 +1,7 @@
+# Fail2ban filter: match scanner probes that Nginx dropped with 444,
+# plus explicit junk-path hits (belt and braces if logging is ever enabled
+# on the 444 locations).
+[Definition]
+failregex = ^<HOST> - \S+ \[.*?\] "(GET|POST|HEAD|PUT|DELETE|PATCH|OPTIONS) /(wp-|wp/|wordpress|xmlrpc\.php|phpmyadmin|pma|adminer|\.env|\.git|\.svn|actuator|vendor/phpunit|laravel|cgi-bin/|server-status).*?" 444\b
+            ^<HOST> - \S+ \[.*?\] ".*?" 444\b
+ignoreregex =
