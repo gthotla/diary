@@ -1,5 +1,7 @@
 # Timely
 
+[![Live App](https://img.shields.io/badge/Live_App-diary.sineops.app-brightgreen?style=flat-square)](https://diary.sineops.app/)
+
 Timely is a productivity management app with an integrated diary. It helps you plan your time, stay on top of todos, and capture daily diary entries — with dashboards that show how your time and mood trend. Built as a React frontend with a Node.js/Express backend.
 
 ## What the app does
