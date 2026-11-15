@@ -105,8 +105,8 @@ jobs:
             CLOUDFRONT_DOMAIN=${{ secrets.CLOUDFRONT_DOMAIN }}
             CLOUDFRONT_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
             CLOUDFRONT_KEY_PAIR_ID=${{ secrets.CLOUDFRONT_KEY_PAIR_ID }}
-            CLOUDFRONT_PRIVATE_KEY_BASE64=${{ secrets.CLOUDFRONT_PRIVATE_KEY_BASE64 }}
-            LOCAL_MASTER_KEY=${{ secrets.LOCAL_MASTER_KEY }}
+            CLOUDFRONT_PRIVATE_KEY_BASE64="${{ secrets.CLOUDFRONT_PRIVATE_KEY_BASE64 }}"
+            LOCAL_MASTER_KEY="${{ secrets.LOCAL_MASTER_KEY }}"
             GRAFANA_ADMIN_USER=${{ secrets.GRAFANA_ADMIN_USER }}
             GRAFANA_ADMIN_PASSWORD=${{ secrets.GRAFANA_ADMIN_PASSWORD }}
             # Mail: auth reuses the existing working Gmail secrets.
