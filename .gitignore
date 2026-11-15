@@ -1,0 +1,11 @@
+diagrams
+docs
+node_modules
+scripts
+ansible/inventory.ini
+# local env and keys — never track
+.env
+*.pem
+master-key.txt
+logs/
+*.log

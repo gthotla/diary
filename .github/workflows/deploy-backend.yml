@@ -105,7 +105,7 @@ jobs:
             CLOUDFRONT_DOMAIN=${{ secrets.CLOUDFRONT_DOMAIN }}
             CLOUDFRONT_DISTRIBUTION_ID=${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }}
             CLOUDFRONT_KEY_PAIR_ID=${{ secrets.CLOUDFRONT_KEY_PAIR_ID }}
-            CLOUDFRONT_PRIVATE_KEY_PATH=/app/private_key.pem
+            CLOUDFRONT_PRIVATE_KEY_BASE64=${{ secrets.CLOUDFRONT_PRIVATE_KEY_BASE64 }}
             LOCAL_MASTER_KEY=${{ secrets.LOCAL_MASTER_KEY }}
             GRAFANA_ADMIN_USER=${{ secrets.GRAFANA_ADMIN_USER }}
             GRAFANA_ADMIN_PASSWORD=${{ secrets.GRAFANA_ADMIN_PASSWORD }}
@@ -118,11 +118,10 @@ jobs:
             ALERT_EMAIL_TO=${{ secrets.ALERT_EMAIL }}
             GF_SMTP_ENABLED=true
             EOF
-            
-            # Create private key file
-            echo "🔑 Creating private key file..."
-            echo "${{ secrets.CLOUDFRONT_PRIVATE_KEY_BASE64 }}" | base64 -d > private_key.pem
-            chmod 644 private_key.pem
+            chmod 600 .env
+
+            # Remove legacy key file if present (we now use env-only, no file).
+            rm -f private_key.pem
 
             # Point the provisioned Grafana contact point at the real recipient.
             # The repo file carries a dummy address (admin@example.com); sed swaps

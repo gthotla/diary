@@ -13,7 +13,23 @@ const secretAccessKey = process.env.AWS_SECRET_ACCESS_KEY
 const cloudfrontDistributionId = process.env.CLOUDFRONT_DISTRIBUTION_ID
 const cloudfrontDomain = process.env.CLOUDFRONT_DOMAIN // e.g., 'dwxz7pdheutva.cloudfront.net'
 const cloudfrontKeyPairId = process.env.CLOUDFRONT_KEY_PAIR_ID
-const cloudfrontPrivateKeyPath = process.env.CLOUDFRONT_PRIVATE_KEY_PATH
+// Private key: prefer env (no file on disk). Supports base64 (single-line,
+// safe for .env) or raw PEM with escaped \n. File path kept as local fallback.
+function loadCloudfrontPrivateKey() {
+  const b64 = process.env.CLOUDFRONT_PRIVATE_KEY_BASE64
+  if (b64 && b64.trim()) {
+    return Buffer.from(b64.trim(), 'base64').toString('utf8')
+  }
+  const raw = process.env.CLOUDFRONT_PRIVATE_KEY
+  if (raw && raw.trim()) {
+    return raw.replace(/\\n/g, '\n')
+  }
+  const keyPath = process.env.CLOUDFRONT_PRIVATE_KEY_PATH
+  if (keyPath) {
+    return readFileSync(keyPath, 'utf8')
+  }
+  throw new Error('CloudFront private key not configured (set CLOUDFRONT_PRIVATE_KEY_BASE64)')
+}
 //console.log(cloudfrontPrivateKeyPath);
 const s3Client = new S3Client({
   region,
@@ -56,7 +72,7 @@ export async function deleteFile(fileName) {
 
 export async function getCloudFrontSignedUrl(key, expiresInSeconds = 3600) {
   try {
-    const privateKey = readFileSync(cloudfrontPrivateKeyPath, 'utf8');
+    const privateKey = loadCloudfrontPrivateKey();
     
     const url = `https://${cloudfrontDomain}/${key}`;
     const expires = Math.floor(Date.now() / 1000) + expiresInSeconds;
